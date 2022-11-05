@@ -1,0 +1,151 @@
+ 0123456789!?ABC
+DEGHLMPー。、┌┘.;©/
+
+あいうえお
+かきくけこ
+さしすせそ
+たちつてと
+なにぬねの
+はひふへほ
+まみむめも
+やゆよわん
+らりるれろ
+を
+
+アイウエオカキクケコサシスセソタチツ
+テトナニヌネノハヒフヘホマミムメ
+モヤユヨラリルレロワヲンっゃゅょ
+ィゥェォッャュョ
+
+がぎぐげご
+ざじずぜぞ
+だぢづでど
+ばびぶべぼ
+ガギグゲゴ
+ザジズゼゾ
+ダヂヅデド
+バビブベボ
+ヴ
+ぱぴぷぺぽパピプペポ 子月
+日ー回年・〜+§ヵ×>◆
+ぁあぃいぅうぇえぉお
+
+################### TEXTS ###################
+なまえをきめてください		Please choose a name.
+B3 BD AF ?? 8D D3 A5
+
+x2D559		B3 BD AF CB 8D D3 A5
+
+$C2/14AB BD 80 C9    LDA $C980,x[$C2:C9BA]   A:003A X:003A Y:12CC P:envmxdIzc
+$C2/14AE 18          CLC                     A:0B79 X:003A Y:12CC P:envmxdIzc
+$C2/14AF 69 E0 C9    ADC #$C9E0              A:0B79 X:003A Y:12CC P:envmxdIzc
+$C2/14B2 85 67       STA $67    [$00:0067]   A:D559 X:003A Y:12CC P:eNvmxdIzc
+
+x2C9E0		Introduction text
+
+x2D40E		Name input
+
+AB FF 8B FF 95 FF 9F FF B3 FF 81 FF BD FF C1 FF D7 FF 4B FF 55 FF 5F FF 41 FF 6A FF E5 0A 
+AD FF 8D FF 97 FF A1 FF B5 FF 83 FF BF FF C3 FF D9 FF 4D FF 57 FF 61 FF 43 FF 6C FF E7 0A 
+A9 FF 8F FF 99 FF A3 FF B7 FF 85 FF D1 FF C5 FF DB FF 4F FF 59 FF 63 FF 45 FF 6E FF E9 0A 
+AF FF 91 FF 9B FF A5 FF B9 FF 87 FF D3 FF C7 FF DD FF 51 FF 5B FF 65 FF 47 FF 70 FF EB 0A 
+B1 FF 93 FF 9D FF A7 FF BB FF 89 FF D5 FF C9 FF DF FF 53 FF 5D FF 67 FF 49 FF 72 FF ED 0A 
+AA FF 8A FF 94 FF 9E FF B2 FF 80 FF BC FF C0 FF D6 FF 4A FF 54 FF 5E FF 40 FF 69 FF E4 0A 
+AC FF 8C FF 96 FF A0 FF B4 FF 82 FF BE FF C2 FF D8 FF 4C FF 56 FF 60 FF 42 FF 6B FF E6 0A 
+A8 FF 8E FF 98 FF A2 FF B6 FF 84 FF D0 FF C4 FF DA FF 4E FF 58 FF 62 FF 44 FF 6D FF E8 0A 
+AE FF 90 FF 9A FF A4 FF B8 FF 86 FF D2 FF C6 FF DC FF 50 FF 5A FF 64 FF 46 FF 6F FF EA 0A 
+B0 FF 92 FF 9C FF A6 FF BA FF 88 FF D4 FF C8 FF DE FF 52 FF 5C FF 66 FF 48 FF 71 FF EC 0A 
+FF FF 68 FF CD FF CF FF E1 FF E3 FF CC FF CE FF E0 FF E2 FF 7D FF F8 FF 0D FF B1 C7 D9 0A 00
+
+First dialog
+さあ ついに やって      き ま し た .
+95 AB FF A3 AD B5	   8D BD 97 9F F7
+
+x1AC67		95 AB FF A3 AD 36
+95 AB FF A3 AD 36 C1 2D 8D BD 97 9F F7 05 
+A9 A1 E1 A9 AD A1 FF 64 C8 56 CE D6 98 B3 05 
+35 7E 0B 
+
+ダイナマイ
+5E AC B2 BC AC
+
+############# LOADING DIALOG CHARACTERS #################
+
+Loading the bottom 4 lines of the top-left tile
+
+$C3/05F1 8B          PHB                     A:C000 X:0000 Y:4308 P:envMxdiZc
+$C3/05F2 A9 C3       LDA #$C3                A:C000 X:0000 Y:4308 P:envMxdiZc
+$C3/05F4 48          PHA                     A:C0C3 X:0000 Y:4308 P:eNvMxdizc
+$C3/05F5 AB          PLB                     A:C0C3 X:0000 Y:4308 P:eNvMxdizc
+$C3/05F6 A9 04       LDA #$04                A:C0C3 X:0000 Y:4308 P:eNvMxdizc
+$C3/05F8 85 3A       STA $3A    [$00:043A]   A:C004 X:0000 Y:4308 P:envMxdizc
+$C3/05FA 64 32       STZ $32    [$00:0432]   A:C004 X:0000 Y:4308 P:envMxdizc
+$C3/05FC 64 33       STZ $33    [$00:0433]   A:C004 X:0000 Y:4308 P:envMxdizc
+$C3/05FE 20 44 06    JSR $0644  [$C3:0644]   A:C004 X:0000 Y:4308 P:envMxdizc
+
+$C1/9AEB AD 15 04    LDA $0415  [$00:0415]   A:0000 X:0002 Y:0010 P:envMxdiZc
+$C1/9AEE F0 2D       BEQ $2D    [$9B1D]      A:0010 X:0002 Y:0010 P:envMxdizc
+$C1/9AF0 C9 0B       CMP #$0B                A:0010 X:0002 Y:0010 P:envMxdizc
+$C1/9AF2 F0 29       BEQ $29    [$9B1D]      A:0010 X:0002 Y:0010 P:envMxdizC
+$C1/9AF4 C9 05       CMP #$05                A:0010 X:0002 Y:0010 P:envMxdizC
+$C1/9AF6 D0 0E       BNE $0E    [$9B06]      A:0010 X:0002 Y:0010 P:envMxdizC
+$C1/9B06 AB          PLB                     A:0010 X:0002 Y:0010 P:envMxdizC
+$C1/9B07 20 EF 85    JSR $85EF  [$C1:85EF]   A:0010 X:0002 Y:0010 P:envMxdizC
+
+$C1/8625 A9 E4 A0    LDA #$A0E4              A:0040 X:0002 Y:0010 P:envmxdizc
+$C1/8628 85 04       STA $04    [$00:0204]   A:A0E4 X:0002 Y:0010 P:eNvmxdizc
+$C1/862A A9 C1 00    LDA #$00C1              A:A0E4 X:0002 Y:0010 P:eNvmxdizc
+$C1/862D 85 06       STA $06    [$00:0206]   A:00C1 X:0002 Y:0010 P:envmxdizc
+
+x1AC67 is the first dialog
+byte lower than x40 seems to have a special treatment
+
+$C3/00D9 A7 1A       LDA [$1A]  [$C1:AC67]   A:0000 X:0000 Y:4308 P:envMxdiZc
+$C3/00DB C2 20       REP #$20                A:0095 X:0000 Y:4308 P:eNvMxdizc
+$C3/00DD E6 1A       INC $1A    [$00:041A]   A:0095 X:0000 Y:4308 P:eNvmxdizc
+$C3/00DF E2 20       SEP #$20                A:0095 X:0000 Y:4308 P:eNvmxdizc
+$C3/00E1 C9 40       CMP #$40                A:0095 X:0000 Y:4308 P:eNvMxdizc
+$C3/00E3 90 12       BCC $12    [$00F7]      A:0095 X:0000 Y:4308 P:envMxdizC
+$C3/00E5 C2 20       REP #$20                A:0095 X:0000 Y:4308 P:envMxdizC
+$C3/00E7 85 1E       STA $1E    [$00:041E]   A:0095 X:0000 Y:4308 P:envmxdizC
+$C3/00E9 E2 20       SEP #$20                A:0095 X:0000 Y:4308 P:envmxdizC
+$C3/00EB 20 8A 05    JSR $058A  [$C3:058A]   A:0095 X:0000 Y:4308 P:envMxdizC
+
+$C3/0104 BF 00 0E C3 LDA $C30E00,x[$C3:0E28] A:0028 X:0028 Y:4328 P:envmxdizc
+$C3/0108 85 20       STA $20    [$00:0420]   A:0EC3 X:0028 Y:4328 P:envmxdizc
+...
+$C3/03CC A7 20       LDA [$20]  [$C3:0EC4]   A:0001 X:0028 Y:4328 P:envMxdizc
+$C3/03CE C2 20       REP #$20                A:005E X:0028 Y:4328 P:envMxdizc
+
+
+LOADING PRESET PHRASES 
+$C3/00D9 A7 1A       LDA [$1A]  [$C1:AC84]   A:0000 X:0000 Y:4328 P:envMxdiZc
+$C3/00DB C2 20       REP #$20                A:0035 X:0000 Y:4328 P:envMxdizc
+$C3/00DD E6 1A       INC $1A    [$00:041A]   A:0035 X:0000 Y:4328 P:envmxdizc
+$C3/00DF E2 20       SEP #$20                A:0035 X:0000 Y:4328 P:eNvmxdizc
+$C3/00E1 C9 40       CMP #$40                A:0035 X:0000 Y:4328 P:eNvMxdizc
+$C3/00E3 90 12       BCC $12    [$00F7]      A:0035 X:0000 Y:4328 P:eNvMxdizc
+$C3/00F7 C9 21       CMP #$21                A:0035 X:0000 Y:4328 P:eNvMxdizc
+$C3/00F9 90 29       BCC $29    [$0124]      A:0035 X:0000 Y:4328 P:envMxdizC
+$C3/00FB 85 24       STA $24    [$00:0424]   A:0035 X:0000 Y:4328 P:envMxdizC
+$C3/00FD 38          SEC                     A:0035 X:0000 Y:4328 P:envMxdizC
+$C3/00FE E9 21       SBC #$21                A:0035 X:0000 Y:4328 P:envMxdizC
+$C3/0100 0A          ASL A                   A:0014 X:0000 Y:4328 P:envMxdizC
+$C3/0101 AA          TAX                     A:0028 X:0000 Y:4328 P:envMxdizc
+$C3/0102 C2 20       REP #$20                A:0028 X:0028 Y:4328 P:envMxdizc
+$C3/0104 BF 00 0E C3 LDA $C30E00,x[$C3:0E28] A:0028 X:0028 Y:4328 P:envmxdizc
+$C3/0108 85 20       STA $20    [$00:0420]   A:0EC3 X:0028 Y:4328 P:envmxdizc
+$C3/010A A9 00 00    LDA #$0000              A:0EC3 X:0028 Y:4328 P:envmxdizc
+$C3/010D E2 20       SEP #$20                A:0000 X:0028 Y:4328 P:envmxdiZc
+$C3/010F A9 C3       LDA #$C3                A:0000 X:0028 Y:4328 P:envMxdiZc
+$C3/0111 85 22       STA $22    [$00:0422]   A:00C3 X:0028 Y:4328 P:eNvMxdizc
+$C3/0113 A7 20       LDA [$20]  [$C3:0EC3]   A:00C3 X:0028 Y:4328 P:eNvMxdizc
+$C3/0115 85 23       STA $23    [$00:0423]   A:000A X:0028 Y:4328 P:envMxdizc
+$C3/0117 C2 20       REP #$20                A:000A X:0028 Y:4328 P:envMxdizc
+$C3/0119 E6 20       INC $20    [$00:0420]   A:000A X:0028 Y:4328 P:envmxdizc
+$C3/011B E2 20       SEP #$20                A:000A X:0028 Y:4328 P:envmxdizc
+$C3/011D A9 01       LDA #$01                A:000A X:0028 Y:4328 P:envMxdizc
+$C3/011F 85 19       STA $19    [$00:0419]   A:0001 X:0028 Y:4328 P:envMxdizc
+$C3/0121 4C CC 03    JMP $03CC  [$C3:03CC]   A:0001 X:0028 Y:4328 P:envMxdizc
+$C3/03CC A7 20       LDA [$20]  [$C3:0EC4]   A:0001 X:0028 Y:4328 P:envMxdizc
+$C3/03CE C2 20       REP #$20                A:005E X:0028 Y:4328 P:envMxdizc
