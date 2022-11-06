@@ -18,18 +18,28 @@ public class ResIO {
     private List<Object> data = new ArrayList<>();
     private Iterator<Object> iterator;
     
+    int indexDataByteArray = 0;
+    byte[] dataByteArray = null;
+    
     public ResIO(ResType type) {
         this.type = type;
     }
-    
+
     public static ResIO getTextResource(String filename) {
         ResIO res = new ResIO(ResType.TEXT_FILE);
+        res.loadResource(filename);
+        return res;
+    }
+
+    public static ResIO getBinaryResource(String filename) {
+        ResIO res = new ResIO(ResType.BINARY_FILE);
         res.loadResource(filename);
         return res;
     }
     
     public void loadResource(String filename) {
         if (type==ResType.TEXT_FILE) loadTextResource(filename);
+        if (type==ResType.BINARY_FILE) loadBinaryResource(filename);
     }
 
     private void loadTextResource(String filename) {
@@ -47,6 +57,14 @@ public class ResIO {
         }
         iterator = data.iterator();
     }
+
+    private void loadBinaryResource(String filename) {
+        try {
+            dataByteArray = Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename)).readAllBytes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
     public boolean hasNext() {
         return iterator.hasNext();
@@ -55,6 +73,18 @@ public class ResIO {
     public Object next() {
         if (!iterator.hasNext()) return null;
         return iterator.next();
+    }
+
+    public boolean hasNextByte() {
+        return indexDataByteArray < dataByteArray.length;
+    }
+
+    public byte nextByte() {
+        return dataByteArray[indexDataByteArray++];
+    }
+    
+    public byte[] getBytes() {
+        return dataByteArray;
     }
 
 }
