@@ -3,10 +3,15 @@ package services;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Utils {
 
@@ -45,6 +50,14 @@ public class Utils {
         }
         return new String(hexChars);
     }
+
+    public static byte[] hexStringToByteArray(String[] s) {
+        byte[] bytes = new byte[s.length];
+        for (int i = 0; i < s.length; i++) {
+            bytes[i] = (byte) (Integer.parseInt(s[i],16) & 0xFF);
+        }
+        return bytes;
+    }
     
     public static String padRight(String s,char c,int length) {
         while (s.length()<length) {
@@ -80,6 +93,8 @@ public class Utils {
         BufferedImage image = null;
         try {
             InputStream inputStream = Utils.class.getClassLoader().getResourceAsStream(filename);
+            if (inputStream==null)
+                System.err.println(filename);
             image = ImageIO.read(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
@@ -238,5 +253,42 @@ public class Utils {
         }
 
         return lastIndexOf;
+    }
+
+    public static void mergeImages(String folder, int columns, String output) {
+        try {
+            List<File> files = Files.list(Paths.get(folder)).map(Path::toFile).collect(Collectors.toList());
+            BufferedImage image = ImageIO.read(files.get(0));
+            int rows = files.size() / columns;
+            if (files.size()%columns>0) rows++;
+            BufferedImage out = new BufferedImage(columns*image.getWidth(), rows*image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+            int x = 0;
+            int y = 0;
+            for (File file : files) {
+                if (x==out.getWidth()) {
+                    x = 0;
+                    y = y + image.getHeight();
+                }
+                BufferedImage read = ImageIO.read(file);
+                addImage(out, read, 1, x, y);
+                x = x + image.getWidth();
+            }
+            ImageIO.write(out, "png", new File(output));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * prints the contents of buff2 on buff1 with the given opaque value.
+     */
+    public static void addImage(BufferedImage buff1, BufferedImage buff2,
+                                float opaque, int x, int y) {
+        Graphics2D g2d = buff1.createGraphics();
+        g2d.setComposite(
+                AlphaComposite.getInstance(AlphaComposite.SRC_OVER, opaque));
+        g2d.drawImage(buff2, x, y, null);
+        g2d.dispose();
     }
 }
