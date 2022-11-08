@@ -68,6 +68,23 @@ A9 A1 E1 A9 AD A1 FF 64 C8 56 CE D6 98 B3 05
 
 ダイナマイ
 5E AC B2 BC AC
+############# SMALL FONT CHARACTERS #################
+と	A7
+top tile	00 00 00 00 00 00 00 00 40 40 40 40 58 58 60 60
+bot tile	40 40 80 80 80 80 7C 7C 00 00 00 00 00 00 00 00
+
+x2C9E0		Introduction text
+
+バ	40
+top tile	00 00 00 00 0A 0A 0A 0A 00 00 08 08 08 08 44 44
+bot tile	44 44 82 82 82 82 02 02 00 00 00 00 00 00 00 00
+
+x33CA0		00 00 08 08 08 08 44 44 44 44 82 82 82 82 02 02
+x33DE0		00 00 00 00 0A 0A 0A 0A								4 lines for the dakuten
+
+
+x33A00		space
+x33A10		。		F7
 
 ############# LOADING DIALOG CHARACTERS #################
 
@@ -149,3 +166,30 @@ $C3/011F 85 19       STA $19    [$00:0419]   A:0001 X:0028 Y:4328 P:envMxdizc
 $C3/0121 4C CC 03    JMP $03CC  [$C3:03CC]   A:0001 X:0028 Y:4328 P:envMxdizc
 $C3/03CC A7 20       LDA [$20]  [$C3:0EC4]   A:0001 X:0028 Y:4328 P:envMxdizc
 $C3/03CE C2 20       REP #$20                A:005E X:0028 Y:4328 P:envMxdizc
+
+################### DECOMPRESSION ###################
+
+xA0000		00 20
+
+xA0020		74 03 00 06 C4 0B 04 12 04 03 04 80 04 44
+
+0374
+
+Decompressed size : x1000
+
+################### LATIN SPRITES ###################
+
+$C3/05E7 69 0C       ADC #$0C                A:8008 X:0002 Y:0010 P:envMxdizc
+$C3/05E9 85 1D       STA $1D    [$00:041D]   A:8014 X:0002 Y:0010 P:envMxdizc
+...
+$C1/9594 4A          LSR A                   A:0000 X:A8A1 Y:4308 P:envmxdIZc
+$C1/9595 4A          LSR A                   A:0000 X:A8A1 Y:4308 P:envmxdIZc
+$C1/9596 4A          LSR A                   A:0000 X:A8A1 Y:4308 P:envmxdIZc
+$C1/9597 4A          LSR A                   A:0000 X:A8A1 Y:4308 P:envmxdIZc
+
+Change to shorten the width from 12 to 8 pixels (more latin characters displayed)
+x305E7		69 08
+x19594		EA
+x19595		EA
+x19596		EA
+x19597		EA
