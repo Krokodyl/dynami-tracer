@@ -8,6 +8,8 @@ import services.lz.LzCompressor;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -19,8 +21,7 @@ public class PointerTable {
 
     String name = "";
     
-    int offsetStart;
-    int offsetEnd;
+    List<PointerRange> ranges = new ArrayList<>();
     int shift;
     
     int newOffsetStart;
@@ -30,20 +31,24 @@ public class PointerTable {
     
     PointerTableType type;
 
-    public PointerTable(int offsetStart, int offsetEnd, int shift, int newOffsetStart) {
-        this.offsetStart = offsetStart;
-        this.offsetEnd = offsetEnd;
+    public PointerTable(int shift, int newOffsetStart) {
         this.shift = shift;
         this.newOffsetStart = newOffsetStart;
     }
+    
+    public void addRange(PointerRange range) {
+        ranges.add(range);
+    }
 
     public void loadPointers(byte[] data) {
-        for (int offset=getOffsetStart();offset<getOffsetEnd();offset = offset + 2) {
-            byte a = data[offset];
-            byte b = data[offset+1];
-            int value = getShift() + ((b & 0xFF) * 0x100) + (a & 0xFF);
-            PointerEntry pointer = new PointerEntry(offset, value, getShift());
-            add(pointer);
+        for (PointerRange range : ranges) {
+            for (int offset=range.getOffsetStart();offset<range.getOffsetEnd();offset = offset + 2) {
+                byte a = data[offset];
+                byte b = data[offset+1];
+                int value = getShift() + ((b & 0xFF) * 0x100) + (a & 0xFF);
+                PointerEntry pointer = new PointerEntry(offset, value, getShift());
+                add(pointer);
+            }
         }
     }
 
@@ -57,22 +62,6 @@ public class PointerTable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getOffsetStart() {
-        return offsetStart;
-    }
-
-    public void setOffsetStart(int offsetStart) {
-        this.offsetStart = offsetStart;
-    }
-
-    public int getOffsetEnd() {
-        return offsetEnd;
-    }
-
-    public void setOffsetEnd(int offsetEnd) {
-        this.offsetEnd = offsetEnd;
     }
 
     public int getShift() {

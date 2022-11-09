@@ -60,7 +60,11 @@ public class Dictionary {
         byte[] res = new byte[0];
         String[] characters = parseCharacters(s);
         for (String value : characters) {
-            byte b = reverseMap.get(value).byteValue();
+            byte b = 0;
+            if (!reverseMap.containsKey(value)) {
+                value = value.replaceAll("\\{","").replaceAll("}","");
+                b = (byte) Integer.parseInt(value,16);
+            } else b = reverseMap.get(value).byteValue();
             res = ArrayUtils.addAll(res, new byte[]{b});
         }
         return res;

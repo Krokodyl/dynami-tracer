@@ -131,6 +131,11 @@ public class DataReader {
                             }
                             //translationEngCount++;
                             engCount++;
+                        } else if (Constants.REPLACE_MISSING_TRANSLATION_WITH_OFFSET) {
+                            String english = h(t.getOffsetData())+"{EL}";
+                            t.setEnglish(english);
+                            byte[] bytes = dictionary.getCode(english);
+                            t.setData(bytes);
                         }
                         /*if (translationMap.containsKey(t.getDataOffset())) {
                             System.err.println(t);
