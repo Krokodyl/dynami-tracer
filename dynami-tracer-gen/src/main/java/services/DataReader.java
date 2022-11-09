@@ -1,10 +1,18 @@
 package services;
 
+import entities.Constants;
 import org.apache.commons.lang.ArrayUtils;
+import services.pointers.PointerTable;
 
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+
+import static services.Utils.*;
 
 public class DataReader {
     
@@ -69,5 +77,76 @@ public class DataReader {
             }
         }
         return result;
+    }
+
+    public static Map<Integer, Translation> loadTranslations(PointerTable table, Dictionary dictionary) {
+        System.out.println("Loading Translations for "+table.getName());
+        Map<Integer, Translation> translationMap = new TreeMap<>();
+        String file = String.format("translations/%s.txt", table.getName());
+        if (!new File("src/main/resources/"+file).exists()) return null;
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(
+                        Objects.requireNonNull(DataReader.class.getClassLoader().getResourceAsStream(file)), StandardCharsets.UTF_8));
+        String line = null;
+        try {
+            line = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int jpnCount = 0;
+        int engCount = 0;
+        Translation t = new Translation();
+        while (line != null) {
+            if (line.contains("=")) {
+                String[] split = line.split("=");
+                if (split.length > 0) {
+                    /*if (split[0].equals(Constants.TRANSLATION_FILE_POINTER)) {
+                        String[] pointer = split[1].split(";");
+                        t.setPointerFile(pointer[0]);
+                        if (pointer[1].length()>0) {
+                            //t.setPointerOffset(x(pointer[1]));
+                            //t.setPointerValue(x(pointer[2]));
+                            t.addPointer(new Pointer(x(pointer[1]), x(pointer[2])));
+                        }
+                        if (pointer.length>=4) {
+                            t.setGlobalPointer(pointer[3].equals("GLOBAL"));
+                        }
+                    }*/
+                    if (split[0].equals(Constants.TRANSLATION_FILE_DATA)) {
+                        String[] data = split[1].split(";");
+                        t.setOffsetData(x(data[0]));
+                    }
+                    if (split[0].equals(Constants.TRANSLATION_FILE_JPN)) {
+                        t.setJapanese(split[1]);
+                        //translationCount++;
+                        jpnCount++;
+                    }
+                    if (split[0].equals(Constants.TRANSLATION_FILE_ENG)) {
+                        if (split.length>1 && split[1].length()>0) {
+                            String english = split[1];
+                            if (english!=null && !english.isEmpty()) {
+                                t.setEnglish(english);
+                                byte[] bytes = dictionary.getCode(english);
+                                t.setData(bytes);
+                            }
+                            //translationEngCount++;
+                            engCount++;
+                        }
+                        /*if (translationMap.containsKey(t.getDataOffset())) {
+                            System.err.println(t);
+                        }*/
+                        translationMap.put(t.getOffsetData(), t);
+                        t = new Translation();
+                    }
+                }
+            }
+            try {
+                line = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Trans Count "+file+" "+engCount+"/"+jpnCount);
+        return translationMap;
     }
 }

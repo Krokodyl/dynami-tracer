@@ -78,7 +78,7 @@ public class Dictionary {
                 special = true;
             } else if (c=='}') {
                 special = false;
-                values.add(specialCode);
+                values.add("{"+specialCode+"}");
                 specialCode = "";
             } else {
                 if (special) specialCode+=c;

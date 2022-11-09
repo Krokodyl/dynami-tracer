@@ -39,6 +39,7 @@ public class DynamiTracer {
         //japanese.print();
         japaneseSmallDictionary.loadDictionary("dictionaries/small-japanese.txt");
         //japaneseSmall.print();
+        latinSmall.loadDictionary("dictionaries/small-latin.txt");
 
         generateSmallLatin();
 
@@ -63,6 +64,9 @@ public class DynamiTracer {
         generateEmptyTranslationFiles(data, tableIntro, japaneseSmallDictionary);
         generateEmptyTranslationFiles(data, tableIntro2, japaneseSmallDictionary);
         
+        tableIntro.loadTranslations(latinSmall);
+        
+        tableIntro.writeEnglish(data);
         //generateJapaneseTable();
         //testDecompression();
         

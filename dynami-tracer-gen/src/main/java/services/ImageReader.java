@@ -42,7 +42,7 @@ public class ImageReader {
             generateSpriteDataFromImage(
                     "src/main/resources/images/small/small.png",
                     "src/main/resources/gen/sprite-uncompressed.data",
-                    new Palette2bpp("/palettes/status.png"),
+                    new Palette2bpp("/palettes/small.png"),
                     2
             );
         } catch (IOException e) {
@@ -401,7 +401,7 @@ public class ImageReader {
         int size = 8;
         try {
             BufferedImage image = ImageIO.read(
-                    Objects.requireNonNull(ImageReader.class.getClassLoader().getResourceAsStream("images/small/full-small.png"))
+                    Objects.requireNonNull(ImageReader.class.getClassLoader().getResourceAsStream("images/small/small.png"))
             );
             int count = 1;
             for (int row=0;row<image.getHeight();row=row+size) {

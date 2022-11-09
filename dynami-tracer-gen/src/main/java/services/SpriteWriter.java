@@ -155,7 +155,7 @@ public class SpriteWriter {
                 /*BufferedImage image = ImageIO.read(
                         Objects.requireNonNull(ImageReader.class.getClassLoader().getResourceAsStream("images/small/full-small.png"))
                 );*/
-                byte[] bytes = ImageReader.generateSpriteDataFromImage(file, new Palette2bpp("/palettes/status.png"), 2);
+                byte[] bytes = ImageReader.generateSpriteDataFromImage(file, new Palette2bpp("/palettes/small.png"), 2);
                 for (byte b : bytes) {
                     data[offset++]=b;
                 }
