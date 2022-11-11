@@ -26,6 +26,12 @@ $C2/14B2 85 67       STA $67    [$00:0067]   A:D559 X:003A Y:12CC P:eNvmxdIzc
 
 x2C9E0		Introduction text
 
+
+Number of character in the description (max: x17 = 23)
+$C2/20DF A2 14 00    LDX #$0014              A:1D01 X:0000 Y:1801 P:envMxdIZc
+$C2/20E2 86 22       STX $22    [$00:0022]   A:1D01 X:0014 Y:1801 P:envMxdIzc
+
+
 x2D40E		Name input
 
 AB FF 8B FF 95 FF 9F FF B3 FF 81 FF BD FF C1 FF D7 FF 4B FF 55 FF 5F FF 41 FF 6A FF E5 0A 

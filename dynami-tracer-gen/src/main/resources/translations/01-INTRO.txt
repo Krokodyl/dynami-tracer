@@ -21,12 +21,12 @@ ENG=
 POINTER=2C994;2CC55
 DATA=2CC55;93 A9 9D 8F BB FF 5E B4 AE DA 0A FF FF B3 8D A1 A1 BB FF AD 97 CB A3 4D FF D3 55 99 81 0A FF FF A9 A1 E1 A9 AD A1 BB FF 69 AC DE CC A6 7E 0A FF FF 8C CE 6D A4 C8 7D AA F8 D8 F8 4B FF AB 93 4B DD F7 0B 0A 8E D6 AC 7D 46 AC 42 F8 0A FF FF A1 A1 BB FF 8B 9F BF BB FF BC 96 C8 F7 0A FF FF 8D E1 A9 4B 9F 5F 4B FF BD 59 BD 59 BB FF 81 C1 95 F7 0A FF FF AB A7 81 FF 69 AC DE CC A6 BB FF A8 64 97 5F AD 7E 0C 0A 00 
 JPN=こうそくの ダニエル{NL}  なきちちの いしをつぎ めざすは{NL}  うちゅういちの パイロット!{NL}  キャプテン・アーリーが あこがれ。{0B}{NL}クライ・ベイビー{NL}  ちちの かたみの マシン。{NL}  きゅうがただが まずまずの はやさ。{NL}  あとは パイロットの ウデしだい!{0C}{NL}{EL}
-ENG=
+ENG=Daniel Kosokuno{NL}Heir to his late father{NL}Goal: be the best pilot{NL}Fan of Captain Early{0B}{NL}Cry Baby{NL}His father's legacy{NL}Average speed{NL}Rest is up to the pilot{0C}{NL}{EL}
 
 POINTER=2C996;2CCDD
 DATA=2CCDD;A5 A3 C7 C9 FF DE F8 5A 0A FF FF 95 C9 8B D5 8F A5 8D 81 FF 56 CE C8 8E C1 BB 0A FF FF 6B F8 AA F8 DA A7 FF A9 A1 E1 A9 AD A1 BB 0A FF FF AC AC B1 A7 93 CB FF 95 4B 99 9F D3 7E 0B 0A BC CC 80 7D D2 AA D8 0A FF FF DE F8 5A 57 BD C9 BB FF 95 AD 97 C9 95 8F F7 0A FF FF AB A3 8B AD B5 FF C5 CD A5 81 FF AA F8 D8 F8 BB 0A FF FF D6 AC A6 B4 C8 4E B5 D5 FF 83 91 CB FF A7 D7 B3 AD F7 0C 0A 00 
 JPN=てつわん ローゼ{NL}  さんかもくてきは ジャンクやの{NL}  ピーアールと うちゅういちの{NL}  イイおとこを さがすため!{0B}{NL}マッハ・メアリ{NL}  ローゼじまんの さいしんさく。{NL}  あつかいに よっては アーリーの{NL}  ライトニングにも ひけを とらない。{0C}{NL}{EL}
-ENG=
+ENG=Rose Tetsuwan{NL}Here to promote her    {NL}junkyard and to find   {NL}the hottest guy ever   {0B}{NL}Mach Mary{NL}Rose's latest work     {NL}Handles as well as     {NL}Early's Lightning      {0C}{EL}
 
 POINTER=2C998;2CD5E
 DATA=2CD5E;8C CE 6D A4 C8 7D AA F8 D8 F8 0A FF FF A9 A1 E1 A9 FF 95 AD 9D 8F BB FF B1 A7 93 F7 0A FF FF 51 41 83 E3 A9 65 D5 FF 8B DD 4B FF C3 A9 97 E3 A9 0A FF FF 99 DB A7 BB FF D5 CD 6A D7 BB FF A9 C7 95 F7 0B 0A D6 AC A6 B4 C8 4E 0A FF FF A9 A1 E1 A9 FF 95 AD 9D 8F CB FF 89 93 DB BC 96 C8 F7 0A FF FF BC 96 C8 7D 98 6F CC 8E 65 81 B3 8F FF BB D9 A5 BB 0A FF FF A9 65 5F A7 81 FF AA F8 D8 F8 BB FF 47 C9 F7 0C 0A 00 
@@ -51,7 +51,7 @@ ENG=
 POINTER=2C9A0;2CF7D
 DATA=2CF7D;8B 8F 97 CF A7 D5 FF AA AC 66 D8 C8 4E FF 97 A3 A3 0A 98 9E F8 A6 BB FF 96 4E B2 DA CB FF AD BD C1 FF B1 9D 97 A7 0A BD CD A5 AD BD 99 7E 0B 0A 0A 0A 65 81 FF AE C8 A6 D8 F8 95 DD 9F FF 8B 8F 97 CF CB 0A 53 97 E3 A9 8B AD FF 97 A5 AD 8D BD 97 E3 A9 7E 0B 0A 0A 5A CC 90 C8 74 41 C9 7E 0A 8E D6 AC 7D 46 AC 42 F8 CB 8B DB FF 97 C9 97 C9 8D AF AD BB 0A 69 AC DE CC A6 FF EE 93 A9 9D 8F BB FF 13 EF 7E 0B 0A 0A 5A CC 90 C8 75 41 C9 7E 0A A9 A1 E1 A9 FF 95 AD 8D E3 A9 BB FF 56 CE C8 8E C1 7E 0A BC CC 80 7D D2 AA D8 B5 FF BD 9F 4B DB 81 0A EE A5 A3 C7 C9 FF 14 EF 7E 0B 0A 0A 5A CC 90 C8 76 41 C9 7E 0A AD C7 59 A7 FF 97 DD 9F FF A9 A1 E1 A9 FF 95 AD 9D 8F BB 0A 69 AC DE CC A6 7E FF AB AD 8D FF D6 AC A6 B4 C8 4E A7 0A EE 8C CE 6D A4 C8 7D 15 EF 7E 0B 0A 0A 5A CC 90 C8 77 41 C9 7E 0A AB D7 8F DD FF AB AD A5 B5 FF 89 97 8B D7 FF 89 97 87 0A AB AD 49 A9 BB FF 86 DA 80 F8 DC F8 65 FF AE C8 A6 D8 F8 0A EE 81 8B AD A5 C9 97 FF 16 EF 7E 0B 0A 0A 5A CC 90 C8 78 41 C9 7E 0A 57 97 E3 A9 FF A9 A1 E1 A9 FF 95 AD 93 A9 BB FF 59 BB A9 0A 54 7D 8C CE CC 98 DA FF AB C1 A3 DB 81 0A EE BE D8 B0 C8 44 DC AC C8 7D 17 EF 7E 0B 0A 0A 9D 97 A5 FF 5A CC 90 C8 79 41 C9 7E 0A BD CD 9F 8F FF D5 CD A5 FF 97 E3 A9 9F AD FF 85 D3 AD 0A B1 BD AF 81 FF AD CD 9F AD FF B2 C8 B3 C9 5F 7E 7F 0A 71 6B E0 CC 6B F8 BB FF EE 9F 9D 4B DD BB FF 18 EF 7E 0C 0A 0A 00 
 JPN=かくしゃとも アイドリング しつつ{NL}スタートの シグナルを いまや おそしと{NL}まっています!{0B}{NL}{NL}{NL}では エントリーされた かくしゃを{NL}ごしょうかい していきましょう!{0B}{NL}{NL}ゼッケン1ばん!{NL}クライ・ベイビーをかる しんしんきえいの{NL}パイロット 『こうそくの {13}』!{0B}{NL}{NL}ゼッケン2ばん!{NL}うちゅう さいきょうの ジャンクや!{NL}マッハ・メアリに またがるは{NL}『てつわん {14}』!{0B}{NL}{NL}ゼッケン3ばん!{NL}いわずと しれた うちゅう さいそくの{NL}パイロット! あいき ライトニングと{NL}『キャプテン・{15}』!{0B}{NL}{NL}ゼッケン4ばん!{NL}あらくれ あいてに ほしから ほしへ{NL}あいぼうの ヘルハーレーで エントリー{NL}『はかいてんし {16}』!{0B}{NL}{NL}ゼッケン5ばん!{NL}じしょう うちゅう さいこうの ずのう{NL}ザ・キャッスル あやつるは{NL}『ミリオンブレイン・{17}』!{0B}{NL}{NL}そして ゼッケン6ばん!{NL}まったく もって しょうたい ふめい{NL}おまえは いったい ナンなんだ!?{NL}ポピュッピーの 『たそがれの {18}』!{0C}{NL}{NL}{EL}
-ENG=
+ENG=Everyone is waiting for{NL}the start signal.{0B}{NL}Let's take a look at the{NL}participants.{0B}{NL}Number 1!{NL}The up-and-coming pilot {NL}driving Cry Baby is…   {0B}{NL}"{13} Kosokuno"!{0B}{NL}{NL}{NL}{NL}Number 2!{NL}The strongest junk{NL}dealer in the universe,{NL}driving Mach Mary is…{0B}{NL}"{14} Tetsuwan"!{0B}{EL}
 
 POINTER=2C9A2;2D13A
 DATA=2D13A;5A CC 90 C8 74 41 C9 EE 93 A9 9D 8F BB FF 13 EF 81 0A B3 8D FF A1 A1 BB FF AB AD 8D 65 FF AB 93 4B DD BB 0A 8C CE 6D A4 C8 7D AA F8 D8 F8 A7 FF 97 E3 A9 45 97 9F AD A7 0A AD CD A5 B1 D9 BD 97 9F F7 0B 0A 0A 95 AB FF 8B 91 5F 97 BB 69 AC DE CC A6 4B 0A A9 A1 E1 A9 FF 95 AD 9D 8F BB B1 A7 93 B5 FF 67 93 BD 65 0A B1 AD A3 91 DB 8B 7E 7F 0C 0A 00 
@@ -111,12 +111,12 @@ ENG=
 POINTER=2C9B8;2D40E
 DATA=2D40E;AB FF 8B FF 95 FF 9F FF B3 FF 81 FF BD FF C1 FF D7 FF 4B FF 55 FF 5F FF 41 FF 6A FF E5 0A AD FF 8D FF 97 FF A1 FF B5 FF 83 FF BF FF C3 FF D9 FF 4D FF 57 FF 61 FF 43 FF 6C FF E7 0A A9 FF 8F FF 99 FF A3 FF B7 FF 85 FF D1 FF C5 FF DB FF 4F FF 59 FF 63 FF 45 FF 6E FF E9 0A AF FF 91 FF 9B FF A5 FF B9 FF 87 FF D3 FF C7 FF DD FF 51 FF 5B FF 65 FF 47 FF 70 FF EB 0A B1 FF 93 FF 9D FF A7 FF BB FF 89 FF D5 FF C9 FF DF FF 53 FF 5D FF 67 FF 49 FF 72 FF ED 0A AA FF 8A FF 94 FF 9E FF B2 FF 80 FF BC FF C0 FF D6 FF 4A FF 54 FF 5E FF 40 FF 69 FF E4 0A AC FF 8C FF 96 FF A0 FF B4 FF 82 FF BE FF C2 FF D8 FF 4C FF 56 FF 60 FF 42 FF 6B FF E6 0A A8 FF 8E FF 98 FF A2 FF B6 FF 84 FF D0 FF C4 FF DA FF 4E FF 58 FF 62 FF 44 FF 6D FF E8 0A AE FF 90 FF 9A FF A4 FF B8 FF 86 FF D2 FF C6 FF DC FF 50 FF 5A FF 64 FF 46 FF 6F FF EA 0A B0 FF 92 FF 9C FF A6 FF BA FF 88 FF D4 FF C8 FF DE FF 52 FF 5C FF 66 FF 48 FF 71 FF EC 0A FF FF 68 FF CD FF CF FF E1 FF E3 FF CC FF CE FF E0 FF E2 FF 7D FF F8 FF 0D FF B1 C7 D9 0A 00 
 JPN=あ か さ た な は ま や ら が ざ だ ば ぱ ぁ{NL}い き し ち に ひ み ゆ り ぎ じ ぢ び ぴ ぃ{NL}う く す つ ぬ ふ む よ る ぐ ず づ ぶ ぷ ぅ{NL}え け せ て ね へ め わ れ げ ぜ で べ ぺ ぇ{NL}お こ そ と の ほ も ん ろ ご ぞ ど ぼ ぽ ぉ{NL}ア カ サ タ ナ ハ マ ヤ ラ ガ ザ ダ バ パ ァ{NL}イ キ シ チ ニ ヒ ミ ユ リ ギ ジ ヂ ビ ピ ィ{NL}ウ ク ス ツ ヌ フ ム ヨ ル グ ズ ヅ ブ プ ゥ{NL}エ ケ セ テ ネ ヘ メ ワ レ ゲ ゼ デ ベ ペ ェ{NL}オ コ ソ ト ノ ホ モ ン ロ ゴ ゾ ド ボ ポ ォ{NL}  ヴ っ ゃ ゅ ょ ッ ャ ュ ョ ・ ー {0D} おわり{NL}{EL}
-ENG=
+ENG=A B C D E F   a b c d e f    {NL}G H I J K L   g h i j k l    {NL}M N O P Q R   m n o p q r    {NL}S T U V W X   s t u v w x    {NL}Y Z           y z            {NL}                             {NL}0 1 2 3 4 5 6 7 8 9          {NL}! ? : , . ' " [ ] …         {NL}                             {NL}                             {NL}                        {0D} END{NL}{EL}
 
 POINTER=2C9BA;2D559
 DATA=2D559;B3 BD AF CB 8D D3 A5 8F 5F 95 AD 0A 00 
 JPN=なまえをきめてください{NL}{EL}
-ENG=
+ENG=Type name{NL}{EL}
 
 POINTER=2C9BC;2D566
 DATA=2D566;93 A9 9D 8F BB 0A 00 
@@ -151,32 +151,32 @@ ENG=
 POINTER=2C9C8;2D595
 DATA=2D595;5E B4 AE DA 0A 00 
 JPN=ダニエル{NL}{EL}
-ENG=
+ENG=Dan{NL}{EL}
 
 POINTER=2C9CA;2D59B
 DATA=2D59B;DE F8 5A 0A 00 
 JPN=ローゼ{NL}{EL}
-ENG=
+ENG=Rose{NL}{EL}
 
 POINTER=2C9CC;2D5A0
 DATA=2D5A0;AA F8 D8 F8 0A 00 
 JPN=アーリー{NL}{EL}
-ENG=
+ENG=Early{NL}{EL}
 
 POINTER=2C9CE;2D5A6
 DATA=2D5A6;C6 AC DA 66 0A 00 
 JPN=ワイルド{NL}{EL}
-ENG=
+ENG=Wilde{NL}{EL}
 
 POINTER=2C9D0;2D5AC
 DATA=2D5AC;80 F8 69 F8 0A 00 
 JPN=ハーパー{NL}{EL}
-ENG=
+ENG=Harps{NL}{EL}
 
 POINTER=2C9D2;2D5B2
 DATA=2D5B2;56 D0 0A 00 
 JPN=ジム{NL}{EL}
-ENG=
+ENG=Jim{NL}{EL}
 
 POINTER=2C9D4;2D5B6
 DATA=2D5B6;93 9F AF CB 67 A9 5D 0A 00 

@@ -111,6 +111,7 @@ public class PointerTable {
 
             // Write new data
             if (bytes!=null) {
+                System.out.println(h(offsetData)+"\t"+translation.getEnglish());
                 for (int i = 0; i < bytes.length; i++) {
                     data[offsetData++] = bytes[i];
                 }

@@ -1,4 +1,5 @@
 import entities.Constants;
+import entities.Patch;
 import images.Sprite;
 import resources.ResIO;
 import services.*;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -25,13 +27,14 @@ public class DynamiTracer {
     
     public static byte[] data;
 
-    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\work\\BS Dynami Tracer (Japan).sfc";
+    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\original\\BS Dynami Tracer (Japan).sfc";
     private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\work\\BS Dynami Tracer (English).sfc";
 
     static Dictionary japaneseDictionary = new Dictionary();
     static Dictionary japaneseSmallDictionary = new Dictionary();
     static Dictionary latinSmall = new Dictionary();
 
+    static List<Patch> patches = new ArrayList<>();
     
     public static void main(String[]args) {
         
@@ -64,6 +67,8 @@ public class DynamiTracer {
         tableIntro.writeEnglish(data);
         
         
+        loadPatches();
+        applyPatches(data);
         
         
         /*PointerTable tableIntro2 = new PointerTable(x("2D9E0"), x("2D9E0"));
@@ -90,6 +95,49 @@ public class DynamiTracer {
         testIntro();
         
         saveRom();
+    }
+    
+    public static void loadPatches() {
+        
+        // Character description width
+        byte[] bytes = Utils.hexStringToByteArray("17 00");
+        Patch p = new Patch(x("220E0"), bytes);
+        patches.add(p);
+    
+        // 0B clearing length (from x15 to x1A, 21 to 26 chars)
+        // C0 15 18    CPY #$1815
+        bytes = Utils.hexStringToByteArray("C0 1A 18");
+        p = new Patch(x("2145D"), bytes);
+        patches.add(p);
+    
+        // Moving up the announcer ship sprite to make room for the text
+        bytes = Utils.hexStringToByteArray("C0 28 40 1C C0 18 20 1C F0 F0 08 30 F0 F0 00 20 F0 F0 00 20 F0 F0 00 20 B8 30 60 1C C8 30 62 1C D8 30 64 1C B8 40 80 1C C8 40 82 1C D8 40 84 1C C8 20 2C 1C D8 10 24 1C D8 20 44 1C D0 10 0D 3C");
+        p = new Patch(x("2F6EB"), bytes);
+        patches.add(p);
+    }
+
+
+    /*// Character description width
+    byte[] bytes = Utils.hexStringToByteArray("17 00");
+    Patch p = new Patch(x("220E0"), bytes);
+        patches.add(p);
+
+    // 0B clearing length (from x15 to x1A, 21 to 26 chars)
+    // C0 15 18    CPY #$1815
+    bytes = Utils.hexStringToByteArray("1A 18");
+    p = new Patch(x("2145D"), bytes);
+        patches.add(p);
+
+    // Moving up the announcer ship sprite to make room for the text
+    bytes = Utils.hexStringToByteArray("C0 28 40 1C C0 18 20 1C F0 F0 08 30 F0 F0 00 20 F0 F0 00 20 F0 F0 00 20 B8 30 60 1C C8 30 62 1C D8 30 64 1C B8 40 80 1C C8 40 82 1C D8 40 84 1C C8 20 2C 1C D8 10 24 1C D8 20 44 1C D0 10 0D 3C");
+    p = new Patch(x("2F6EB"), bytes);
+    //patches.add(p);*/
+
+    public static void applyPatches(byte[] data) {
+        for (Patch patch : patches) {
+            patch.applyPatch(data);
+        }
+
     }
 
     public static void generateEmptyTranslationFiles(byte[] bytes, PointerTable table, Dictionary dictionary) {

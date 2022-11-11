@@ -51,6 +51,10 @@ public class Utils {
         return new String(hexChars);
     }
 
+    public static byte[] hexStringToByteArray(String s) {
+        return hexStringToByteArray(s.split(" "));
+    }
+
     public static byte[] hexStringToByteArray(String[] s) {
         byte[] bytes = new byte[s.length];
         for (int i = 0; i < s.length; i++) {
