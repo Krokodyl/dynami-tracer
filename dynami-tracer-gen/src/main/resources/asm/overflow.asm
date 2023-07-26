@@ -27,13 +27,16 @@ CPX #$0100
 	STA $76; loop counter
 	
 	LDA #$00 ; load 00 (top pixel line always empty)
-	STA $7EF000,X
+	; STA $7EF000,X
+	JSL $C30B80; jump to write top tile
+	
 	LDA [$6D],Y ; load bot tile bytes
 	bit_shift_left_first_byte_bot:
 	ASL
 	DEC $75
 	BNE bit_shift_left_first_byte_bot
-	STA $7EF100,X
+	; STA $7EF100,X
+	JSL $C30B90; jump to write bot tile
 	INX
 	INY
 	DEC $76
@@ -48,7 +51,8 @@ CPX #$0100
 	ASL
 	DEC $75
 	BNE bit_shift_left_new_top
-	STA $7EF000,X
+	; STA $7EF000,X
+	JSL $C30B80; jump to write top tile
 	
 	LDA $74; 8-shift
 	STA $75
@@ -57,7 +61,8 @@ CPX #$0100
 	ASL
 	DEC $75
 	BNE bit_shift_left_new_bot
-	STA $7EF100,X
+	; STA $7EF100,X
+	JSL $C30B90; jump to write bot tile
 	
 	INX
 	INY

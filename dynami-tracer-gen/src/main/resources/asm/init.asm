@@ -18,11 +18,14 @@ SEP #$30
 LDA [$1A]; read char
 CMP #$05
 BNE no_shift_reset ; Mesen Bug : Off by one
-STZ $60; set shift to 0
-STZ $64
-STZ $62
-STZ $70
+LDA #$10
+STA $70
 STZ $71
+STZ $73; set shift to 0
+;STZ $64
+;STZ $62
+;STZ $70
+;STZ $71
 no_shift_reset:
 NOP
 NOP

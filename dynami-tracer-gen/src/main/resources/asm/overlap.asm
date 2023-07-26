@@ -29,12 +29,16 @@ CPX #$0200
 	STA $76; loop counter
 
 	loop_shift_width_under_8:
-	LDA $7EF000,X ; load existing top tile bytes
+	; LDA $7EF000,X ; load existing top tile bytes
+	JSL $C30BA0; jump to load top tile
 	AND $74
-	STA $7EF000,X
-	LDA $7EF100,X ; load existing bot tile bytes
+	; STA $7EF000,X
+	JSL $C30B80; jump to write top tile
+	; LDA $7EF100,X ; load existing bot tile bytes
+	JSL $C30BB0; jump to load bot tile
 	AND $74
-	STA $7EF100,X
+	; STA $7EF100,X
+	JSL $C30B90; jump to write bot tile
 	
 	LDA $73 ; load shift
 	STA $75 ; save tmp shift
@@ -45,9 +49,11 @@ CPX #$0200
 	DEC $75
 	BNE bit_shift_right_top
 	STA $75
-	LDA $7EF000,X
+	; LDA $7EF000,X
+	JSL $C30BA0; jump to load top tile
 	ORA $75
-	STA $7EF000,X
+	; STA $7EF000,X
+	JSL $C30B80; jump to write top tile
 	
 	LDA $73 ; load shift
 	STA $75 ; save tmp
@@ -58,9 +64,11 @@ CPX #$0200
 	DEC $75
 	BNE bit_shift_right_bot
 	STA $75
-	LDA $7EF100,X
+	; LDA $7EF100,X
+	JSL $C30BB0; jump to load bot tile
 	ORA $75
-	STA $7EF100,X
+	; STA $7EF100,X
+	JSL $C30B90; jump to write bot tile
 	
 	INX
 	INY
