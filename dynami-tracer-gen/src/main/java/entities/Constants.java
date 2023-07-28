@@ -2,7 +2,7 @@ package entities;
 
 public class Constants {
 
-    public static final boolean REPLACE_MISSING_TRANSLATION_WITH_OFFSET = true;
+    //public static final boolean REPLACE_MISSING_TRANSLATION_WITH_OFFSET = true;
     
     public static int COUNT_UPPERCASE = 26;
     public static int OFFSET_UPPERCASE_MAINSPRITES = Integer.parseInt("34600",16);

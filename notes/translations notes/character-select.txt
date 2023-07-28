@@ -1,0 +1,69 @@
+2CC55
+こうそくの ダニエル
+  なきちちの いしをつぎ めざすは
+  うちゅういちの パイロット!
+  キャプテン・アーリーが あこがれ。{0B}
+クライ・ベイビー
+  ちちの かたみの マシン。
+  きゅうがただが まずまずの はやさ。
+  あとは パイロットの ウデしだい!{0C}
+{EL}
+
+亡き父の 意志を継ぎ 目指すは う中いちの パイロット! キャプテン・アーリーが 憧れ。
+父の 形見の マシン。 急が只が 先ず先ずの 速さ。 あとは パイロットの ウデしだい!
+ENG=Daniel Kosokuno{NL}
+Heir to his late father{NL}
+Goal: be the best pilot{NL}
+Fan of Captain Early{0B}{NL}
+Cry Baby{NL}
+His father's legacy{NL}
+Average speed{NL}
+Rest is up to the pilot{0C}{NL}{EL}
+
+ENG=Daniel Kosokuno{NL}Heir to his late father{NL}Goal: be the best pilot{NL}Fan of Captain Early{0B}{NL}Cry Baby{NL}His father's legacy{NL}Average speed{NL}Rest is up to the pilot{0C}{NL}{EL}
+
+
+てつわん ローゼ
+  さんかもくてきは ジャンクやの
+  ピーアールと うちゅういちの
+  イイおとこを さがすため!{0B}
+マッハ・メアリ
+  ローゼじまんの さいしんさく。
+  あつかいに よっては アーリーの
+  ライトニングにも ひけを とらない。{0C}
+{EL}
+
+参加目的は ジャンクやの ピーアールと 宇宙いちの イイ男を 探すため
+ローゼ自慢の 最新作。 扱いに よっては アーリーの ライトニングにも 引けを 取らない。
+Rose Tetsuwan
+Here to promote her
+junkyard and to find
+the hottest guy ever
+Mach Mary
+Rose's latest work
+Handles as well as
+Early's Lightning
+
+
+キャプテン・アーリー
+  うちゅう さいそくの おとこ。
+  げばひょうでも かれが ゆうしょう
+  するとの もっぱらの うわさ。{0B}
+ライトニング
+  うちゅう さいそくを ほこるマシン。
+  マシン・スペックではなく のりての
+  うでだとは アーリーの べん。{0C}
+{EL}
+
+宇宙 最速の 男。 下馬評でも かれが 優勝 するとの 専らの 噂。
+宇宙 最速を ほこるマシン。 マシン・スペックではなく 乗り手 腕立とは アーリーの べん。
+Captain Early
+The fastest man ever
+Rumors say he will be
+the winner
+Lightning
+Fastest machine ever
+The specs count less
+than the rider's skill
+
+

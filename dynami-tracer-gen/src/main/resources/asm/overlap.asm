@@ -19,6 +19,7 @@ CPX #$0200
 	SBC $73
 	STA $74
 	LDA #$FF
+	
 	bit_shift_left_top:
 	ASL
 	DEC $74
@@ -42,9 +43,23 @@ CPX #$0200
 	
 	LDA $73 ; load shift
 	STA $75 ; save tmp shift
+	
+	LDA $76
+	CMP #$10
+	BNE not_first_loop
+	LDA #$00
+	BRA bit_shift_right_top
+	not_first_loop:
+	NOP
+	NOP
+	NOP
+	
 	LDA [$6A],Y ; load top tile bytes
 	
 	bit_shift_right_top:
+	NOP
+	NOP
+	NOP
 	LSR
 	DEC $75
 	BNE bit_shift_right_top

@@ -6,6 +6,8 @@ public class Translation {
     byte[] data;// english data
     String japanese;
     String english;
+    
+    boolean addressReplacement = false;
 
     public int getOffsetData() {
         return offsetData;
@@ -37,5 +39,13 @@ public class Translation {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public boolean isAddressReplacement() {
+        return addressReplacement;
+    }
+
+    public void setAddressReplacement(boolean addressReplacement) {
+        this.addressReplacement = addressReplacement;
     }
 }

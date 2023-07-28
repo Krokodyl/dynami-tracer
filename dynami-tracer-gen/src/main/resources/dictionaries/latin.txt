@@ -1,0 +1,9 @@
+00={EL}
+05={NL}
+06={NLTB}
+07={WPNL}
+08={WPNLTB}
+09={CL}
+0A={CLTB}
+0B={WPCL}
+0C={WPCLTB}

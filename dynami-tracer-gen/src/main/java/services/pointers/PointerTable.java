@@ -3,17 +3,12 @@ package services.pointers;
 import services.DataReader;
 import services.Dictionary;
 import services.Translation;
-import services.lz.LzCompressor;
+import services.vwf.Font;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static services.Utils.h;
 
@@ -30,12 +25,22 @@ public class PointerTable {
     Map<Integer, PointerEntry> pointers = new TreeMap<>();
     
     PointerTableType type;
+    
+    int maxLineLength = 25; // tile counts
 
     public PointerTable(int shift, int newOffsetStart) {
         this.shift = shift;
         this.newOffsetStart = newOffsetStart;
     }
-    
+
+    public int getMaxLineLength() {
+        return maxLineLength;
+    }
+
+    public void setMaxLineLength(int maxLineLength) {
+        this.maxLineLength = maxLineLength;
+    }
+
     public void addRange(PointerRange range) {
         ranges.add(range);
     }
@@ -93,7 +98,32 @@ public class PointerTable {
     }
 
     public void loadTranslations(Dictionary dictionary) {
-        translationMap = DataReader.loadTranslations(this, dictionary);
+        translationMap = DataReader.loadTranslations(this, dictionary, true);
+    }
+    
+    public void loadTranslations(Dictionary dictionary, boolean replaceMissingWithAddress) {
+        translationMap = DataReader.loadTranslations(this, dictionary, replaceMissingWithAddress);
+    }
+
+    public void checkTranslationsLength() {
+        for (Map.Entry<Integer, Translation> e : translationMap.entrySet()) {
+            Translation translation = e.getValue();
+            String english = translation.getEnglish();
+            if (!translation.isAddressReplacement() && english!=null && !english.isEmpty()) {
+                english = english.replaceAll("\\{NL}","§");
+                english = english.replaceAll("\\{WPCL}","§");
+                String[] split = english.split("§");
+                for (String s : split) {
+                    int length = Font.getStringLength(s);
+                    if (length/8>maxLineLength)
+                        System.err.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
+                    else System.out.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
+                }
+
+
+            }
+        }
+
     }
 
     public void writeEnglish(byte[] data) {
@@ -111,7 +141,7 @@ public class PointerTable {
 
             // Write new data
             if (bytes!=null) {
-                System.out.println(h(offsetData)+"\t"+translation.getEnglish());
+                //System.out.println(h(offsetData)+"\t"+translation.getEnglish());
                 for (int i = 0; i < bytes.length; i++) {
                     data[offsetData++] = bytes[i];
                 }

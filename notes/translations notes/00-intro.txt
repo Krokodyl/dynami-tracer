@@ -1,0 +1,126 @@
+Width: 6 spaces 20 chars 6 spaces
+
+The leading 6 spaces are coded here:
+$C2/1EA5 A2 06 00    LDX #$0006              A:1D50 X:0000 Y:1B70 P:envMxdIZC
+$C2/1EA8 86 1E       STX $1E    [$00:001E]   A:1D50 X:0006 Y:1B70 P:envMxdIzC
+
+
+
+OG=     ときは みらい……
+KJ=
+
+OG=  じんるいが ほかの ほしぼしと			  	
+    たいとうに こうりゅうを					
+  むすぶまでに なった じだい……				
+  
+KJ=	人類 他の 星々と
+	たいとうに 交流を
+	むすぶまでに なった 時代
+	
+OG
+うちゅう ぼうえきで いちだいにして
+とみを きずいた うちゅう しょうしゃ
+ ミツトモ・ギャラクシー・カンパニー
+ かいちょう コウノスケ・ミツトモは
+ぜんだいみもんの レースを もよおす。
+
+KJ
+宇宙 貿易で いちだいにして				
+とみを 築いた 宇宙 商社
+ ミツトモ・ギャラクシー・カンパニー
+ 会長 コウノスケ・ミツトモは
+前代未聞の レースを 催す。
+
+
+OG
+そのレースは スピードを きそうのみに
+ とどまらず うちゅうの ほしぼしに
+ ねむる おたから『トレジャー』を
+      みつけだし……
+
+KJ
+そのレースは スピードを 競うのみに
+ 止まらず 宇宙の 星々に
+ 眠る お宝『トレジャー』を
+      見付けだし……
+	  
+	  
+ゴールまで もちこんだ『トレジャー』の
+ げいじゅつてき かちを かんていし
+      ポイントを える。
+KJ
+ゴールまで 持ち込んだ『トレジャー』の
+ 芸術的 かちを 鑑定士
+      ポイントを える。
+
+OG	  
+ゴールした じゅんいと そのポイントで
+   しょうはいが きまるという。
+うちゅうに ぶんめいが うまれて いらい
+もっとも かこくであろう このレースは
+
+KJ
+ゴールした 順位と そのポイントで
+   勝敗が きまるという。
+宇宙に 文明が 生まれて いらい
+もっとも かこくであろう このレースは
+
+   ダイナマイトなみに きけんで
+  トレジャーを あつめる レースと
+ いういみで ダイナマイ・トレースと
+      めいめい された。{0B}
+
+KJ  
+   ダイナマイトなみに 危険で
+  トレジャーを 集める レースと
+ いういみで ダイナマイ・トレースと
+      銘々 された。
+
+{EL}
+
+2CBA5
+だれもが ちゅうもくするなか
+ エントリーするものが いないのではと
+あやぶまれたが そこに かくわくせいの
+  モサたちが 名乗りを あげた!{0C}
+KJ
+だれもが ちゅうもくするなか
+ エントリーするものが 以内のではと
+危ぶまれたが そこに 各惑星の
+  猛者たちが 名乗りを 挙げた!{0C}
+{EL}
+
+2CBF3
+
+ じさつこういにも ひとしい さんかを
+ ひょうめいした かれらを ひとびとは
+  そんけいと いふのねんを こめて
+      こう よんだ……{0B}
+{EL}
+KJ
+ じさつこういにも 等しい 参加を
+ ひょうめいした かれらを 人々は
+  尊敬と いふのねんを 込めて
+      こう 呼んだ……{0B}
+{EL}
+
+
+2C9E0
+In a future time…
+A time when mankind and other planets could communicate with each other on an equal footing.
+Mitsutomo Galaxy Company has established itself as one of the leading companies in space trade.
+The chairman, Kōnosuke Mitsutomo, is hosting an unprecedented race.
+The race is not only about speed, but also about finding the treasures that lie hidden among the stars of the universe.
+Points are awarded for the artistic value of the treasure brought to the finish line.
+The winner is determined by the finishing order and the points.
+This race is surely the most extreme in the history of civilization in the universe.
+A race to collect treasures as dangerous as dynamite. It's called Dynami Trace.
+
+2CBA5
+While everyone was busy, it was feared that there would be no entrants, but then fierce competitors from all over the planet came forward!
+
+2CBF3
+With respect and admiration for their participation in what amounted to a suicide pact, they were called...
+
+2CC3F
+Dynami Tracers!!

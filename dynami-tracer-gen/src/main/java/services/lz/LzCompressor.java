@@ -191,7 +191,7 @@ public class LzCompressor {
             //out.flush();
         }
         if (verbose) System.out.printf("LzCompress %s bytes (%s)\n", data.length, Integer.toHexString(data.length));
-        if (verbose) System.out.printf("Compressed size : %s (%s)\n",out.toByteArray().length, Integer.toHexString(out.toByteArray().length));
+        System.out.printf("Compressed size : %s (%s)\n",out.toByteArray().length, Integer.toHexString(out.toByteArray().length));
         return out.toByteArray();
 
     }

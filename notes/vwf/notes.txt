@@ -1,0 +1,201 @@
+A7=と
+B3=な
+D9=り
+BB=の
+
+x544EA		A7 B3 D9 BB
+			40 41 42 43
+			
+                     --------sub start--------
+C305F1  8B             PHB
+C305F2  A9 C3          LDA #$C3
+C305F4  48             PHA
+C305F5  AB             PLB
+C305F6  A9 04          LDA #$04
+C305F8  85 3A          STA $3A
+C305FA  64 32          STZ $32
+C305FC  64 33          STZ $33
+C305FE  20 44 06       JSR $0644
+C30601  C2 20          REP #$20
+C30603  E6 32          INC $32
+C30605  E6 45          INC $45
+C30607  E2 20          SEP #$20
+C30609  20 44 06       JSR $0644
+C3060C  C2 20          REP #$20
+C3060E  E6 32          INC $32
+C30610  E6 45          INC $45
+C30612  E2 20          SEP #$20
+C30614  C6 3A          DEC $3A
+C30616  D0 E6          BNE $C305FE
+C30618  C2 20          REP #$20
+C3061A  18             CLC
+C3061B  A5 45          LDA $45
+C3061D  69 F0 00       ADC #$00F0
+C30620  85 45          STA $45
+C30622  E2 20          SEP #$20
+C30624  A9 08          LDA #$08
+C30626  85 3A          STA $3A
+C30628  20 44 06       JSR $0644
+C3062B  C2 20          REP #$20
+C3062D  E6 32          INC $32
+C3062F  E6 45          INC $45
+C30631  E2 20          SEP #$20
+C30633  20 44 06       JSR $0644
+C30636  C2 20          REP #$20
+C30638  E6 32          INC $32
+C3063A  E6 45          INC $45
+C3063C  E2 20          SEP #$20
+C3063E  C6 3A          DEC $3A
+C30640  D0 E6          BNE $C30628
+C30642  AB             PLB
+C30643  60             RTS
+                     ----------------
+X		((x-40) << 5)
+40		0
+41		20
+42		40
+
+variable 
+$32 
+$33
+$34		char value
+$3A
+$45 	
+$60		shift
+$61		loop counter
+
+$64		char count
+
+$65		target ram address
+
+$70		offset in RAM (X)
+$72		width
+$73		shift
+$74		tmp storage		(0xFF << 8-shift)
+$75		tmp storage		(shift)
+
+GAME VARIABLES
+$10		3	Address of the buffer in WRAM
+$34		1	Current character
+
+VWF VARIABLES
+$70		2	Offset for the buffer in RAM
+$76		1	loop counter
+$6A		3	Address in ROM of the font
+$72		1	current width
+$73		1	shift (pixels from the left)
+$74		1	tmp results
+$75		1	tmp results
+$77		2	tmp for register Y
+$6D		3	Address in ROM of the font (+10)
+$60		3	Address in RAM of the buffer
+$63		3	Address in RAM of the buffer (+100)
+
+Top Tiles		$7EF000		$7EF200
+Bot Tiles		$7EF100		$7EF300
+Font Char Top	$C34000+Y
+Font Char Bot	$C34010+Y
+
+C300D9  A7 1A          LDA [$1A]
+C300DB  C2 20          REP #$20
+Reset shift here when A == 05 ?
+
+
+x30A00		22 00 0A C3
+
+; init/reset vwf variables
+LDA [$1A]; read char
+CMP #$05
+BNE no_shift_reset
+STZ $60; set shift to 0
+LDA 
+no_shift_reset:
+REP #$20
+LDA #$7EF0
+STA $68
+LDA #$4000
+STA $6A
+LDA #$10C3
+STA $6C
+LDA #$C340
+STA $6E
+SEP #$20
+LDA [$1A]; read char
+AND #$00FF
+REP #$20
+RTL
+
+; main vwf routine
+PHP
+REP #$30
+PHA
+PHX
+PHY
+REP #$20
+SEP #$10
+LDA #$0000
+SEP #$30
+LDX $62
+LDA #$10
+STA $61; loop counter
+LDA $34; read char
+SEC
+SBC #$40;
+ASL
+ASL
+ASL
+ASL
+ASL
+TAY
+copy_bytes:
+	LDA [$6A],Y ; load top tile bytes
+	STA $7EF000,X
+	LDA [$6D],Y ; load bot tile bytes
+	STA $7EF100,X
+	INX
+	INY
+	DEC $61
+	BNE copy_bytes
+STX $62
+REP #$30
+PLY
+PLX
+PLA
+PLP
+RTL
+
+readShift
+if (shift == 0) {
+
+}
+
+
+SMALL FONT
+
+Character ー (xF8)
+x33b00		00 00 00 00 00 00 00 00 7C 7C 00 00 00 00 00 00
+
+ITEM LIST
+WRAM 
+1C00	Item list ids (ends with 07 00)
+1C90	Item 1 name (9 bytes)
+1D80	Item 1 val (9 bytes) ???
+
+$1A		Current Item column (00 left, 0D right)
+$1C		Current Item row (00 to 07)
+$22		columns to move to next row
+$24		lines to display
+$26		Scroll position
+$60		Item count
+$5C		Item name length
+
+x215DC		A9 0D 85 1A A5 1C 0A 1A C5 60 B0 05 20 0B 16
+
+LDA $1C01	01
+*2			02
+*2			04
+STA $10		04
+*2			08
+ADC $10		0C
+
+(x*4)+(x*8) = x*12

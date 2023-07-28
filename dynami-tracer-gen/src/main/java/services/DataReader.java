@@ -3,6 +3,7 @@ package services;
 import entities.Constants;
 import org.apache.commons.lang.ArrayUtils;
 import services.pointers.PointerTable;
+import services.pointers.PointerTableType;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -68,7 +69,7 @@ public class DataReader {
         for (int i = start; i < bytes.length; i++) {
             byte a = bytes[i];
             result = ArrayUtils.addAll(result, new byte[]{a});
-            if ((a & 0xFF) == end) {
+            if ((a & 0xFF) == (end & 0xFF)) {
                 return result;
             } else if ((a & 0xFF) >= 0x80 && (a & 0xFF) < 0xA0) {
                 i++;
@@ -79,7 +80,23 @@ public class DataReader {
         return result;
     }
 
-    public static Map<Integer, Translation> loadTranslations(PointerTable table, Dictionary dictionary) {
+    public static byte[] readByteCount(byte[] bytes, int start, int count) {
+        byte[] result = new byte[0];
+        for (int i = start; i < bytes.length; i++) {
+            byte a = bytes[i];
+            result = ArrayUtils.addAll(result, new byte[]{a});
+            if (--count == 0) {
+                return result;
+            } else if ((a & 0xFF) >= 0x80 && (a & 0xFF) < 0xA0) {
+                i++;
+                byte b = bytes[i];
+                result = ArrayUtils.addAll(result, new byte[]{b});
+            }
+        }
+        return result;
+    }
+
+    public static Map<Integer, Translation> loadTranslations(PointerTable table, Dictionary dictionary, boolean replaceMissingWithAddress) {
         System.out.println("Loading Translations for "+table.getName());
         Map<Integer, Translation> translationMap = new TreeMap<>();
         String file = String.format("translations/%s.txt", table.getName());
@@ -131,8 +148,13 @@ public class DataReader {
                             }
                             //translationEngCount++;
                             engCount++;
-                        } else if (Constants.REPLACE_MISSING_TRANSLATION_WITH_OFFSET) {
+                        } else if (replaceMissingWithAddress) {
+                            t.setAddressReplacement(true);
                             String english = h(t.getOffsetData())+"{EL}";
+                            if (table.getType() == PointerTableType.SIZE_PREFIX) {
+                                english = h(t.getOffsetData());
+                                english = "{"+h2(english.length())+"}"+english;
+                            }
                             t.setEnglish(english);
                             byte[] bytes = dictionary.getCode(english);
                             t.setData(bytes);

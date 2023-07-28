@@ -32,6 +32,16 @@ public class Dictionary {
             }
         }
     }
+
+    /**
+     * 
+     * @param code Hexadecimal code
+     * @param value Printed String
+     */
+    public void addEntry(int code, String value) {
+        map.put(code, value);
+        reverseMap.put(value, code);
+    }
     
     public void print() {
         for (Map.Entry<Integer, String> e : map.entrySet()) {

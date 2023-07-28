@@ -1,0 +1,85 @@
+race start
+
+2CF7D
+
+各社とも アイドリング しつつ スタートの シグナルを 今や 遅しと 待っています!{0B}
+
+
+では エントリーされた かくしゃを ごしょうかい していきましょう!{0B}
+
+ゼッケン1ばん!
+クライ・ベイビーをかる 新進気鋭の パイロット 『こうそくの ダニエル』!{0B}
+
+ゼッケン2ばん!
+うちゅう さいきょうの ジャンクや!
+マッハ・メアリに またがるは
+『てつわん {14}』!{0B}
+
+ゼッケン3ばん!
+いわずと しれた うちゅう さいそくの
+パイロット! あいき ライトニングと
+『キャプテン・{15}』!{0B}
+
+ゼッケン4ばん!
+あらくれ あいてに ほしから ほしへ
+あいぼうの ヘルハーレーで エントリー
+『はかいてんし {16}』!{0B}
+
+ゼッケン5ばん!
+じしょう うちゅう さいこうの ずのう
+ザ・キャッスル あやつるは
+『ミリオンブレイン・{17}』!{0B}
+
+そして ゼッケン6ばん!
+まったく もって しょうたい ふめい
+おまえは いったい ナンなんだ!?
+ポピュッピーの 『たそがれの {18}』!{0C}
+
+{EL}
+
+宇宙 最強 ジャンク屋! マッハ・メアリに 跨るは 『てつわん {14}』!
+
+ゼッケン3ばん! いわずと しれた 宇宙 最速の パイロット! 愛機 ライトニングと 『キャプテン・{15}』!{0B}
+ゼッケン4ばん! 荒くれ 相手に ほしから 星へ 相棒の ヘルハーレーで エントリー 『はかいてんし {16}』!{0B}
+ゼッケン5ばん! 自称 宇宙 最高の 頭脳 ザ・キャッスル あやつるは 『ミリオンブレイン・{17}』!{0B}
+そして ゼッケン6ばん! まったく もって 正体 不明 おまえは いったい ナンなんだ!? ポピュッピーの 『たそがれの {18}』!
+
+Everyone is waiting for{NL}the start signal.{0B}{NL}{NL}{NL}{NL}Let's take a look at the{NL}participants.{0B}{NL}{NL}{NL}{NL}Number 1!{NL}The up-and-coming pilot {NL}driving Cry Baby is…   {0B}{NL}"{13} Kosokuno"!{0B}{NL}{NL}{NL}{NL}Number 2!{NL}The strongest junk{NL}dealer in the universe,{NL}driving Mach Mary is…{0B}{NL}"{14} Tetsuwan"!{0B}{EL}
+
+Everyone is waiting for{NL}
+the start signal.{0B}{NL}
+Let's take a look at the{NL}
+participants.{0B}{NL}{NL}{NL}{NL}
+Number 1!{NL}The up-and-coming pilot {NL}driving Cry Baby is… {0B}{NL}"{13} Kosokuno"!{0B}{NL}{NL}{NL}{NL}
+Number 2!{NL}The strongest junk{NL}dealer in the universe,{NL}driving Mach Mary is… {0B}{NL}"{14} Tetsuwan"!{0B}{NL}{NL}{NL}{NL}
+Number 3!{NL}The fastest pilot in the{NL}universe,{NL}driving Lightning is… {0B}{NL}"Captain {15}"!{0B}{NL}{NL}{NL}{NL}
+Number 4!{NL}The roughneck and worthy{NL}opponent{NL}driving Hell Harley is… {0B}{NL}"{16} Hakaitenshi"!{0B}{NL}{NL}{NL}{NL}
+Number 5!{NL}The self-proclaimed best{NL}mind in the universe,{NL}driving The Castle is… {0B}{NL}"{17} Millionbrain"!{0B}{NL}{NL}{NL}{NL}
+And number 6!{NL}I have no idea who or{NL}what you are!{NL}In Popyupi, it's… {0B}{NL}"{18} Tasogareno"!{0B}{NL}{NL}{NL}{NL}
+{EL}
+
+Everyone is waiting for{NL}the start signal.{0B}{NL}Let's take a look at the{NL}participants.{0B}{NL}{NL}{NL}{NL}Number 1!{NL}The up-and-coming pilot {NL}driving Cry Baby is… {0B}{NL}"{13} Kosokuno"!{0B}{NL}{NL}{NL}{NL}Number 2!{NL}The strongest junk{NL}dealer in the universe,{NL}driving Mach Mary is… {0B}{NL}"{14} Tetsuwan"!{0B}{NL}{NL}{NL}{NL}Number 3!{NL}The fastest pilot in the{NL}universe,{NL}driving Lightning is… {0B}{NL}"Captain {15}"!{0B}{NL}{NL}{NL}{NL}Number 4!{NL}The roughneck and worthy{NL}opponent{NL}driving Hell Harley is… {0B}{NL}"{16} Hakaitenshi"!{0B}{NL}{NL}{NL}{NL}Number 5!{NL}The self-proclaimed best{NL}mind in the universe,{NL}driving The Castle is… {0B}{NL}"{17} Millionbrain"!{0B}{NL}{NL}{NL}{NL}And number 6!{NL}I have no idea who or{NL}what you are!{NL}In Popyupi, it's… {0B}{NL}"{18} Tasogareno"!{0B}{NL}{NL}{NL}{NL}{EL}
+
+Everyone is waiting for{NL}
+the start signal.{0B}{NL}{NL}
+Let's take a look at the{NL}
+participants.{0B}{NL}
+Number 1!{NL}The up-and-coming pilot{NL}driving Cry Baby is…{NL}"{13} Kosokuno"!{0B}{NL}
+Number 2!{NL}The strongest junk{NL}dealer in the universe,{NL}driving Mach Mary is…{NL}"{14} Tetsuwan"!{0B}{NL}
+{EL}
+
+2D13A
+ゼッケン1ばん『ダニエル』は なき 父の あいきで 憧れの キャプテン・アーリーと 勝負したいと いっておりました。
+さあ 駆け出しのパイロットが 宇宙 さいそくのおとこに どこまで おいつけるか!?
+
+"{13} Kosokuno" said he{NL}wanted to compete against{NL}Captain Early whom he{NL}admires a lot.{0B}{NL}{NL}{NL}{NL}
+How far can a novice pilot{NL}go to keep up with the{NL}fastest man in space?{0C}{EL}
+
+2D1AD
+ローゼは ジャンクやのピーアールと そして 宇宙いちの いい男を さがすため エントリーしたと ききます。{0B}
+さあ 果たして こんな 女に イヤ 宇宙を またにかけた いちだい はな婿さがしは 成功 するのか!?{0C} {EL}
+
+I hear "{14} Tetsuwan"{NL}entered the competition to{NL}promote her junkyard and{NL}find a good man.{0B}{NL}{NL}{NL}{NL}
+Will this woman succeed in{NL}her quest to find a{NL}husband from across the{NL}universe?{0C}{EL}
+
+2D3A4

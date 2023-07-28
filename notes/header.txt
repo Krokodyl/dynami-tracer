@@ -1,0 +1,27 @@
+FFB0		43 33 00 00 00 14 00 00 00 00 00 00 00 00 00 00 
+FFC0		C0 DE B2 C5 CF B2 A5 C4 DA B0 BB B0 20 20 20 20 
+FFD0		FF 00 00 00 00 00 FF FF 31 10 33 02 B1 6F 4E 90 
+FFE0		00 00 00 00 00 00 18 FF 00 00 10 FF 00 00 14 FF 
+FFF0		00 00 00 00 18 FF 00 00 00 00 00 00 00 FF 00 00
+
+
+FFC0		ﾀﾞｲﾅﾏｲ･ﾄﾚｰｻｰ    
+
+FFD8		31		00110001		FastROM HiROM
+
+
+xFB0-xFB1 = Licensee / Maker Code
+xFB2-xFB5 = Program Type
+xFB6-xFBF = Reserved
+xFC0-xFCF = Title (Shift-JIS)
+xFD0-xFD3 = Block Allocation Flags
+xFD4-xFD5 = Limited Starts
+xFD6      = Date - Month
+xFD7      = Date - Day
+xFD8      = ROM Speed (unconfirmed) & Map Mode
+xFD9      = File/Execution Type
+xFDA      = Fixed (0x33)
+xFDB      = Version Number (unconfirmed)
+xFDC-xFDD = Inverse Checksum
+xFDE-xFDF = Checksum
+xFE0-xFFF = Exception Vectors (Identical to SNES ROM header)

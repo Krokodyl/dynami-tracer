@@ -1,0 +1,18 @@
+Pointers
+xA0000		20 00 97 03 10 08 BB 08 40 1D 5D 24 7B 25 DF 26 79 2B 28 3B
+
+Adresses	A0020 A0397 A0810 ...
+
+Breakpoints
+CA0000-CA0014
+
+
+x37900	Items value
+
+WRAM
+x10100-x1018F	Items acquired
+128 bytes: 1 bytes per item
+00 = not owned
+01 = owned
+
+

@@ -62,6 +62,13 @@ public class Utils {
         }
         return bytes;
     }
+
+    public static void writePointer(byte[] data, int pointerOffset, int value) {
+        data[pointerOffset] = (byte) (((value) % 256) & 0xFF);
+        data[pointerOffset + 1] = (byte) ((value) / 256);
+        data[pointerOffset] = (byte) (((value) % 256) & 0xFF);
+        data[pointerOffset + 1] = (byte) ((value) / 256);
+    }
     
     public static String padRight(String s,char c,int length) {
         while (s.length()<length) {

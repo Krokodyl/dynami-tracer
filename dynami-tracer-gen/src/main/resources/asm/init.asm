@@ -16,20 +16,27 @@ NOP
 NOP
 SEP #$30
 LDA [$1A]; read char
+CMP #$06
+BNE 8
+LDA #$40 ; shift reset + tab
+STA $70
+STZ $71
+STZ $73; set shift to 0
+
+CMP #$00
+BEQ 10; shift_reset
 CMP #$05
-BNE no_shift_reset ; Mesen Bug : Off by one
+BEQ 6; shift_reset
+CMP #$0B
+BEQ 2; shift_reset
+BRA 8; no_shift_reset
+shift_reset:
 LDA #$10
 STA $70
 STZ $71
 STZ $73; set shift to 0
-;STZ $64
-;STZ $62
-;STZ $70
-;STZ $71
+
 no_shift_reset:
-NOP
-NOP
-NOP
 REP #$20
 SEP #$10
 LDA $10
@@ -51,5 +58,5 @@ LDA $12
 STA $62
 STA $65
 LDA [$1A]; read char
-REP #$20
+REP #$30
 RTL

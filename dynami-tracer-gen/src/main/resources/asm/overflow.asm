@@ -10,12 +10,14 @@ CPX #$0100
 	LDA $34; read char
 	SEC
 	SBC #$40;
+	REP #$20    
 	ASL
 	ASL
 	ASL
 	ASL
 	ASL
 	TAY
+	SEP #$20
 
 	LDA #$08
 	SEC

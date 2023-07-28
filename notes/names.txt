@@ -1,0 +1,67 @@
+Characters
+
+こうそくの ダニエル			Kōsokuno Danieru			Daniel Kosokuno			(高速 (kosokuno) = rapid)
+てつわん ローゼ				Tetsuwan rōze				Rose Tetsuwan			(鉄腕 (tetsuwan) = strong arm)
+キャプテン・アーリー			Kyaputen ārī					Captain Early
+はかいてんし ワイルド		Hakaitenshi wairudo			Wilde Hakaitenshi		(はかいてき = destructive)
+ミリオンブレイン・ハーパー	Mirionburein hāpā			Harper Millionbrain
+たそがれの ジム				Tasogareno jimu				Jim Tasogareno			(黄昏 (たそがれ) = twilight)
+
+Vehicles
+
+クライ・ベイビー				Kurai beibī					Cry Baby
+マッハ・メアリ				Mahha Meari					Mach Mary
+ライトニング					Raitoningu					Lightning
+ヘルハーレー					Heruhārē					Hell Harley
+ザ・キャッスル				Za kyassuru					The Castle
+ポピュッピー					Popyuppī						Popyupi
+
+ミツトモ・ギャラクシー・カンパニー		Mitsutomo gyarakushī kanpanī	
+										Mitsutomo Galaxy Company
+コウノスケ・ミツトモは					Kōnosuke Mitsutomo
+
+ダイナマイ・トレース		Dainamai torēsu		Dynami Trace
+ダイナマイ・トレーサー	Dainamai torēsā		Dynami Tracer
+
+
+レース				Rēsu		Race
+トレジャー			Torejā		Treasure
+ゴール				Gōru		Goal
+ポイント				Pointo		Point
+ダイナマイト			Dainamaito	Dynamite
+エントリー			Entorī		Entry (registration)
+パイロット			Pairotto	Pilot
+マシン				Mashin		Machine (race car)
+ジャンク				Janku		Junk
+ピーアール			Pīāru		PR
+スペック				Supekku		Specs
+アイドリング			Aidoringu	Idling
+スタート				Sutāto		Start
+シグナル				Shigunaru	Signal
+
+かくしゃとも アイドリング しつつ{NL}
+スタートの シグナルを いまや おそしと{NL}
+まっています!{0B}{NL}{NL}{NL}
+
+では エントリーされた かくしゃを{NL}
+ごしょうかい していきましょう!
+{0B}{NL}{NL}
+
+ゼッケン1ばん!{NL}
+クライ・ベイビーをかる しんしんきえいの{NL}
+パイロット 『こうそくの {13}』!
+
+{13} = ダニエル
+
+{0B}{NL}{NL}ゼッケン2ばん!{NL}うちゅう さいきょうの ジャンクや!{NL}マッハ・メアリに またがるは{NL}『てつわん {14}』!{0B}{NL}{NL}ゼッケン3ばん!{NL}いわずと しれた うちゅう さいそくの{NL}パイロット! あいき ライトニングと{NL}『キャプテン・{15}』!{0B}{NL}{NL}ゼッケン4ばん!{NL}あらくれ あいてに ほしから ほしへ{NL}あいぼうの ヘルハーレーで エントリー{NL}『はかいてんし {16}』!{0B}{NL}{NL}ゼッケン5ばん!{NL}じしょう うちゅう さいこうの ずのう{NL}ザ・キャッスル あやつるは{NL}『ミリオンブレイン・{17}』!{0B}{NL}{NL}そして ゼッケン6ばん!{NL}まったく もって しょうたい ふめい{NL}おまえは いったい ナンなんだ!?{NL}ポピュッピーの 『たそがれの {18}』!{0C}{NL}{NL}{EL}
+
+https://en.wikipedia.org/wiki/Hanjuku_Hero
+
+ITEM	Dead Gun
+デッドガン (1-4)
+将軍が人間大砲となり、敵に発射する自爆攻撃。将軍は必ず死亡し、敵がボス以外の将軍であれば道連れにできる。エグモン、ボスに対してはダメージを与える作品と、犬死にになる作品がある。
+
+		Firebird
+ファバード (1-4)
+「科学忍法・火の鳥」のように、炎をまとって敵に大ダメージを与える。作品によっては、自分もダメージを受ける。WSC版及びスマートフォンアプリ版第2作のみ発動時のセリフが差し替わっている。
+

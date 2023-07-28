@@ -1,0 +1,4 @@
+
+Printing normal characters
+$300D9
+$305F1

@@ -52,7 +52,7 @@ public class ImageReader {
 
 
     private static String generateSpriteDataFromImage(String image, String output, Palette palette, int bpp) throws IOException {
-        System.out.println("Generating Sprite Data from image "+image);
+        //System.out.println("Generating Sprite Data from image "+image);
         ImageReader fontImageReader = new ImageReader();
         String s = "";
         if (bpp==2) s = fontImageReader.loadFontImage2bpp(image, palette);
@@ -69,7 +69,7 @@ public class ImageReader {
     }
 
     public static byte[] generateSpriteDataFromImage(String image, Palette palette, int bpp) {
-        System.out.println("Generating Sprite Data from image "+image);
+        //System.out.println("Generating Sprite Data from image "+image);
         ImageReader fontImageReader = new ImageReader();
         if (bpp==2) fontImageReader.loadFontImage2bpp(image, palette);
         else fontImageReader.loadFontImage4bpp(image, palette);
