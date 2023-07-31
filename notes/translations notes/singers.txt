@@ -1,0 +1,32 @@
+JPN=ウタウダー「……{WPNLTB}な なにを いってるんだ キミは。{NLTB}じょうだんに きまってるではないか。{WPNLTB}ヒーローは にげたりしないのだ!{EL}
+...What are you talking about? You must be joking, right?Heroes don't run away from the city!
+
+JPN=ウタウダー「そうか! いや よかった!{NLTB}……じゃない ザンネンだ。{NLTB}ワタシのからださえ カンペキなら……{WPCLTB}さあ ほしのうらの スタジオへ{NLTB}しゅつどうせよッ!{EL}
+Oh, yeah! No, thank God! That's a shame. If only my body was perfect. ......Let's head to the studio on the other side of the planet!
+
+JPN=ウタウダー「なに! テーマけっていせん?{WPNLTB}ウッ……! きゅうに このあいだの{NLTB}たたかいの きずが……{NLTB}とても でられそうにない……{EL}
+
+JPN=ウタウダー「やはり そうか。{NLTB}しかし ワタシが きたからには{NLTB}もう あんしんだ。{EL}
+
+JPN=ウタウダー「やはり よるとしなみには……{WPNLTB}イ イヤ そんなことは ない!{NLTB}こんどは グレートウタウダー7として{NLTB}さいしゅっぱつだ!{EL}
+I'm not going to let my advanced age get the best of me.
+
+JPN=ウタウダー「クッ こんなとき だれかが{NLTB}だれかが たちあがってくれたら……!{NLTB}やります{NLTB}……{EL}
+Someone should stand up at a time like this. I'll do it.
+
+JPN=ウタウダー「ハッハッハッハッハッハ!{WPNLTB}せいぎは かならず かつ!{NLTB}キミも よくやった。 これからも{NLTB}せいぎのため ともに たたかおう!{EL}
+*gasp*Justice must be served. You did well.Let's continue to work together for what's right.
+
+JPN=ウタウダー「ヒーロー ひとすじ 25ねん{NLTB}かようせんし ウタウダーA{NLTB}ただいま さんじょう!{EL}
+
+Ordinary Hero for 25 years. Song warrior Utauda-A I'm back!
+
+ヒーロー					Hero
+ひとすじ		一筋		Hitosuji
+せんし		戦士		Senshi
+
+JPN=ウタウダー「フッフッフッ……{NLTB}オクターブの テーマは{NLTB}このワタシに まかせたまえ!{WPNLTB}トウッ!{EL}
+*hehehe* Let me decide the octave theme!
+
+JPN=ウタウダー「ムムッ!?{WPNLTB}そこのキミ ワタシを よんだかね?{NLTB}はい{NLTB}いいえ{EL}
+humphHey, you there, did you call me?

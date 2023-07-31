@@ -596,27 +596,27 @@ ENG=
 POINTER=581EE;59E9D
 DATA=59E9D;AB FF 67 A9 D5 F7 05 C7 9F 8F 97 FF 93 BB 35 BB 05 93 A9 97 8D FF 8D DF 8F AD C9 65 FF 53 55 AD BD 99 F7 0B C7 9F 8F 97 67 D5 BB 89 A9 65 FF DC F8 98 BB 8D DF 8F CB 05 A9 91 9F BD C7 2D B1 D9 BD 99 F7 0B 9A F8 44 97 9F AD A7 8D B5 31 8B 8F C7 8F 9B AD B5 05 C7 9F 8F 97 67 D5 37 B1 D9 BD 99 BB 65 05 B1 93 AF CB FF B1 8B 91 8F 5F 95 AD F7 00 
 JPN=あ どうも。{NL}わたくし このダイナマイ・トレースの{NL}こうしき きろくいんで ございます。{WPCL}わたくしどものほうで レースのきろくを{NL}うけたまわっております。{WPCL}セーブしたいときには かくわくせいに{NL}わたくしどもが おりますので{NL}おこえを おかけください。{EL}
-ENG=
+ENG=Oh, hi!{NL}I am the official record keeper for{NL}this Dynami Trace.{WPCL}I am happy to keep track of the race.{NL}If you need to save, I'm here for you.{EL}
 
 POINTER=581F0;59F0F
 DATA=59F0F;9A F8 44 AD 9F 97 BD 99 8B 7F 06 81 AD 06 AD AD AF 00 
 JPN=セーブいたしますか?{NLTB}はい{NLTB}いいえ{EL}
-ENG=
+ENG=Do you want to save?{NLTB}Yes{NLTB}No{EL}
 
 POINTER=581F2;59F21
 DATA=59F21;65 31 53 91 C9 A7 A9 CB FF B1 AD BB D9 97 A5 AD BD 99 F7 00 
 JPN=では ごけんとうを おいのりしています。{EL}
-ENG=
+ENG=I wish you the best of luck.{EL}
 
 POINTER=581F4;59F35
 DATA=59F35;8D 97 CF FA C1 AB FF 81 57 D3 BD 97 A5 F7 0C 49 8F 31 92 98 D4 7D 9E AC D0 58 97 BB 8D 97 CF 06 40 66 7D BE D6 F8 F7 0C 93 C9 B3 FF 8B 93 8F B3 DC F8 98 B5 06 AE C8 A6 D8 F8 97 9F FF 8C BE 36 8D 2E BF CB 06 D5 2D B9 F7 0C 9D A9 FF 91 D1 9F 4B D7 3A 65 8F DD C5 F7 06 47 A3 36 DC F8 98 BB 56 CE BC CB 97 C5 A9 2D 06 C6 90 57 CF 3A C9 5F F7 0C AD C1 FF B1 8B BD AD B3 8F F7 06 91 AD 83 CB A3 8B 2D FF A9 A1 E1 A9 80 AC C0 F8 65 06 B1 CD 8B 91 DB 8B D7 FF 8C BE 81 DC F8 98 B5 06 9B C9 B9 C9 97 A5 8F DD DD 41 AD AD F7 0C C3 A9 39 65 8D DB C5 A9 FF 91 C9 A7 A9 CB 06 AD BB DB C5 F7 00 
 JPN=きしゃ「やあ はじめまして。{WPCLTB}ぼくは コスモ・タイムズしのきしゃ{NLTB}バド・ミラー。{WPCLTB}こんな かこくなレースに{NLTB}エントリーした キミに きょうみを{NLTB}もってね。{WPCLTB}そう けむたがらないでくれよ。{NLTB}べつに レースのジャマをしようって{NLTB}ワケじゃないんだ。{WPCLTB}いや おかまいなく。{NLTB}けいひをつかって うちゅうハイヤーで{NLTB}おっかけるから キミはレースに{NLTB}せんねんしてくれればいい。{WPCLTB}ゆうしょうできるよう けんとうを{NLTB}いのるよ。{EL}
-ENG=
+ENG={CL}Reporter: Hi, nice to meet you.{NL}I'm journalist for the Cosmo Times,{NL}Bud Miller.{WPCL}I'm just curious as to why you{NL}entered such a tough race.{WPCL}Please don't give me the cold{NL}shoulder.{WPCL}I'm not trying to interfere{NL}with the race.{NL}Nothing to worry about.{WPCL}I'll rent a spaceship with chauffeur{NL}to catch up with you, and you can{NL}just focus on the race.{WPCL}I wish you all the best in your{NL}efforts to win the competition.{EL}
 
 POINTER=581F6;59FF7
 DATA=59FF7;40 66 FA 93 BB 89 97 BB 83 A7 9F A1 31 A9 A1 E1 A9 AD A1 06 B1 C9 4B 8F A5 8D FF 95 AD BB A9 B5 99 4F DD 06 B1 C9 4B 8F CB FF 93 C5 B3 8F FF AB AD 97 A5 AD DB F7 0C 9D D9 CF FF 48 8E D5 B1 C9 4B 8F 81 99 8D 95 F7 06 91 67 FF AD BD BB 8C BE 31 BB C9 8D B5 06 A9 9F 2D DB 41 AB AD FF 57 CF 3A 5F DF 7F 00 
 JPN=バド「このほしのひとたちは うちゅういち{NLTB}おんがくてき さいのうにすぐれ{NLTB}おんがくを こよなく あいしている。{WPCLTB}そりゃ ボクもおんがくはすきさ。{NLTB}けど いまのキミは のんきに{NLTB}うたってるばあい じゃないだろ?{EL}
-ENG=
+ENG={CL}Bud: The people of this planet have{NL}the greatest musical talent in the{NL}universe and they love music.{WPCL}Of course I love music too.{NL}But now is not the time for you to be{NL}singing, is it?{EL}
 
 POINTER=581F8;5A092
 DATA=5A092;40 66 FA B3 C9 30 87 C9 A5 A3 D5 3A FF 85 A3 A9 BB 06 C7 8F 9B AD 5F B3 F7 0C AB DD 7F FF 48 8E BB A7 91 AD 37 AD A3 BB BD B5 8B 06 93 C7 DD A5 DB F7 06 B1 57 AD A1 CF C9 BB 8B 9F BF 5F 8B D7 FF 9D DF 9D DF 06 57 E1 BF 2E B3 BB 8B B3 33 00 
@@ -625,57 +625,57 @@ ENG=
 
 POINTER=581FA;5A17C
 DATA=5A17C;14 FA AB D7 FF 91 CD 93 A9 C1 DB C7 B9 F7 06 91 67 FF AB 9F 97 CB 8F 67 8F C5 D9 06 BD 59 FF AB 9F 97 CB B7 AD A5 FF D5 D7 C7 B3 8D CF F7 0C AB 9F 97 FF 81 C1 AD B0 A6 92 37 99 8D B3 BB F7 06 D5 A1 DF C9 FF AD AD B0 A6 92 65 B9 FE 00 
-JPN=リオケォ「あら けっこうやるわね。{NLTB}けど あたしをくどくより{NLTB}まず あたしをぬいて もらわなきゃ。{WPCLTB}あたし はやいオトコが すきなの。{NLTB}もちろん いいオトコでね♥{EL}
-ENG=
+JPN={14}「あら けっこうやるわね。{NLTB}けど あたしをくどくより{NLTB}まず あたしをぬいて もらわなきゃ。{WPCLTB}あたし はやいオトコが すきなの。{NLTB}もちろん いいオトコでね♥{EL}
+ENG={14}: Oh, you don't look bad either.{NL}But you have to take me out first{NL}before you can seduce me.{WPCL}I like guys who are fast.{NL}And pleasant, of course♥.{EL}
 
 POINTER=581FC;5A1CA
 DATA=5A1CA;14 FA AB C9 9F B3 C9 8B 57 CF FF BD 5F BD 5F 06 93 BB C7 9F 97 B5 31 C1 8F 45 9D 8F B9 F7 0C 57 CF FF 52 F8 DA 65 BD 2D DB C7 FE 00 
-JPN=リオケォ「あんたなんかじゃ まだまだ{NLTB}このわたしには やくぶそくね。{WPCLTB}じゃ ゴールでまってるわ♥{EL}
+JPN={14}「あんたなんかじゃ まだまだ{NLTB}このわたしには やくぶそくね。{WPCLTB}じゃ ゴールでまってるわ♥{EL}
 ENG=
 
 POINTER=581FE;5A1F6
 DATA=5A1F6;14 FA 32 B3 B5 37 4D C9 4B 91 AD 06 AA AC 66 DA C5 F7 FF AB 9F 97 BB 89 A9 4B 06 59 CD A7 59 CD A7 32 C8 7F 00 
-JPN=リオケォ「……なにが ぎんがけい{NLTB}アイドルよ。 あたしのほうが{NLTB}ずっとずっと……ン?{EL}
-ENG=
+JPN={14}「……なにが ぎんがけい{NLTB}アイドルよ。 あたしのほうが{NLTB}ずっとずっと……ン?{EL}
+ENG={14}: What is it with these galactic{NL}idols?{NL}I'm much, much better than that.{EL}
 
 POINTER=58200;5A29B
 DATA=5A29B;16 FA 33 00 
-JPN=ンッイェォ「……{EL}
-ENG=
+JPN={16}「……{EL}
+ENG={16}: ...{EL}
 
 POINTER=58202;5A29F
 DATA=5A29F;16 FA 33 0C B1 BD AF 32 0C EE 4A D6 98 BB C3 43 C7 EF FF D5 2D DB 8B 7F 06 81 AD 06 AD AD AF 00 
-JPN=ンッイェォ「……{WPCLTB}おまえ……{WPCLTB}『ガラスのゆびわ』 もってるか?{NLTB}はい{NLTB}いいえ{EL}
+JPN={16}「……{WPCLTB}おまえ……{WPCLTB}『ガラスのゆびわ』 もってるか?{NLTB}はい{NLTB}いいえ{EL}
 ENG=
 
 POINTER=58204;5A2BF
 DATA=5A2BF;16 FA 7E 7E 00 
-JPN=ンッイェォ「!!{EL}
+JPN={16}「!!{EL}
 ENG=
 
 POINTER=58206;5A2C4
 DATA=5A2C4;16 FA 9F FF 9F BB D1 7E 06 9D DD FF 8F DD 32 7E 7E 06 81 AD 06 AD AD AF 00 
-JPN=ンッイェォ「た たのむ!{NLTB}それ くれ……!!{NLTB}はい{NLTB}いいえ{EL}
+JPN={16}「た たのむ!{NLTB}それ くれ……!!{NLTB}はい{NLTB}いいえ{EL}
 ENG=
 
 POINTER=58208;5A2DD
 DATA=5A2DD;16 FA B1 32 0C B1 C9 36 8D DB 33 0C DD AD A7 AD CD A1 CF FF B3 C9 5F 4B 32 06 B0 DC BB A6 DC 56 CE F8 FF 5B C9 45 C1 DB 33 0C EE 4A D6 98 BB C3 43 C7 EF A7 83 8D 8B AF B5 05 16 BB 99 47 A5 BB A6 DC 56 CE F8 CB 50 CC A6 7E 00 
-JPN=ンッイェォ「お……{WPCLTB}おんに きる……{WPCLTB}れいといっちゃ なんだが……{NLTB}オレのトレジャー ぜんぶやる……{WPCLTB}『ガラスのゆびわ』とひきかえに{NL}ンッイェォのすべてのトレジャーをゲット!{EL}
+JPN={16}「お……{WPCLTB}おんに きる……{WPCLTB}れいといっちゃ なんだが……{NLTB}オレのトレジャー ぜんぶやる……{WPCLTB}『ガラスのゆびわ』とひきかえに{NL}{16}のすべてのトレジャーをゲット!{EL}
 ENG=
 
 POINTER=5820A;5A328
 DATA=5A328;16 FA 9F FF 9F BB D1 7E 00 
-JPN=ンッイェォ「た たのむ!{EL}
+JPN={16}「た たのむ!{EL}
 ENG=
 
 POINTER=5820C;5A331
 DATA=5A331;16 FA 33 0C B1 BD AF B5 81 32 0C 8B C9 97 CF BB 93 A7 41 D5 FF 3A 33 00 
-JPN=ンッイェォ「……{WPCLTB}おまえには……{WPCLTB}かんしゃのことばも ない……{EL}
+JPN={16}「……{WPCLTB}おまえには……{WPCLTB}かんしゃのことばも ない……{EL}
 ENG=
 
 POINTER=5820E;5A349
 DATA=5A349;17 31 EE 4A D6 98 BB C3 43 C7 EF CB 05 D5 2D AD DB F7 0B AD BD D5 2D AD DB FF A6 DC 56 CE F8 99 47 A5 A7 05 93 A9 8B C9 97 BD 99 8B 7F 06 81 AD 06 AD AD AF 00 
-JPN=ホァクカは 『ガラスのゆびわ』を{NL}もっている。{WPCL}いまもっている トレジャーすべてと{NL}こうかんしますか?{NLTB}はい{NLTB}いいえ{EL}
+JPN={17}は 『ガラスのゆびわ』を{NL}もっている。{WPCL}いまもっている トレジャーすべてと{NL}こうかんしますか?{NLTB}はい{NLTB}いいえ{EL}
 ENG=
 
 POINTER=58210;5A37E
@@ -685,12 +685,12 @@ ENG=
 
 POINTER=58212;5A39F
 DATA=5A39F;17 FA 93 C9 B3 4A D6 8E 9E CB FF 9D C9 B3 B5 06 89 97 4B DB B3 C9 A5 FF 83 DF AD A9 A1 E1 A9 B5 81 06 B1 8B 97 B3 FF 8B A1 8B C9 CB D5 CD 9F 8B 9F 4B 06 AD DB D5 BB 65 99 B3 F7 88 F8 88 CC 88 7E 00 
-JPN=ホァクカ「こんなガラクタを そんなに{NLTB}ほしがるなんて ひろいうちゅうには{NLTB}おかしな かちかんをもったかたが{NLTB}いるものですな。ホーホッホ!{EL}
+JPN={17}「こんなガラクタを そんなに{NLTB}ほしがるなんて ひろいうちゅうには{NLTB}おかしな かちかんをもったかたが{NLTB}いるものですな。ホーホッホ!{EL}
 ENG=
 
 POINTER=58214;5A3E1
 DATA=5A3E1;16 FA 32 7E 7E 03 06 03 00 
-JPN=ンッイェォ「……!!{03}{NLTB}{03}{EL}
+JPN={16}「……!!{03}{NLTB}{03}{EL}
 ENG=
 
 POINTER=58216;5A3EA
@@ -700,27 +700,27 @@ ENG=
 
 POINTER=58218;5A406
 DATA=5A406;16 FA 33 0C B8 92 33 0C AB 45 3A FF A7 93 DF 5F CD 9F 33 0B 05 FF 16 8B D7 FF B8 92 CB FF AB 59 91 D7 DD 9F 7E 00 
-JPN=ンッイェォ「……{WPCLTB}ネコ……{WPCLTB}あぶない ところだった……{WPCL}{NL} ンッイェォから ネコを あずけられた!{EL}
+JPN={16}「……{WPCLTB}ネコ……{WPCLTB}あぶない ところだった……{WPCL}{NL} {16}から ネコを あずけられた!{EL}
 ENG=
 
 POINTER=5821A;5A42C
 DATA=5A42C;18 FA 33 00 
-JPN=ミッウ「……{EL}
-ENG=
+JPN={18}「……{EL}
+ENG={18}: ...{EL}
 
 POINTER=5821C;5A430
 DATA=5A430;17 FA 88 F8 CC 88 CC 88 7E 08 AB CD 9F BD DB FF AB CD 9F BD DB F7 06 9F BD B5 31 93 BB C5 A9 36 C1 41 C9 B3 06 5F C9 49 A9 FF 9D A9 A1 D5 FF C5 AD D5 BB 65 99 B3 F7 0C 93 DD 31 93 DD 31 81 57 D3 BD 97 A5 F7 06 C6 9E 8E 96 4B EE A9 A1 E1 A9 AD A1 BB 59 BB A9 EF 06 25 80 F8 69 F8 65 99 F7 0C B3 8B B3 8B FF 57 E1 C9 A1 2E B5 AD 2D 06 B1 D7 DD DB C5 A9 65 99 4B 32 0C C3 A9 39 30 AF AD 8B C9 81 06 93 BB C6 9E 8E 96 30 59 57 2E B5 06 8B 4B C1 8F BB 65 99 7E 00 
-JPN=ホァクカ「ホーッホッホ!{WPNLTB}あったまる あったまる。{NLTB}たまには このように やばんな{NLTB}だんぼう そうちも よいものですな。{WPCLTB}これは これは はじめまして。{NLTB}ワタクシが『うちゅういちのずのう』{NLTB}ミリオンブレイン・ハーパーです。{WPCLTB}なかなか じゅんちょうにいって{NLTB}おられるようですが……{WPCLTB}ゆうしょうの えいかんは{NLTB}このワタクシの ずじょうに{NLTB}かがやくのです!{EL}
+JPN={17}「ホーッホッホ!{WPNLTB}あったまる あったまる。{NLTB}たまには このように やばんな{NLTB}だんぼう そうちも よいものですな。{WPCLTB}これは これは はじめまして。{NLTB}ワタクシが『うちゅういちのずのう』{NLTB}ミリオンブレイン・ハーパーです。{WPCLTB}なかなか じゅんちょうにいって{NLTB}おられるようですが……{WPCLTB}ゆうしょうの えいかんは{NLTB}このワタクシの ずじょうに{NLTB}かがやくのです!{EL}
 ENG=
 
 POINTER=5821E;5A4C9
 DATA=5A4C9;17 FA 88 F8 CC 88 CC 88 7E 08 AB CD 9F BD DB FF AB CD 9F BD DB F7 06 9F BD B5 31 93 BB C5 A9 36 C1 41 C9 B3 06 5F C9 49 A9 FF 9D A9 A1 D5 FF C5 AD D5 BB 65 99 B3 F7 0C BD 5F FF AB 8D D7 D3 A5 31 AD 3A BB 65 99 B9 F7 06 B3 8B B3 8B FF C1 D9 BD 99 B3 F7 00 
-JPN=ホァクカ「ホーッホッホ!{WPNLTB}あったまる あったまる。{NLTB}たまには このように やばんな{NLTB}だんぼう そうちも よいものですな。{WPCLTB}まだ あきらめては いないのですね。{NLTB}なかなか やりますな。{EL}
+JPN={17}「ホーッホッホ!{WPNLTB}あったまる あったまる。{NLTB}たまには このように やばんな{NLTB}だんぼう そうちも よいものですな。{WPCLTB}まだ あきらめては いないのですね。{NLTB}なかなか やりますな。{EL}
 ENG=
 
 POINTER=58220;5A51E
 DATA=5A51E;17 FA B1 C1 7F 06 8B 9F 36 AD A7 8E 58 4B 32 00 
-JPN=ホァクカ「おや?{NLTB}かたに いとクズが……{EL}
+JPN={17}「おや?{NLTB}かたに いとクズが……{EL}
 ENG=
 
 POINTER=58222;5A52E
@@ -736,32 +736,32 @@ ENG=
 POINTER=58226;5A54F
 DATA=5A54F;06 EE 1F EF CB 50 CC A6 7E 00 
 JPN={NLTB}『{1F}』をゲット!{EL}
-ENG=
+ENG={NLTB}You get {NLTB}"{1F}"{EL}
 
 POINTER=58228;5A559
 DATA=5A559;A9 A1 E1 A9 36 83 43 91 FF AB AD BB AE 92 F8 7E 05 BF C9 B3 30 C1 99 D7 4D 05 A9 9F 53 AF FF C7 8F 9B AD FF B0 8E 9E F8 44 65 F8 99 7E 05 0B 34 30 8B 9F 65 99 B9 7F 05 91 AD 8D 63 91 36 74 8D E3 8F FF AD 8B 4B 65 99 8B 7E 00 
 JPN=うちゅうに ひびけ あいのエコー!{NL}みんなの やすらぎ{NL}うたごえ わくせい オクターブでーす!{NL}{WPCL}ダイナマイ・トレーサーの かたですね?{NL}けいきづけに 1きょく いかがですか!{EL}
-ENG=
+ENG=Everyday, sounds of fights echo{NL}through the universe!{WPCL}Here on planet Octave, you only hear{NL}peaceful singing voices!{EL}
 
 POINTER=5822A;5A5A4
 DATA=5A5A4;67 A9 97 9F D5 C9 5F DF 32 FF C9 7F 07 AD C1 B9 FF AD BD FF 93 BB 89 97 BB A4 F8 BC 9C C8 4E CB 05 A3 8F DF A9 2D FF 81 B3 97 37 AB DB C9 5F F7 05 B0 8E 9E F8 44 31 A9 9F BB 89 97 5F 8B D7 B9 F7 0B 5F 91 67 FF 83 A7 A3 FF D5 C9 5F AD 37 AB 2D B9 32 07 BF C9 B3 FF 6D D6 AC 66 BB 9F 8B AD FF 83 A7 9F A1 5F 97 05 93 BD CD 9F D5 C9 5F 32 00 
 JPN=どうしたもんだろ…… ん?{WPNL}いやね いま このほしのテーマソングを{NL}つくろうって はなしが あるんだ。{NL}オクターブは うたのほしだからね。{WPCL}だけど ひとつ もんだいが あってね……{WPNL}みんな プライドのたかい ひとたちだし{NL}こまったもんだ……{EL}
-ENG=
+ENG=What's going on?{WPNL}We are trying to make a theme song{NL}for this planet.{NL}Octave is the music planet after all.{WPCL}There is one problem, though...{WPNL}Everyone is overly proud, it's{NL}unmanageable...{EL}
 
 POINTER=5822C;5A615
 DATA=5A615;32 07 AD AD BB 8B 7F 07 9D DD 65 FF AD AD BB 8B 7F 07 89 C9 A7 36 93 BB 8D E3 8F 65 FF AD AD BB 8B 7F 00 
 JPN=……{WPNL}いいのか?{WPNL}それで いいのか?{WPNL}ほんとに このきょくで いいのか?{EL}
-ENG=
+ENG=...{WPNL}Are you sure?{WPNL}Is that what you want?{WPNL}Are you sure about this?{EL}
 
 POINTER=5822E;5A638
 DATA=5A638;93 BB 89 97 B5 81 B9 FF 77 B5 C9 30 AD 5F AD B3 05 AA F8 A4 E6 98 A6 4B AD DB BB F7 0B DE CC 8E 98 9E F8 FF AE 42 98 7D 6D DC 98 D8 F8 F7 05 AF C9 8B 30 B1 B1 53 97 E3 FF 94 44 52 DE A8 F7 05 82 F8 DE F8 83 A7 99 57 FF A8 9E A8 5E F8 F0 F7 05 4D C9 4B 91 AD AA AC 66 DA FF D4 D4 B2 96 FF 8E D8 92 F7 0B 5F 91 67 FF 77 B5 C9 30 B3 8B 37 C7 DB 8F 2D F7 05 BF C9 B3 FF 57 45 C9 37 93 BB 89 97 BB A4 F8 BC CB 05 A3 8F DB 2D FF 8D 8B 3A BB C5 F7 00 
 JPN=このほしにはね 4にんの いだいな{NL}アーティストがいるの。{WPCL}ロックスター エビス・プレスリー。{NL}えんかの おおごしょ サブゴロウ。{NL}ヒーローひとすじ ウタウダーA。{NL}ぎんがけいアイドル モモナシ クリコ。{WPCL}だけど 4にんの なかが わるくって。{NL}みんな じぶんが このほしのテーマを{NL}つくるって きかないのよ。{EL}
-ENG=
+ENG=There are four outstanding artists{NL}on this planet.{WPCL}Rock star Melvis Presley.{NL}Enka's great master, Sabugorō.{NL}Ordinary Hero Masinger-A.{NL}Galactic Idol Momonashi Kuriko.{WPCL}But, the four of them are all bad.{NL}People never ask me if I'm going{NL}to create a theme song for this{NL}planet.{EL}
 
 POINTER=58230;5A6CC
 DATA=5A6CC;99 53 8F FF 99 A5 8D B3 FF A4 F8 BC 9C C8 4E 65 05 AB 9F 97 FF 8D B5 AD CD A1 CF CD 9F 7E 07 A7 8F 36 A7 A9 AD A3 9B AD CB FF BD CD 9F 8F 05 D1 97 97 A5 FF 83 C1 8F 99 DB A7 93 DF 37 94 AC 92 A8 7E 00 
 JPN=すごく すてきな テーマソングで{NL}あたし きにいっちゃった!{WPNL}とくに とういつせいを まったく{NL}むしして ひやくするところが サイコウ!{EL}
-ENG=
+ENG=The theme song is very lovely, I love{NL}it!{WPCL}Especially the way it changes the{NL}subject without any sense of unity!{EL}
 
 POINTER=58232;5A70F
 DATA=5A70F;8C CE F9 FF 4A C8 40 CC A4 F9 7E 0B 32 2D FF AA C8 9E FF B3 B5 BA C8 8C B5 05 81 B3 97 8B 91 A5 C9 BB C5 F7 05 95 CD 95 A7 FF 81 97 D9 B3 95 AD 7E 00 
@@ -771,247 +771,247 @@ ENG=
 POINTER=58234;5A741
 DATA=5A741;05 8D BF 31 D5 A9 FF C7 99 DD 9F 8B AD FD 07 85 9F D9 65 FF 8F D7 97 9F FF AB BB 77 57 2E 81 C9 FD 0B 48 8E BB A9 9F FF 8D B5 AD 2D 8F DD 9F 8B AD 7F 06 81 AD 06 AD AD AF 00 
 JPN={NL}きみは もう わすれたかい♪{WPNL}ふたりで くらした あの4じょうはん♪{WPCL}ボクのうた きにいってくれたかい?{NLTB}はい{NLTB}いいえ{EL}
-ENG=
+ENG=Have you already forgotten ♪{WPNL}That tiny studio where we lived{NL}together? ♪{WPCL}Do you like my song?{NLTB}Yes{NLTB}No{EL}
 
 POINTER=58236;5A77B
 DATA=5A77B;32 AB D9 4B A7 A9 F7 05 65 D5 FF 93 BB 89 97 65 31 5F DD D5 05 84 EC F8 8E B3 C9 A5 FF 8D AD A5 8F DD 3A BB 95 F7 05 8B B3 97 AD B9 F7 FF DA DA DA 32 00 
 JPN=……ありがとう。{NL}でも このほしでは だれも{NL}フォークなんて きいてくれないのさ。{NL}かなしいね。 ルルル……{EL}
-ENG=
+ENG=...Thanks.{NL}But on this planet, nobody listens{NL}to folk songs.{NL}So sad...{EL}
 
 POINTER=58238;5A7AE
 DATA=5A7AE;32 9D A9 8B FF C1 CD 6A D9 B9 F7 05 84 EC F8 8E B3 C9 A5 FF D5 A9 FF 81 C1 D7 3A C9 5F F7 05 93 DD D5 FF 57 5F AD 30 B3 4B DD B3 BB 8B B3 32 05 8B B3 97 AD B9 F7 FF B2 B2 B2 32 00 
 JPN=……そうか やっぱりね。{NL}フォークなんて もう はやらないんだ。{NL}これも じだいの ながれなのかな……{NL}かなしいね。 ナナナ……{EL}
-ENG=
+ENG=...I knew it.{NL}Folk songs are not popular anymore.{NL}I guess this is just part of{NL}the zeitgeist. Sad...{EL}
 
 POINTER=5823A;5A7EA
 DATA=5A7EA;32 91 CD 8D E3 8F FF 84 EC F8 8E 81 05 A4 F8 BC B5 31 95 AD C5 A9 FF 95 DD B3 8B CD 9F C5 F7 05 8B B3 97 AD B9 F7 FF D6 AC D6 AC D6 AC 32 00 
 JPN=……けっきょく フォークは{NL}テーマには さいよう されなかったよ。{NL}かなしいね。 ライライライ……{EL}
-ENG=
+ENG=*annoyed*{NL}Folk was not considered for the{NL}theme...{NL}That's sad.{EL}
 
 POINTER=5823C;5A819
 DATA=5A819;AB 9D 93 30 8A A8 C8 9E F8 36 AD DB BB 4B 05 93 BB B0 8E 9E F8 44 30 B1 A9 95 BD 95 F7 0B 65 D5 FF 8D 4B C5 C7 AD A9 AF 36 B1 A1 2E 97 D5 BB 65 05 5F DD 36 A4 F8 BC CB FF A3 8F D7 9B DB 8B 05 B3 8B B3 8B FF 8D D3 D7 C9 3A C9 5F F7 07 45 9F AD BB 97 8B AD 31 A9 BD AD C9 5F 91 67 B3 E5 32 0B B0 AC D6 7F 05 B0 AC D6 5F CD 9F D7 D5 A1 DF C9 FF AF C9 8B 5F B9 F7 05 94 44 A1 CF C9 FF 95 AD 93 A9 7E 00 
 JPN=あそこの カウンターに いるのが{NL}このオクターブの おうさまさ。{WPCL}でも きがよわいうえに おちょうしもので{NL}だれに テーマを つくらせるか{NL}なかなか きめらんないんだ。{WPNL}ぶたいのしかいは うまいんだけどなぁ……{WPCL}オイラ?{NL}オイラだったらもちろん えんかだね。{NL}サブちゃん さいこう!{EL}
-ENG=
+ENG=That's the king of Octave right{NL}behind the counter.{WPCL}He's a good-natured fellow but has{NL}a weak mind so he has a hard time{NL}deciding who gets to choose the{NL}theme.{WPCL}Me?{NL}If it was up to me, I'd say enka{NL}of course.{NL}Sabu-chan is the best!{EL}
 
 POINTER=5823E;5A89E
 DATA=5A89E;93 C9 8B AD BB 93 A7 65 FF C7 8B CD 9F C5 F7 05 67 C9 B3 FF 56 CE C8 DA B5 D5 FF AD AD A7 93 DF 4B 05 AB DB C9 5F 2D B9 F7 FF B0 AC D6 D5 FF 93 67 D5 D7 97 8F 05 82 F8 DE F8 A4 F8 BC D5 FF 8D AD A5 BF C5 A9 8B B3 32 00 
 JPN=こんかいのことで わかったよ。{NL}どんな ジャンルにも いいところが{NL}あるんだってね。 オイラも こどもらしく{NL}ヒーローテーマも きいてみようかな……{EL}
-ENG=
+ENG=I understand now.{NL}Every genre has its qualities.{NL}Maybe we should listen to the hero{NL}theme like kids...{EL}
 
 POINTER=58240;5A935
 DATA=5A935;AE 42 98 FA AC AE F8 AC 7E 06 B1 DD 95 BD 4B 98 6F F8 98 7D DE CC 8E C8 DE F8 D6 F8 06 AE 42 98 7D 6D DC 98 D8 F8 5F 7E FF 84 E4 C8 8C F8 7E 00 
 JPN=エビス「イエーイ!{NLTB}おれさまがスペース・ロックンローラー{NLTB}エビス・プレスリーだ! ファンキー!{EL}
-ENG=
+ENG=Melvis: Yeah!{NL}I'm space rock & roll star{NL}Melvis Presley!{NL}Funky!{EL}
 
 POINTER=58242;5A965
 DATA=5A965;AE 42 98 FA 86 AC C2 F8 FF BA CC A5 DB 8B F8 AD 7F 06 AC AE F8 AC 7E 06 32 00 
 JPN=エビス「ヘイユー ノッてるかーい?{NLTB}イエーイ!{NLTB}……{EL}
-ENG=
+ENG=Melvis: Hey! Are you in the groove?{NLTB}Yay!{NLTB}......{EL}
 
 POINTER=58244;5A97F
 DATA=5A97F;AE 42 98 FA 32 A0 EA CC F7 00 
 JPN=エビス「……チェッ。{EL}
-ENG=
+ENG=Melvis: ...Dang.{EL}
 
 POINTER=58246;5A989
 DATA=5A989;AE 42 98 FA B0 F8 90 AC FF 9D BB A1 2E 97 5F 7E 06 DE CC 8E C8 DE F8 DA FF AC 58 FF AE 68 D8 96 C8 4E 06 AE 68 D8 96 C8 4E FF AC 58 FF DE CC 8E C8 DE F8 DA 7E 06 AF C9 8B D5 AA AC 66 DA D5 FF 8F 9F 41 CD A1 BD AF 7E 00 
 JPN=エビス「オーケイ そのちょうしだ!{NLTB}ロックンロール イズ エヴリシング{NLTB}エヴリシング イズ ロックンロール!{NLTB}えんかもアイドルも くたばっちまえ!{EL}
-ENG=
+ENG=Melvis: Okay, that's the spirit!{NL}Rock & roll is everything,{NL}everything is rock & roll!{NL}Enka and idols can go to hell!{EL}
 
 POINTER=58248;5A9D2
 DATA=5A9D2;AE 42 98 FA D6 C8 B4 C8 FF A4 F8 BC 7F FF 56 F8 54 98 7E 08 DE CC 8E C8 DE F8 D6 F8 37 9D C9 B3 06 91 C9 93 A9 A5 8D B3 93 A7 FF 65 8D DB 8B C4 7E 00 
 JPN=エビス「ランニン テーマ? ジーザス!{WPNLTB}ロックンローラーが そんな{NLTB}けんこうてきなこと できるかヨ!{EL}
-ENG=
+ENG=Melvis: Running for the theme? Jesus!{WPNL}What kind of rockstar could do{NL}something so healthy?{EL}
 
 POINTER=5824A;5AA04
 DATA=5AA04;AE 42 98 FA 86 AC C2 F8 FF A1 2E 67 AD AD 06 B0 DC BB 8B C7 D9 36 65 A5 8F DD FF 46 AC 46 F8 7E 06 B0 CC 90 F8 7E 06 AD C1 5F 00 
 JPN=エビス「ヘイユー ちょうどいい{NLTB}オレのかわりに でてくれ ベイベー!{NLTB}オッケー!{NLTB}いやだ{EL}
-ENG=
+ENG=Melvis: Hey, why won't you be my{NL}stand-in baby?{NLTB}Ok!{NLTB}No{EL}
 
 POINTER=5824C;5AA2F
 DATA=5AA2F;AE 42 98 FA 82 E0 F8 FF 94 C8 8C E0 F8 7E 06 B0 F8 D6 AC FF 9D A9 A7 FF 8D BD CD 9F D7 06 A7 CD A7 A7 FF 89 97 BB A9 D7 30 98 9E 56 B0 87 06 82 AA FF A8 E6 FF 52 F8 7E 00 
 JPN=エビス「ヒュー サンキュー!{NLTB}オーライ そうと きまったら{NLTB}とっとと ほしのうらの スタジオへ{NLTB}ヒア ウィ ゴー!{EL}
-ENG=
+ENG=Melvis: Hugh, thanks!{NL}Alright.{NL}When you're ready, head to the studio{NL}on the other side of the planet!{EL}
 
 POINTER=5824E;5AA68
 DATA=5AA68;AE 42 98 FA 46 D8 46 D8 4E F8 CC 7E 06 C0 CC 69 FF B0 DC 95 BD 30 8D E3 8F 4B 06 94 AC 92 A8 5F 5B 7E 00 
 JPN=エビス「ベリベリグーッ!{NLTB}ヤッパ オレさまの きょくが{NLTB}サイコウだぜ!{EL}
-ENG=
+ENG=Melvis: Very very good!{NL}I'm telling you, my music is the best!{EL}
 
 POINTER=58250;5AA8B
 DATA=5AA8B;94 44 52 DE A8 FA C7 97 BB B3 31 94 44 52 DE A8 F7 06 83 A7 31 C7 97 CB 06 AB DB 8F FF B2 B4 C6 45 97 A7 FF C5 45 F7 00 
 JPN=サブゴロウ「わしのなは サブゴロウ。{NLTB}ひとは わしを{NLTB}あるく ナニワぶしと よぶ。{EL}
-ENG=
+ENG=Sabugorō: My name is Sabugorō.{NL}People call me a "sad song{NL}on two legs".{EL}
 
 POINTER=58252;5AAB3
 DATA=5AAB3;94 44 52 DE A8 FA C5 AD 8B B3 F7 06 AF C9 8B 30 93 93 DF 31 81 81 53 93 DF F7 06 81 81 37 B3 8F A5 31 AD 8D D7 DD B7 F7 06 AB A7 31 B3 8F A5 D5 FF AD 8D D7 DD DB F7 00 
 JPN=サブゴロウ「よいかな。{NLTB}えんかの こころは ははごころ。{NLTB}ははが なくては いきられぬ。{NLTB}あとは なくても いきられる。{EL}
-ENG=
+ENG=Sabugorō: Is it good?{NL}The essence of enka is a mother's{NL}heart. Without a mother, we can't live.{NL}The rest, we can live without.{EL}
 
 POINTER=58254;5AAEB
 DATA=5AAEB;94 44 52 DE A8 FA C7 DD C7 DD 77 B5 C9 65 FF A4 F8 BC CB 7F 08 84 C8 FF B1 BD AF 95 C9 31 97 2D AD DB 8B B3 06 B1 B1 D5 BB A7 81 30 66 CC 96 D8 8B BD AF A5 06 8B DB 4B DB 97 8F FF A9 53 8B B7 D5 BB 57 CF F7 00 
 JPN=サブゴロウ「われわれ4にんで テーマを?{WPNLTB}フン おまえさんは しっているかな{NLTB}おおものとはの ドッシリかまえて{NLTB}かるがるしく うごかぬものじゃ。{EL}
-ENG=
+ENG=Sabugorō: The four of us will be{NL}responsible for the theme?{WPCL}*hmph*{NL}Do you know what a big shot is?{NL}It's an important man who doesn't act{NL}carelessly.{EL}
 
 POINTER=58256;5AB31
 DATA=5AB31;94 44 52 DE A8 FA 67 A9 5F F7 FF C7 97 30 8B C7 D9 B5 06 81 97 DD 41 FF 65 97 36 97 A5 C1 DB 5D F7 06 C1 D9 BD 99 06 AF C9 D9 E3 97 BD 99 00 94 44 52 DE A8 FA B3 8B B3 8B FF BF 67 93 DF 37 AB DB F7 06 C5 97 F7 FF B1 BD AF 30 51 AD D3 AD 81 06 EE 97 9F 63 BF FF B3 4B AD 5D A9 EF 5F F7 0C 65 31 65 97 A7 97 A5 30 97 E1 4D 2E 06 5F AD AD CD 72 5F 7E 06 89 97 BB A9 D7 30 98 9E 56 B0 87 FF AD 91 7E 06 B3 4B AD 5D A9 7E 00 
-JPN=サブゴロウ「どうだ。 わしの かわりに{NLTB}はしれば でしに してやるぞ。{NLTB}やります{NLTB}えんりょします{EL}サブゴロウ「なかなか みどころが ある。{NLTB}よし。 おまえの げいめいは{NLTB}『したづみ ながいぞう』だ。{WPCLTB}では でしとしての しゅぎょう{NLTB}だいいっぽだ!{NLTB}ほしのうらの スタジオへ いけ!{NLTB}ながいぞう!{EL}
-ENG=
+JPN=サブゴロウ「どうだ。 わしの かわりに{NLTB}はしれば でしに してやるぞ。{NLTB}やります{NLTB}えんりょします{EL}
+ENG=Sabugorō: Compete for me and I'll{NL}make you my apprentice.{NLTB}I'll do it{NLTB}No, thanks{EL}
 
 POINTER=58258;5AB60
 DATA=5AB60;94 44 52 DE A8 FA B3 8B B3 8B FF BF 67 93 DF 37 AB DB F7 06 C5 97 F7 FF B1 BD AF 30 51 AD D3 AD 81 06 EE 97 9F 63 BF FF B3 4B AD 5D A9 EF 5F F7 0C 65 31 65 97 A7 97 A5 30 97 E1 4D 2E 06 5F AD AD CD 72 5F 7E 06 89 97 BB A9 D7 30 98 9E 56 B0 87 FF AD 91 7E 06 B3 4B AD 5D A9 7E 00 
 JPN=サブゴロウ「なかなか みどころが ある。{NLTB}よし。 おまえの げいめいは{NLTB}『したづみ ながいぞう』だ。{WPCLTB}では でしとしての しゅぎょう{NLTB}だいいっぽだ!{NLTB}ほしのうらの スタジオへ いけ!{NLTB}ながいぞう!{EL}
-ENG=
+ENG=Sabugorō: What a great idea!{NL}Okay, your stage name is now{NL}"Butler Forever".{WPCL}Then it's time for your first lesson!{NL}Go to the studio on the other side of{NL}the planet, Butler!{EL}
 
 POINTER=5825A;5ABBD
 DATA=5ABBD;94 44 52 DE A8 FA 84 C8 32 FF B1 DF 8B D5 BB D3 F7 06 C7 97 30 65 97 B5 B3 DD 41 FF 99 41 D7 97 AD 06 51 AD D3 AD D5 FF A3 91 A5 C1 CD 9F BB B5 32 00 
 JPN=サブゴロウ「フン…… おろかものめ。{NLTB}わしの でしになれば すばらしい{NLTB}げいめいも つけてやったのに……{EL}
-ENG=
+ENG=Sabugorō: Uhh...you fool.{NL}If you became my apprentice, I would{NL}have given you a great stage name...{EL}
 
 POINTER=5825C;5ABEF
 DATA=5ABEF;94 44 52 DE A8 FA C7 8B DB D5 BB B5 31 C7 8B DB BB A9 F7 06 C1 81 D9 FF AF C9 8B 93 9D FF A9 9F BB 97 C9 59 AD F7 08 93 DD 8B D7 D5 FF 39 57 C9 FF 99 DB 4B C5 AD F7 00 
 JPN=サブゴロウ「わかるものには わかるのう。{NLTB}やはり えんかこそ うたのしんずい。{WPNLTB}これからも しょうじん するがよい。{EL}
-ENG=
+ENG=Sabugorō: Those who understand will{NL}understand.{NL}Enka is the essence of music.{WPNL}Keep up the good work.{EL}
 
 POINTER=5825E;5AC27
 DATA=5AC27;94 44 52 DE A8 FA 33 08 AF C9 8B 30 BF A1 A7 31 9F AF DB BF A1 F7 06 95 AD C5 A9 FF 95 DD 59 36 56 CC A7 9F AF DB 06 99 4B 9F 93 9D FF A9 A3 8F 97 AD BB 5F 33 0C A0 8E 96 E2 F8 CC 7E 00 
 JPN=サブゴロウ「……{WPNLTB}えんかの みちとは たえるみち。{NLTB}さいよう されずに ジッとたえる{NLTB}すがたこそ うつくしいのだ……{WPCLTB}チクショーッ!{EL}
-ENG=
+ENG=Sabugorō: ...{WPCL}The way of enka is the way of{NL}endurance.{NL}There's beauty in staying composed in{NL}the face of rejection...{WPCL}Goddamnit!{EL}
 
 POINTER=58260;5AC65
 DATA=5AC65;A8 9E A8 5E F8 FA D0 D0 CC 7E 7F 08 9D 93 BB 8C BE FF C6 9E 96 CB FF C5 C9 5F 8B B9 7F 06 81 AD 06 AD AD AF 00 
 JPN=ウタウダー「ムムッ!?{WPNLTB}そこのキミ ワタシを よんだかね?{NLTB}はい{NLTB}いいえ{EL}
-ENG=
+ENG=Masinger: humph!?{WPNL}Hey, you there, did you call me?{NLTB}Yes{NLTB}No{EL}
 
 POINTER=58262;5AC8A
 DATA=5AC8A;A8 9E A8 5E F8 FA C1 81 D9 FF 9D A9 8B F7 06 97 8B 97 FF C6 9E 96 37 8D 9F 8B D7 B5 81 06 D5 A9 FF AB C9 97 C9 5F F7 00 
 JPN=ウタウダー「やはり そうか。{NLTB}しかし ワタシが きたからには{NLTB}もう あんしんだ。{EL}
-ENG=
+ENG=Masinger: As I thought.{NL}But now that I'm here, the place is{NL}safe.{EL}
 
 POINTER=58264;5ACB2
 DATA=5ACB2;A8 9E A8 5E F8 FA 82 F8 DE F8 FF 83 A7 99 57 FF 75 78 B9 C9 06 8B C5 A9 9B C9 97 FF A8 9E A8 5E F8 F0 06 9F 5F AD BD FF 95 C9 57 2E 7E 00 
 JPN=ウタウダー「ヒーロー ひとすじ 25ねん{NLTB}かようせんし ウタウダーA{NLTB}ただいま さんじょう!{EL}
-ENG=
+ENG=Masinger: Ordinary Hero for 25 years.{NL}Song warrior Masinger-A.{NL}I'm back!{EL}
 
 POINTER=58266;5ACE0
 DATA=5ACE0;A8 9E A8 5E F8 FA 84 CC 84 CC 84 CC 32 06 B0 8E 9E F8 44 30 A4 F8 BC 81 06 93 BB C6 9E 96 36 BD 8B 9B 9F BD AF 7E 08 A6 A8 CC 7E 00 
 JPN=ウタウダー「フッフッフッ……{NLTB}オクターブの テーマは{NLTB}このワタシに まかせたまえ!{WPNLTB}トウッ!{EL}
-ENG=
+ENG=Masinger: *hehehe*{NL}Let me decide the Octave theme!{NL}*whoosh*{EL}
 
 POINTER=58268;5AD0C
 DATA=5AD0C;A8 9E A8 5E F8 FA B3 B5 7E FF A4 F8 BC 91 2D AD 9B C9 7F 08 A8 CC 32 7E FF 8D E1 A9 36 93 BB AB AD 5F BB 06 9F 9F 8B AD 30 8D 59 4B 32 06 A7 A5 D5 FF 65 D7 DD 9D A9 B5 3A 32 00 
 JPN=ウタウダー「なに! テーマけっていせん?{WPNLTB}ウッ……! きゅうに このあいだの{NLTB}たたかいの きずが……{NLTB}とても でられそうにない……{EL}
-ENG=
+ENG=Masinger: What! A theme song playoff?{NL}Ugh...I'm still wounded from the last{NL}fight. I don't have a chance...{EL}
 
 POINTER=5826A;5AD47
 DATA=5AD47;A8 9E A8 5E F8 FA 8E CC FF 93 C9 B3 A7 8D FF 5F DD 8B 4B 06 5F DD 8B 37 9F A1 AB 4B 2D 8F DD 9F D7 32 7E 06 C1 D9 BD 99 06 32 00 
 JPN=ウタウダー「クッ こんなとき だれかが{NLTB}だれかが たちあがってくれたら……!{NLTB}やります{NLTB}……{EL}
-ENG=
+ENG=Masinger: At times like these, I wish{NL}someone would step up to the plate...!{NLTB}I'll do it{NLTB}......{EL}
 
 POINTER=5826C;5AD72
 DATA=5AD72;A8 9E A8 5E F8 FA 9D A9 8B 7E FF AD C1 FF C5 8B CD 9F 7E 06 32 57 CF 3A FF 54 C8 B8 C8 5F F7 06 C6 9E 96 BB 8B D7 5F 95 AF FF 8A C8 6F 8C B3 D7 32 0C 95 AB FF 89 97 BB A9 D7 30 98 9E 56 B0 87 06 97 E1 A3 67 A9 9B C5 CC 7E 00 
 JPN=ウタウダー「そうか! いや よかった!{NLTB}……じゃない ザンネンだ。{NLTB}ワタシのからださえ カンペキなら……{WPCLTB}さあ ほしのうらの スタジオへ{NLTB}しゅつどうせよッ!{EL}
-ENG=
+ENG=Masinger: Okay! Thank goodness!{NL}...I'm sorry.{NL}If only my physique was perfect...{WPCL}Let's head to the studio on the other{NL}side of the planet!{EL}
 
 POINTER=5826E;5ADBD
 DATA=5ADBD;A8 9E A8 5E F8 FA 32 08 B3 FF B3 B5 CB FF AD 2D DB C9 5F FF 8C BE 81 F7 06 57 2E 5F C9 36 8D BD 2D DB 65 81 3A 8B F7 08 82 F8 DE F8 31 B5 51 9F D9 97 3A BB 5F 7E 00 
 JPN=ウタウダー「……{WPNLTB}な なにを いってるんだ キミは。{NLTB}じょうだんに きまってるではないか。{WPNLTB}ヒーローは にげたりしないのだ!{EL}
-ENG=
+ENG=Masinger: ...What did you say?{NL}You must be joking, right?{NL}Heroes never give up!{EL}
 
 POINTER=58270;5ADF4
 DATA=5ADF4;A8 9E A8 5E F8 FA 80 CC 80 CC 80 CC 80 CC 80 CC 80 7E 08 9B AD 4D 31 8B B3 D7 59 FF 8B A3 7E 06 8C BE D5 FF C5 8F C1 CD 9F F7 FF 93 DD 8B D7 D5 06 9B AD 4D BB 9F D3 FF A7 D5 36 9F 9F 8B B1 A9 7E 00 
 JPN=ウタウダー「ハッハッハッハッハッハ!{WPNLTB}せいぎは かならず かつ!{NLTB}キミも よくやった。 これからも{NLTB}せいぎのため ともに たたかおう!{EL}
-ENG=
+ENG=Masinger: Hahahahaha!{WPNL}Justice must be served. You did well.{NL}Let's continue to work together for{NL}what's right!{EL}
 
 POINTER=58272;5AE36
 DATA=5AE36;A8 9E A8 5E F8 FA C1 81 D9 FF C5 DB A7 97 B3 BF B5 81 32 08 AC FF AC C0 FF 9D C9 B3 93 A7 31 3A 7E 06 93 C9 67 31 4E DC F8 A6 A8 9E A8 5E F8 7A A7 97 A5 06 95 AD 97 E1 CD 6A A3 5F 7E 00 
 JPN=ウタウダー「やはり よるとしなみには……{WPNLTB}イ イヤ そんなことは ない!{NLTB}こんどは グレートウタウダー7として{NLTB}さいしゅっぱつだ!{EL}
-ENG=
+ENG=Masinger: As expected, my age is{NL}beginning to tell on me...{WPNL}N...no, that cannot be!{WPCL}Let's start over!{NL}Now as the Great Masinger 7!{EL}
 
 POINTER=58274;5AE74
 DATA=5AE74;8E D8 6B F8 FA B1 81 C5 A9 53 55 AD BD 99 CC 6B F8 FE 06 D4 D4 B2 96 FF 8E D8 92 65 F8 99 F7 06 8E D8 6B F8 2D FF C5 C9 65 B8 FE 00 
 JPN=クリピー「おはようございますッピー♥{NLTB}モモナシ クリコでーす。{NLTB}クリピーって よんでネ♥{EL}
-ENG=
+ENG=Clippy: Good morning♥{NL}Ma name is Momonashi Kuriko.{NL}You can call me Clippy♥{EL}
 
 POINTER=58276;5AEA0
 DATA=5AEA0;8E D8 6B F8 FA AA 9E 96 E6 F8 FF A9 9F BB 93 A7 A7 8B E4 F8 08 C5 8F FF C7 8B D7 3A C9 65 99 91 67 EC F8 08 AD CD 39 91 C9 D3 AD FF 4B C9 41 DB 8B D7 E4 F8 08 B1 A9 AF C9 FF C5 DF 6B 8F B9 FE 00 
 JPN=クリピー「アタシィー うたのこととかァー{WPNLTB}よく わからないんですけどォー{WPNLTB}いっしょうけんめい がんばるからァー{WPNLTB}おうえん よろピくね♥{EL}
-ENG=
+ENG=Clippy: Umm...About singing...{NL}I don't know much about singing,{NL}but I'll try my best so please be{NL}supportive♥{EL}
 
 POINTER=58278;5AEE1
 DATA=5AEE1;8E D8 6B F8 FA AF F8 FF A8 CC 9C EC F8 7E 08 5F 2D EA FF AA 9E 96 FF 8D 2E 9D A9 B3 C9 A5 06 65 8D 3A D5 F8 C9 7E 08 C0 5E C0 5E C0 5E C0 5E F8 7E 00 
 JPN=クリピー「えー ウッソォー!{WPNLTB}だってェ アタシ きょうそうなんて{NLTB}できないもーん!{WPNLTB}ヤダヤダヤダヤダー!{EL}
-ENG=
+ENG=Clippy: *sobs*{WPNL}You know I can't compete!{WPNL}No, no, no, no, no!{EL}
 
 POINTER=5827A;5AF13
 DATA=5AF13;8E D8 6B F8 FA B8 FF 8B C7 D9 B5 C1 2D 8F DD 3A 7F 06 8E D8 6B F8 8B D7 30 B0 7D 03 04 B8 7D 03 04 4A 7D 03 04 AC FE 06 81 AD 06 AD AD AF 00 
 JPN=クリピー「ネ かわりにやってくれない?{NLTB}クリピーからの オ・{03}{04}ネ・{03}{04}ガ・{03}{04}イ♥{NLTB}はい{NLTB}いいえ{EL}
-ENG=
+ENG=Clippy: Will you do it for me?{NL}Please {03}{04}do me {03}{04}this {03}{04}favor♥{NLTB}Yes{NLTB}No{EL}
 
 POINTER=5827C;5AF42
 DATA=5AF42;8E D8 6B F8 FA D6 CC 6B F8 FF C0 CC 6B F8 FF A9 DD 6B F8 7E 08 9D DD 57 CF AB B9 F8 FF 89 97 BB A9 D7 4B C7 BB EC F8 06 98 9E 56 B0 87 FF AD 2D 8F DD DB E8 7F 08 8E D8 6B F8 FF B1 A9 AF C9 97 A1 CF A9 FE 00 
 JPN=クリピー「ラッピー ヤッピー うれピー!{WPNLTB}それじゃあねー ほしのうらがわのォー{NLTB}スタジオへ いってくれるゥ?{WPNLTB}クリピー おうえんしちゃう♥{EL}
-ENG=
+ENG=Clippy: Yippee! Happy Clippy!{WPNL}Okay, please go to the studio on the{NL}other side of the planet.{WPNL}I'm rooting for you♥{EL}
 
 POINTER=5827E;5AF87
 DATA=5AF87;8E D8 6B F8 FA AF EA F8 CC 7E 7F 06 A1 E3 F9 96 E2 CC 8E F8 7E 06 97 C9 57 D7 C9 B2 E4 F8 AC F7 06 B3 C9 65 B3 C9 65 B3 C9 65 EA F9 7F 00 
 JPN=クリピー「えェーッ!?{NLTB}ちょ〜ショックー!{NLTB}しんじらんナァーイ。{NLTB}なんでなんでなんでェ〜?{EL}
-ENG=
+ENG=Clippy: Huh!?{NL}I'm shocked!{NL}I can't believe you.{NL}Why, why, why?{EL}
 
 POINTER=58280;5AFB5
 DATA=5AFB5;8E D8 6B F8 FA 8E D8 92 FF A9 DD 6B F8 7E 06 AF F8 CD A7 EC FF 03 04 93 DD D5 EC FF 03 04 BF C9 B3 E4 03 04 06 AA 9E 96 37 8B C7 AD AD 8B D7 E4 7F 00 
 JPN=クリピー「クリコ うれピー!{NLTB}えーっとォ {03}{04}これもォ {03}{04}みんなァ{03}{04}{NLTB}アタシが かわいいからァ?{EL}
-ENG=
+ENG=Clippy: Happy Clippy!{NL}Uhh...{03}{04}do you think...{03}{04}me being cute...{03}{04}{NL}helped at all?{EL}
 
 POINTER=58282;5AFE7
 DATA=5AFE7;8E D8 6B F8 FA A0 E2 CC A6 F9 FF 67 A9 B3 2D C9 BB C5 7E 06 B3 C9 65 FF AA 9E 96 37 95 AD C5 A9 06 95 DD 3A C6 90 7F 0C 56 E2 F8 5E C8 57 CF 3A C7 C5 7E 06 BC B8 F8 56 CE F8 FF 67 93 B3 BB 06 BC B8 F8 56 CE F8 7E 00 
 JPN=クリピー「チョット〜 どうなってんのよ!{NLTB}なんで アタシが さいよう{NLTB}されないワケ?{WPCLTB}ジョーダンじゃないわよ!{NLTB}マネージャー どこなの{NLTB}マネージャー!{EL}
-ENG=
+ENG=Clippy: What the heck is going on?{NL}Why wasn't I selected?{NL}You've got to be kidding me!{WPCL}Manager! Where's my manager?{EL}
 
 POINTER=58284;5B02F
 DATA=5B02F;17 FA 88 F8 CC 88 CC 88 7E 0C 93 DD 31 93 DD 31 81 57 D3 BD 97 A5 F7 06 C6 9E 8E 96 4B EE A9 A1 E1 A9 AD A1 BB 59 BB A9 EF 06 25 80 F8 69 F8 65 99 F7 0C B3 8B B3 8B FF 57 E1 C9 A1 2E B5 AD 2D 06 B1 D7 DD DB C5 A9 65 99 4B 32 0C C3 A9 39 30 AF AD 8B C9 81 06 93 BB C6 9E 8E 96 30 59 57 2E B5 06 8B 4B C1 8F BB 65 99 7E 00 
-JPN=ホァクカ「ホーッホッホ!{WPCLTB}これは これは はじめまして。{NLTB}ワタクシが『うちゅういちのずのう』{NLTB}ミリオンブレイン・ハーパーです。{WPCLTB}なかなか じゅんちょうにいって{NLTB}おられるようですが……{WPCLTB}ゆうしょうの えいかんは{NLTB}このワタクシの ずじょうに{NLTB}かがやくのです!{EL}
-ENG=
+JPN={17}「ホーッホッホ!{WPCLTB}これは これは はじめまして。{NLTB}ワタクシが『うちゅういちのずのう』{NLTB}ミリオンブレイン・ハーパーです。{WPCLTB}なかなか じゅんちょうにいって{NLTB}おられるようですが……{WPCLTB}ゆうしょうの えいかんは{NLTB}このワタクシの ずじょうに{NLTB}かがやくのです!{EL}
+ENG={17}: Ho ho ho!{WPCL}Well, well, nice to meet you.{NL}I'm Harper Millionbrain, the "most{NL}intelligent man in the universe".{WPCL}You seem to be on a pretty good{NL}roll...{WPCL}But the laurels of the victory will{NL}rest on my own head!{EL}
 
 POINTER=58286;5B09A
 DATA=5B09A;17 FA 88 F8 CC 88 CC 88 7E 0C BD 5F FF AB 8D D7 D3 A5 81 AD 3A BB 65 99 B9 F7 06 B3 8B B3 8B FF C1 D9 BD 99 B3 F7 00 
-JPN=ホァクカ「ホーッホッホ!{WPCLTB}まだ あきらめてはいないのですね。{NLTB}なかなか やりますな。{EL}
-ENG=
+JPN={17}「ホーッホッホ!{WPCLTB}まだ あきらめてはいないのですね。{NLTB}なかなか やりますな。{EL}
+ENG={17}: Ho ho ho!{WPCL}You haven't given up yet.{NL}You are very good at this.{EL}
 
 POINTER=58288;5B0C1
 DATA=5B0C1;17 FA 88 A8 FF AB B3 9F 31 82 F8 DE F8 CB 06 AF D7 43 BD 97 9F 8B F7 0C 5B C9 A9 A1 E1 A9 CB FF 8B 91 B7 91 DB 06 34 93 9D 06 51 C9 5F AD 30 82 F8 DE F8 A7 06 AD A9 C7 91 65 99 B3 F7 0C B3 D7 41 FF C6 9E 8E 96 31 AA AC 66 DA BB 06 8B C7 D9 36 81 97 D9 BD 99 8B F7 0C C6 9E 8E 96 30 84 E4 C8 B5 31 C7 8B AD 92 D5 06 B1 B1 5B AD FF B1 D9 BD 99 8B D7 B3 F7 06 88 F8 CC 88 CC 88 7E 00 
-JPN=ホァクカ「ホウ あなたは ヒーローを{NLTB}えらびましたか。{WPCLTB}ぜんうちゅうを かけぬける{NLTB}ダイナマイ・トレーサーこそ{NLTB}げんだいの ヒーローと{NLTB}いうわけですな。{WPCLTB}ならば ワタクシは アイドルの{NLTB}かわりに はしりますか。{WPCLTB}ワタクシの ファンには わかいコも{NLTB}おおぜい おりますからな。{NLTB}ホーッホッホ!{EL}
-ENG=
+JPN={17}「ホウ あなたは ヒーローを{NLTB}えらびましたか。{WPCLTB}ぜんうちゅうを かけぬける{NLTB}ダイナマイ・トレーサーこそ{NLTB}げんだいの ヒーローと{NLTB}いうわけですな。{WPCLTB}ならば ワタクシは アイドルの{NLTB}かわりに はしりますか。{WPCLTB}ワタクシの ファンには わかいコも{NLTB}おおぜい おりますからな。{NLTB}ホーッホッホ!{EL}
+ENG={17}: So you've picked the hero{NL}singer. The Dynami Tracers, running{NL}through the entire universe, are the{NL}heroes of our time.{WPCL}I guess I'll stand in for the idol.{NL}There are a lot of young girls who{NL}are my fans.{NL}Ho ho ho!{EL}
 
 POINTER=5828A;5B140
 DATA=5B140;17 FA B2 DA 88 66 FF DE CC 8E 65 99 8B F7 06 95 99 4B 36 B1 C7 8B 8F A5 AD D7 CD 97 CF DB F7 06 93 C9 B3 FF 9D A9 5D A9 97 AD FF 91 AD 81 8F B3 06 B1 C9 4B 8F CB FF AF D7 45 A7 81 33 0C B3 D7 41 FF C6 9E 8E 96 31 82 F8 DE F8 A4 F8 BC 65 06 C6 9E 8E 96 30 4B AD 9B C9 69 DC F8 66 B5 06 85 95 C7 97 AD FF 8D E3 8F CB 06 A3 8F DB A7 97 BD 99 8B F7 FF 88 F8 CC 88 CC 88 7E 00 
-JPN=ホァクカ「ナルホド ロックですか。{NLTB}さすがに おわかくていらっしゃる。{NLTB}こんな そうぞうしい けいはくな{NLTB}おんがくを えらぶとは……{WPCLTB}ならば ワタクシは ヒーローテーマで{NLTB}ワタクシの がいせんパレードに{NLTB}ふさわしい きょくを{NLTB}つくるとしますか。 ホーッホッホ!{EL}
-ENG=
+JPN={17}「ナルホド ロックですか。{NLTB}さすがに おわかくていらっしゃる。{NLTB}こんな そうぞうしい けいはくな{NLTB}おんがくを えらぶとは……{WPCLTB}ならば ワタクシは ヒーローテーマで{NLTB}ワタクシの がいせんパレードに{NLTB}ふさわしい きょくを{NLTB}つくるとしますか。 ホーッホッホ!{EL}
+ENG={17}: I see you've picked rock.{NL}As expected from a young man.{NL}How could you choose such loud,{NL}frivolous and boisterous music?{WPCL}Then I shall compose a song with{NL}a hero theme for my triumphal return{NL}parade.{NL}Ho ho ho!{EL}
 
 POINTER=5828C;5B1BC
 DATA=5B1BC;17 FA B1 C1 FF AB B3 9F 31 AE C8 8A BB 06 8B C7 D9 36 81 97 DB BB 65 99 8B F7 06 B3 8B B3 8B FF 96 44 AC FF 53 97 E1 BF 65 99 B3 F7 0C B3 D7 41 FF C6 9E 8E 96 31 B2 A8 B3 C0 C8 4E BB 06 B1 C9 4B 8F FF DE CC 8E C8 DE F8 DA 65 06 84 E6 F8 40 F8 99 DB A7 FF 97 BD 99 8B B3 F7 06 88 F8 CC 88 CC 88 7E 00 
-JPN=ホァクカ「おや あなたは エンカの{NLTB}かわりに はしるのですか。{NLTB}なかなか シブイ ごしゅみですな。{WPCLTB}ならば ワタクシは ナウなヤングの{NLTB}おんがく ロックンロールで{NLTB}フィーバーすると しますかな。{NLTB}ホーッホッホ!{EL}
-ENG=
+JPN={17}「おや あなたは エンカの{NLTB}かわりに はしるのですか。{NLTB}なかなか シブイ ごしゅみですな。{WPCLTB}ならば ワタクシは ナウなヤングの{NLTB}おんがく ロックンロールで{NLTB}フィーバーすると しますかな。{NLTB}ホーッホッホ!{EL}
+ENG={17}: So you're the stand-in for{NL}that enka singer?{NL}You have a very refined taste, don't{NL}you?{WPCL}In that case, I'm going to go for the{NL}music of the youth, that rock & roll{NL}fever. Ho ho ho!{EL}
 
 POINTER=5828E;5B220
 DATA=5B220;17 FA B1 C1 B1 C1 FF AA AC 66 DA A7 81 32 06 B3 8B B3 8B FF 57 AD 97 8D FF 8B 57 2E 65 06 AD D7 CD 97 CF DB F7 FF 32 AC AE AC AE FF 47 A3 B5 06 8B BD AD BD 9B C9 A7 D5 F7 0C B3 D7 41 FF C6 9E 8E 96 31 AE C8 8A A7 C1 D7 CB 06 AF D7 43 BD 39 F7 06 88 F8 CC 88 CC 88 7E 00 
-JPN=ホァクカ「おやおや アイドルとは……{NLTB}なかなか じいしき かじょうで{NLTB}いらっしゃる。 ……イエイエ べつに{NLTB}かまいませんとも。{WPCLTB}ならば ワタクシは エンカとやらを{NLTB}えらびましょう。{NLTB}ホーッホッホ!{EL}
-ENG=
+JPN={17}「おやおや アイドルとは……{NLTB}なかなか じいしき かじょうで{NLTB}いらっしゃる。 ……イエイエ べつに{NLTB}かまいませんとも。{WPCLTB}ならば ワタクシは エンカとやらを{NLTB}えらびましょう。{NLTB}ホーッホッホ!{EL}
+ENG={17}: Gee, what's an idol?{NL}She seems to be very self-conscious...{NL}Surely that's not a problem.{WPCL}Then I'll choose the enka singer.{NL}Ho ho ho!{EL}
 
 POINTER=58290;5B27A
 DATA=5B27A;17 FA C6 9E 8E 96 31 53 D7 C9 BB A7 B1 D9 BB 06 A7 97 C5 D9 F7 FF BF B3 95 C9 FF 99 93 97 81 06 A5 8B 51 C9 FF 97 A5 8F 5F 95 AD C5 F7 06 88 F8 CC 88 CC 88 7E 00 
-JPN=ホァクカ「ワタクシは ごらんのとおりの{NLTB}としより。 みなさん すこしは{NLTB}てかげん してくださいよ。{NLTB}ホーッホッホ!{EL}
-ENG=
+JPN={17}「ワタクシは ごらんのとおりの{NLTB}としより。 みなさん すこしは{NLTB}てかげん してくださいよ。{NLTB}ホーッホッホ!{EL}
+ENG={17}: As you can see, I am older{NL}than you.{NL}Please go easy on me.{NL}Ho ho ho!{EL}
 
 POINTER=58292;5B2B0
 DATA=5B2B0;AD C1 81 C1 FF 93 BD CD 9F FF 67 A9 97 9F D5 BB 8B F9 05 A1 E3 AD A7 FF 9D 93 AD 8F FF AB B3 9F 95 BD F9 05 C5 2D D7 CD 97 CF AD FF FF 8D AD A5 D7 CD 97 CF AD F9 05 8D 8F D5 FF B3 BF 5F 30 FF D5 BB 4B 9F D9 F9 0B C7 9F 97 31 93 93 30 FF B1 A9 95 BD C5 F9 05 93 93 31 A9 9F 49 97 FF FF A9 9F BB 89 97 F9 05 A4 F8 BC 37 B3 91 D9 CF FF 81 B3 97 B5 B3 D7 B7 F9 0B 91 DD 67 FF 77 B5 C9 30 FF 95 CD 8D E3 8F 8B F9 05 A4 F8 BC 31 83 A7 A3 FF FF 93 A9 89 31 77 B5 C9 F9 05 AB A1 D7 CB FF 9F A5 DD 41 FF 93 A1 D7 37 9F 9F 59 F9 05 89 C9 36 67 97 9F D7 FF FF AD AD BB C1 D7 F9 00 
 JPN=いやはや こまった どうしたものか〜{NL}ちょいと そこいく あなたさま〜{NL}よってらっしゃい  きいてらっしゃい〜{NL}きくも なみだの  ものがたり〜{WPCL}わたしは ここの  おうさまよ〜{NL}ここは うたぼし  うたのほし〜{NL}テーマが なけりゃ はなしにならぬ〜{WPCL}けれど 4にんの  さっきょくか〜{NL}テーマは ひとつ  こうほは 4にん〜{NL}あちらを たてれば こちらが たたず〜{NL}ほんに どしたら  いいのやら〜{EL}
-ENG=
+ENG=Oh, I don't know what to do~{NL}I'll be right there, my de~ar{NL}Come and listen to me~{NL}Listen to my tale of wo~e{WPCL}I'm the king of this pla~ce{NL}This is the planet of so~ngs{NL}Without a the~me{NL}There is no sto~ry{WPCL}One of four sin~gers{NL}One theme, four candida~tes{NL}You can't please every~one{NL}I really don't know what to do~{EL}
 
 POINTER=58294;5B36E
 DATA=5B36E;9D A9 5F FF 9D A9 5F C5 7E FF B1 D5 AD A3 AD 9F C5 F9 7E 05 AD CD 9D FF 77 B5 C9 65 FF FF 8D D3 D9 CF AD AD F9 05 81 97 2D FF 81 97 2D FF 8D E3 8F 63 8F D9 F9 05 A4 F8 BC 9C C8 4E 30 FF FF 91 2D AD 9B C9 F9 7E 0B D5 AD A1 67 FF 9D 93 AD 8F FF AB B3 9F 95 BD F9 05 77 B5 C9 36 A3 9F AF A5 FF 8F 5F 95 AD B3 F9 05 A4 F8 BC 9C C8 4E 30 FF FF 91 2D AD 9B C9 F9 7E 00 
 JPN=そうだ そうだよ! おもいついたよ〜!{NL}いっそ 4にんで  きめりゃいい〜{NL}はしって はしって きょくづくり〜{NL}テーマソングの   けっていせん〜!{WPCL}もいちど そこいく あなたさま〜{NL}4にんに つたえて くださいな〜{NL}テーマソングの   けっていせん〜!{EL}
-ENG=
+ENG=Yes, yes, yes! I've got an idea~!{NL}Four contestants, one wi~nner{NL}Running, running, song wri~ting{NL}A theme song play~off!{WPCL}Go back there again, my dea~r{NL}Inform the four contesta~nts{NL}of the theme song play~off!{EL}
 
 POINTER=58296;5B3E7
 DATA=5B3E7;A1 E3 AD A7 FF BD 2D C5 FF B1 8D CF 8F 95 C9 F9 05 57 A3 31 BD 5F 93 93 FF FF A5 A3 8B 59 65 F9 05 93 DD 8B D7 FF 95 8D 31 FF AB 9D 47 BD 9B C9 F9 05 9D DD 65 31 BF B3 95 C9 FF 95 C5 A9 B3 D7 F9 00 
@@ -1021,82 +1021,82 @@ ENG=
 POINTER=58298;5B429
 DATA=5B429;06 FF FF FF A7 8F 9B A3 98 9E 56 B0 06 EE BE E0 F8 56 CC 8E 7D 84 E4 8E A6 D8 F8 EF 03 04 03 00 
 JPN={NLTB}   とくせつスタジオ{NLTB}『ミュージック・ファクトリー』{03}{04}{03}{EL}
-ENG=
+ENG={NLTB}Special Studio "Music Factory"{03}{06}{EL}
 
 POINTER=5829A;5B449
 DATA=5B449;C1 2D 8D 9F 8D 9F FF FF FF A3 AD B5 8D 9F F9 7E 05 A4 F8 BC 9C C8 4E 30 FF FF 91 2D AD 9B C9 F9 05 81 97 2D FF 81 97 2D FF 83 9F 99 D7 81 97 D9 F9 05 81 C1 AD FF AA B2 9E CB FF FF 95 AD C5 A9 C5 F9 0B 39 45 31 75 97 E1 A9 FF BD CD 9F B3 97 F9 7E 05 BF B3 95 C9 FF C5 A9 AD 31 FF AD AD 65 99 8B F9 05 9D DD 65 31 AD C5 AD C5 FF FF 89 C9 41 C9 BB F9 05 BD 8F CB FF AB 91 DB A7 FF FF FF AD 9F 97 BD 39 F9 7E 00 
 JPN=やってきたきた   ついにきた〜!{NL}テーマソングの   けっていせん〜{NL}はしって はしって ひたすらはしり〜{NL}はやい アナタを  さいようよ〜{WPCL}しょうぶは 2しゅう まったなし〜!{NL}みなさん よういは  いいですか〜{NL}それでは いよいよ  ほんばんの〜{NL}まくを あけると   いたしましょう〜!{EL}
-ENG=
+ENG=The moment has co~me!{NL}The theme song play~off{NL}Run, run, keep run~ning{NL}Go fast and you're cho~sen{WPCL}Victory is only two laps a~way!{NL}Is everybody rea~dy?{NL}This time, it's the real de~al{NL}Let's sta~rt!{EL}
 
 POINTER=5829C;5B4D1
 DATA=5B4D1;FF FF 76 FB 03 05 75 FB 03 05 74 FB 03 05 98 9E F8 A6 7E 03 00 
-JPN=  3…{03}{NL}2…{03}{NL}1…{03}{NL}スタート!{03}{EL}
-ENG=
+JPN=  3…{03}{05}2…{03}{05}1…{03}{05}スタート!{03}{EL}
+ENG=3...{03}{05}2...{03}{05}1...{03}{05}Start!{03}{EL}
 
 POINTER=5829E;5B4E6
 DATA=5B4E6;FF FF 82 F8 DE F8 A4 F8 BC FF 95 AD C5 A9 F9 7E 03 02 03 00 
 JPN=  ヒーローテーマ さいよう〜!{03}{02}{03}{EL}
-ENG=
+ENG={CL}1st: Hero{03}{02}{03}{EL}
 
 POINTER=582A0;5B4FA
 DATA=5B4FA;FF FF FF AF C9 8B FF 95 AD C5 A9 F9 7E 03 02 03 00 
 JPN=   えんか さいよう〜!{03}{02}{03}{EL}
-ENG=
+ENG={CL}1st: Enka{03}{02}{03}{EL}
 
 POINTER=582A2;5B50B
 DATA=5B50B;FF FF FF AA AC 66 DA FF 95 AD C5 A9 F9 7E 03 02 03 00 
 JPN=   アイドル さいよう〜!{03}{02}{03}{EL}
-ENG=
+ENG={CL}1st: Idol{03}{02}{03}{EL}
 
 POINTER=582A4;5B51D
 DATA=5B51D;FF FF DE CC 8E C8 DE F8 DA FF 95 AD C5 A9 F9 7E 03 02 03 00 
 JPN=  ロックンロール さいよう〜!{03}{02}{03}{EL}
-ENG=
+ENG={CL}1st: Rock{03}{02}{03}{EL}
 
 POINTER=582A6;5B588
 DATA=5B588;FF FF FF FF FF FF FF FF 52 F8 DA 7E 7E 03 02 03 00 
 JPN=        ゴール!!{03}{02}{03}{EL}
-ENG=
+ENG={CL}         Goal!!{03}{02}{NL}{03}{EL}
 
 POINTER=582A8;5B599
 DATA=5B599;8B C9 57 C9 8B B3 D3 30 D2 DE 64 E6 F8 81 F9 05 BF 53 A7 74 AD 65 FF FF FF 52 F8 DA 97 9F F9 05 82 F8 DE F8 A4 F8 BC 36 91 2D AD 65 F9 99 7E 00 
 JPN=かんじんかなめの メロディーは〜{NL}みごと1いで   ゴールした〜{NL}ヒーローテーマに けっていで〜す!{EL}
-ENG=
+ENG=The most crucial part of the melody~{NL}Is crossing the finish line fi~rst{NL}The hero theme has been cho~sen!{EL}
 
 POINTER=582AA;5B5C9
 DATA=5B5C9;8B C9 57 C9 8B B3 D3 30 D2 DE 64 E6 F8 81 F9 05 BF 53 A7 74 AD 65 FF FF FF 52 F8 DA 97 9F F9 05 AF C9 8B B5 91 2D AD FF 5F AD 91 2D F9 AD 7E 00 
 JPN=かんじんかなめの メロディーは〜{NL}みごと1いで   ゴールした〜{NL}えんかにけってい だいけって〜い!{EL}
-ENG=
+ENG=The most crucial part of the melody~{NL}Is crossing the finish line fi~rst{NL}The enka theme has been cho~sen!{EL}
 
 POINTER=582AC;5B5F9
 DATA=5B5F9;8B C9 57 C9 8B B3 D3 30 D2 DE 64 E6 F8 81 F9 05 BF 53 A7 74 AD 65 FF FF FF 52 F8 DA 97 9F F9 05 AA AC 66 DA 9C C8 4E 36 91 2D AD 65 F9 99 7E 00 
 JPN=かんじんかなめの メロディーは〜{NL}みごと1いで   ゴールした〜{NL}アイドルソングに けっていで〜す!{EL}
-ENG=
+ENG=The most crucial part of the melody~{NL}Is crossing the finish line fi~rst{NL}The idol theme has been cho~sen!{EL}
 
 POINTER=582AE;5B629
 DATA=5B629;8B C9 57 C9 8B B3 D3 30 D2 DE 64 E6 F8 81 F9 05 BF 53 A7 74 AD 65 FF FF FF 52 F8 DA 97 9F F9 05 DE CC 8E C8 DE F8 DA 36 91 2D AD 65 F9 99 7E 00 
 JPN=かんじんかなめの メロディーは〜{NL}みごと1いで   ゴールした〜{NL}ロックンロールに けっていで〜す!{EL}
-ENG=
+ENG=The most crucial part of the melody~{NL}Is crossing the finish line fi~rst{NL}The rock theme has been cho~sen!{EL}
 
 POINTER=582B0;5B659
 DATA=5B659;AD C1 AD C1 FF 57 A3 36 FF FF 99 41 D7 97 AD F9 7E 03 04 05 93 DD 5D FF 8D E1 A9 8D E3 8F FF A4 F8 BC 8D E3 8F F9 03 04 05 95 CD 9D 8F FF A9 9F 2D FF FF D5 D7 AD BD 39 F9 03 04 05 C7 DD D7 BB A4 F8 BC FF FF FF FF 5F AD 81 CD 6C 2E F9 7E 00 
 JPN=いやいや じつに   すばらしい〜!{03}{04}{NL}これぞ きゅうきょく テーマきょく〜{03}{04}{NL}さっそく うたって  もらいましょう〜{03}{04}{NL}われらのテーマ    だいはっぴょう〜!{EL}
-ENG=
+ENG=Wow, it's wonderfu~l!{03}{04}{NL}This is the ultimate theme so~ng.{03}{04}{NL}Let's have a sing-along right away~.{03}{04}{NL}The grand reveal of the theme so~ng!{EL}
 
 POINTER=582B2;5B6A9
 DATA=5B6A9;67 A9 65 99 FF BF B3 30 FF 5F AD 81 C9 8D 2E F9 7E 05 93 DD 65 FF C7 9F 97 31 FF 8D D3 BD 97 9F F9 05 93 A7 AB DB 53 A7 36 FF FF 91 2D AD 9B C9 F9 05 A3 4D A3 4D FF A4 F8 BC CB FF A3 8F D9 BD 39 F9 0B D5 AD A1 67 FF C1 2D FF FF BF BD 9B C9 8B F9 7F 05 9F 5F 97 FF 5A DE 8B D7 FF FF C1 D9 B3 B1 97 F9 05 93 93 65 30 9F 8B D7 31 BF C9 B3 69 AA F9 0B 9D DD 65 D5 FF C1 2D FF BF BD 99 8B B3 F9 7F 06 81 AB F9 AD 06 AD AD F9 AF 00 
 JPN=どうです みなの  だいはんきょう〜!{NL}これで わたしは  きめました〜{NL}ことあるごとに   けっていせん〜{NL}つぎつぎ テーマを つくりましょう〜{WPCL}もいちど やって  みませんか〜?{NL}ただし ゼロから  やりなおし〜{NL}ここでの たからは みんなパア〜{WPCL}それでも やって みますかな〜?{NLTB}はあ〜い{NLTB}いい〜え{EL}
-ENG=
+ENG=What a great turn~out!{NL}This is what I've decided to do~.{NL}Every now and then, a play~off{NL}to make a new theme so~ng.{WPCL}Why don't you give it another try~?{NL}You'll have to start from scra~tch.{NL}Return all the treasures from he~re.{WPCL}Do you want to give it another sho~t?{NLTB}Ye~s{NLTB}No~o{EL}
 
 POINTER=582B4;5B737
 DATA=5B737;8B C9 97 CF FF 8B C9 51 8D FF AB D3 AB D7 DD F9 7E 05 77 B5 C9 36 A3 9F AF A5 FF 8F 5F 95 AD B3 F9 05 D5 AD A1 67 FF A4 F8 BC 30 91 2D AD 9B C9 F9 00 
 JPN=かんしゃ かんげき あめあられ〜!{NL}4にんに つたえて くださいな〜{NL}もいちど テーマの けっていせん〜{EL}
-ENG=
+ENG=I'm extremely gratefu~l!{NL}Find four contesta~nts{NL}for the theme song play~off!{EL}
 
 POINTER=582B6;5B769
 DATA=5B769;AB B3 9F 30 A3 8F CD 9F FF AB BB A4 F8 BC F9 05 D5 AD A1 67 FF 8D AD A5 FF FF BF BD 99 8B B3 F9 7F 06 81 AB F9 AD 06 AD AD F9 AF 00 
 JPN=あなたの つくった あのテーマ〜{NL}もいちど きいて  みますかな〜?{NLTB}はあ〜い{NLTB}いい〜え{EL}
-ENG=
+ENG=The theme you helped cre~ate{NL}Do you want to hear it agai~n?{NLTB}Ye~s{NLTB}No~o{EL}
 
 POINTER=582B8;5B795
 DATA=5B795;40 8E AD A1 DF A9 FA 48 FF 48 8E 65 99 8B 6D DA DA 7F 06 81 AD 06 AD AD AF 00 
@@ -1381,22 +1381,22 @@ ENG=
 POINTER=58328;5C219
 DATA=5C219;06 EE 1F EF CB 50 CC A6 7E 00 
 JPN={NLTB}『{1F}』をゲット!{EL}
-ENG=
+ENG={NLTB}You get {NLTB}"{1F}"{EL}
 
 POINTER=5832A;5C223
 DATA=5C223;AD C1 81 C1 FF 57 A3 36 FF FF FF 99 41 D7 97 AD F9 7E 05 C1 CD 6A D9 FF 8D E1 A9 8D E3 8F FF A4 F8 BC 8D E3 8F F9 05 AB B3 9F 31 A5 C9 95 AD FF FF FF AA F8 A4 E6 98 A6 F9 05 8B C9 97 CF 30 97 DB 97 36 FF 93 DD 67 A9 5D F9 7E 00 
 JPN=いやはや じつに    すばらしい〜!{NL}やっぱり きゅうきょく テーマきょく〜{NL}あなたは てんさい   アーティスト〜{NL}かんしゃの しるしに  これどうぞ〜!{EL}
-ENG=
+ENG=It's truly wonderfu~l!{NL}This theme song is just the be~st!{NL}You're an artistic prodi~gy!{NL}Here's a token of my gratitu~de!{EL}
 
 POINTER=5832C;5C26F
 DATA=5C26F;AD C1 81 C1 FF 57 A3 36 FF FF FF 99 41 D7 97 AD F9 7E 05 C1 CD 6A D9 FF 8D E1 A9 8D E3 8F FF A4 F8 BC 8D E3 8F F9 05 91 DD 67 D5 FF AB B3 9F 31 FF FF 85 95 AD C5 A9 F9 05 BD 9F 30 8D 8B AD 36 FF FF FF 4B C9 41 2D F9 7E 00 
 JPN=いやはや じつに    すばらしい〜!{NL}やっぱり きゅうきょく テーマきょく〜{NL}けれども あなたは   ふさいよう〜{NL}またの きかいに    がんばって〜!{EL}
-ENG=
+ENG=It's truly wonderfu~l!{NL}This theme song is just the be~st!{NL}If you didn't come fi~rst,{NL}good luck next ti~me!{EL}
 
 POINTER=5832E;5C2B9
 DATA=5C2B9;A9 9F 81 03 01 C5 B5 A3 DD 03 03 FF C5 81 03 01 A9 9F B5 A3 DD 03 04 05 C7 9F DB 03 01 9B 91 C9 B5 03 03 FF B1 B5 81 03 01 B3 97 03 04 05 AB B3 9F BB 03 01 9F D3 B5 03 03 FF A9 A1 E1 A9 BB 03 01 9F D3 B5 03 04 05 BD C7 DB 03 01 4D C9 4B BB 03 03 FF 83 BB 8D 45 9F AD 03 04 09 93 93 DF CB 03 01 93 D3 A5 03 03 FF FF A9 9F AD BD 99 03 04 05 C7 DD D7 BB 03 01 89 97 BB 03 03 FF FF A4 F8 BC 9C C8 4E 03 04 05 A9 9F A9 81 D4 A0 DE C8 03 03 FF 94 44 52 DE A8 7E 03 04 05 9D DD 65 81 03 04 FF 81 D9 8D 2D 67 A9 5D F9 7E 03 04 03 00 
 JPN=うたは{03}{01}よにつれ{03}{03} よは{03}{01}うたにつれ{03}{04}{NL}わたる{03}{01}せけんに{03}{03} おには{03}{01}なし{03}{04}{NL}あなたの{03}{01}ために{03}{03} うちゅうの{03}{01}ために{03}{04}{NL}まわる{03}{01}ぎんがの{03}{03} ひのきぶたい{03}{04}{CL}こころを{03}{01}こめて{03}{03}  うたいます{03}{04}{NL}われらの{03}{01}ほしの{03}{03}  テーマソング{03}{04}{NL}うたうはモチロン{03}{03} サブゴロウ!{03}{04}{NL}それでは{03}{04} はりきってどうぞ〜!{03}{04}{03}{EL}
-ENG=
+ENG=As the song goes, {03}{03}so the world go~es{03}{04}{NL}There is kindness {03}{03}everywhe~re{03}{04}{NL}For you, {03}{03}for the unive~rse{03}{04}{NL}The galaxy spins {03}{03}in the limeli~ght{03}{04}{CL}I'll sing along {03}{03}with all my hea~rt{03}{04}{NL}Our planet {03}{03}theme so~ng{03}{04}{NL}Sung by the grea~t {03}{03}Sabugorō!{03}{04}{NL}Give it all, {03}{03}take it away~!{03}{04}{NL}{03}{EL}
 
 POINTER=58330;5C368
 DATA=5C368;FF FF FF FF FF FD A7 8D D3 8F FF D1 B9 81 03 FF 03 00 
@@ -1421,7 +1421,7 @@ ENG=
 POINTER=58338;5C3AF
 DATA=5C3AF;FF FF FF FF FF FD 83 A7 BF CB FF A7 57 A5 03 FF 03 00 
 JPN=     ♪ひとみを とじて{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 05{NL}{03}{FF}{03}{EL}
 
 POINTER=5833A;5C3C1
 DATA=5C3C1;FF FF FF FF FF FF FF FD B3 51 8C CC 98 03 FF 03 00 
@@ -1441,7 +1441,7 @@ ENG=
 POINTER=58340;5C3F4
 DATA=5C3F4;FF FF FF FF FF FD 66 8C 66 8C 97 A1 CF A9 03 FF 03 00 
 JPN=     ♪ドキドキしちゃう{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 09{NL}{03}{FF}{03}{EL}
 
 POINTER=58342;5C406
 DATA=5C406;FF FF FF FF FD 6B C8 8E 30 DA F8 56 E0 81 03 FF 03 00 
@@ -1466,7 +1466,7 @@ ENG=
 POINTER=5834A;5C44E
 DATA=5C44E;FF FF FF FF FF FD 8F A1 63 91 FF 97 9F D7 03 FF 03 00 
 JPN=     ♪くちづけ したら{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 15{NL}{03}{FF}{03}{EL}
 
 POINTER=5834C;5C460
 DATA=5C460;FF FF FF FF FD 84 EC F8 D8 C8 FF D6 44 FE 03 FF 03 00 
@@ -1486,7 +1486,7 @@ ENG=
 POINTER=58352;5C495
 DATA=5C495;FF FF FF FF FD AA B2 9E 36 D1 A1 E1 A9 03 FF 03 00 
 JPN=    ♪アナタに むちゅう{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 19{NL}{03}{FF}{03}{EL}
 
 POINTER=58354;5C4A6
 DATA=5C4A6;FF FF FF FF FF FD 85 9F D9 30 93 AD 81 03 FF 03 00 
@@ -1521,7 +1521,7 @@ ENG=
 POINTER=58360;5C50D
 DATA=5C50D;FF FF FF FF FF FD 81 57 D3 A5 30 93 AD 03 FF 03 00 
 JPN=     ♪はじめての こい{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 07{NL}{03}{FF}{03}{EL}
 
 POINTER=58362;5C51E
 DATA=5C51E;FF FF FF FF FF FF FF FD C7 99 DD 3A 03 FF 03 00 
@@ -1566,7 +1566,7 @@ ENG=
 POINTER=58372;5C5AB
 DATA=5C5AB;FF FF FF FF FF FD 8C BE 30 9D BB C3 D3 03 FF 03 00 
 JPN=     ♪キミの そのゆめ{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 17{NL}{03}{FF}{03}{EL}
 
 POINTER=58374;5C5BC
 DATA=5C5BC;FF FF FF FF FF FF FF FD 97 C9 57 A5 DB 03 FF 03 00 
@@ -1581,12 +1581,12 @@ ENG=
 POINTER=58378;5C5DE
 DATA=5C5DE;FF FF FF FF FF FD AB 8B AD FF BC C8 A6 81 03 FF 03 00 
 JPN=     ♪あかい マントは{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 01{NL}{03}{FF}{03}{EL}
 
 POINTER=5837A;5C5F0
 DATA=5C5F0;FF FF FF FF FF FD 9B AD 4D 30 A1 8B AD 03 FF 03 00 
 JPN=     ♪せいぎの ちかい{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 02{NL}{03}{FF}{03}{EL}
 
 POINTER=5837C;5C601
 DATA=5C601;FF FF FF FF FF FD AD BD 5F 7E FF 45 A3 91 DF 7E 03 FF 03 00 
@@ -1626,17 +1626,17 @@ ENG=
 POINTER=5838A;5C681
 DATA=5C681;FF FF FF FF FF FD D5 AF DB FF C3 A9 83 81 03 FF 03 00 
 JPN=     ♪もえる ゆうひは{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 01{NL}{03}{FF}{03}{EL}
 
 POINTER=5838C;5C693
 DATA=5C693;FF FF FF FF FD 39 D9 30 AB 8B 97 03 FF 03 00 
 JPN=    ♪しょうりの あかし{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 12{NL}{03}{FF}{03}{EL}
 
 POINTER=5838E;5C6A2
 DATA=5C6A2;FF FF FF FF FD 5F DD 8B 37 C5 C9 65 DB 03 FF 03 00 
 JPN=    ♪だれかが よんでる{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 03{NL}{03}{FF}{03}{EL}
 
 POINTER=58390;5C6B3
 DATA=5C6B3;FF FF FF FF FD EE 44 D8 54 4A FF 8C CC 8E 7E EF 03 FF 03 00 
@@ -1651,7 +1651,7 @@ ENG=
 POINTER=58394;5C6D9
 DATA=5C6D9;FF FF FF FF FF FF FD A7 C9 65 C3 91 7E 03 FF 03 00 
 JPN=      ♪とんでゆけ!{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 06{NL}{03}{FF}{03}{EL}
 
 POINTER=58396;5C6EA
 DATA=5C6EA;FF FF FF FF FD A9 A1 E1 A9 30 87 AD C7 03 FF 03 00 
@@ -1671,7 +1671,7 @@ ENG=
 POINTER=5839C;5C71D
 DATA=5C71D;FF FF FF FF FF FD 83 8B DB FF A3 DB 4D 81 03 FF 03 00 
 JPN=     ♪ひかる つるぎは{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 11{NL}{03}{FF}{03}{EL}
 
 POINTER=5839E;5C72F
 DATA=5C72F;FF FF FF FF FD C3 A9 97 CF 30 97 DB 97 03 FF 03 00 
@@ -1681,7 +1681,7 @@ ENG=
 POINTER=583A0;5C740
 DATA=5C740;FF FF FF FF FF FD AB 8F 30 A5 95 8D B5 03 FF 03 00 
 JPN=     ♪あくの てさきに{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 03{NL}{03}{FF}{03}{EL}
 
 POINTER=583A2;5C751
 DATA=5C751;FF FF FF FF FD EE 84 E4 AC 4A FF AA 9E CC 8E 7E EF 03 FF 03 00 
@@ -1691,12 +1691,12 @@ ENG=
 POINTER=583A4;5C766
 DATA=5C766;FF FF FF FF FD C3 A9 57 2E FF 69 C6 F8 65 03 FF 03 00 
 JPN=    ♪ゆうじょう パワーで{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 05{NL}{03}{FF}{03}{EL}
 
 POINTER=583A6;5C778
 DATA=5C778;FF FF FF FF FF FF FD 4B CD 9F AD 5F 7E 03 FF 03 00 
 JPN=      ♪がったいだ!{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 16{NL}{03}{FF}{03}{EL}
 
 POINTER=583A8;5C789
 DATA=5C789;FF FF FF FF FD 9B AD 4D 30 AD 8B D9 CB 03 FF 03 00 
@@ -1726,7 +1726,7 @@ ENG=
 POINTER=583B2;5C7E1
 DATA=5C7E1;FF FF FF FF FD 8F D7 AF 7E FF 83 CD 95 A3 7E 03 FF 03 00 
 JPN=    ♪くらえ! ひっさつ!{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 13{NL}{03}{FF}{03}{EL}
 
 POINTER=583B4;5C7F4
 DATA=5C7F4;FF FF FF FF FD EE 90 AA DA 4A FF 42 F8 D0 7E EF 03 FF 03 00 
@@ -1736,7 +1736,7 @@ ENG=
 POINTER=583B6;5C808
 DATA=5C808;FF FF FF FF FF FD AB A3 AD FF A1 97 B1 65 03 FF 03 00 
 JPN=     ♪あつい ちしおで{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 15{NL}{03}{FF}{03}{EL}
 
 POINTER=583B8;5C81A
 DATA=5C81A;FF FF FF FF FF FF FD 83 CB FF A3 91 DF 7E 03 FF 03 00 
@@ -1761,7 +1761,7 @@ ENG=
 POINTER=583C0;5C860
 DATA=5C860;FF FF FF FF FF FD B1 C1 57 30 85 B9 81 03 FF 03 00 
 JPN=     ♪おやじの ふねは{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 01{NL}{03}{FF}{03}{EL}
 
 POINTER=583C2;5C871
 DATA=5C871;FF FF FF FF FF FD 8D 9F 4F 36 9D 5F A1 03 FF 03 00 
@@ -1786,7 +1786,7 @@ ENG=
 POINTER=583CA;5C8B6
 DATA=5C8B6;FF FF FF FF FF FF FF FD B2 B4 C6 45 97 03 FF 03 00 
 JPN=       ♪ナニワぶし{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 06{NL}{03}{FF}{03}{EL}
 
 POINTER=583CC;5C8C7
 DATA=5C8C7;FF FF FF FF FF FD A7 C7 30 8D 59 B3 CB 03 FF 03 00 
@@ -1796,17 +1796,17 @@ ENG=
 POINTER=583CE;5C8D8
 DATA=5C8D8;FF FF FF FF FF FF FF FD BB BF 89 97 9F 03 FF 03 00 
 JPN=       ♪のみほした{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 08{NL}{03}{FF}{03}{EL}
 
 POINTER=583D0;5C8E9
 DATA=5C8E9;FF FF FF FF FF FD BF B3 A7 30 BD A1 95 03 FF 03 00 
 JPN=     ♪みなとの まちさ{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 19{NL}{03}{FF}{03}{EL}
 
 POINTER=583D2;5C8FA
 DATA=5C8FA;FF FF FF FF FF FD B8 B0 C8 30 BD A1 81 03 FF 03 00 
 JPN=     ♪ネオンの まちは{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 01{NL}{03}{FF}{03}{EL}
 
 POINTER=583D4;5C90B
 DATA=5C90B;FF FF FF FF FF FD BF DD C9 37 A3 BB DB 03 FF 03 00 
@@ -1831,7 +1831,7 @@ ENG=
 POINTER=583DC;5C950
 DATA=5C950;FF FF FF FF FF FF FD BB D1 FF 95 91 81 03 FF 03 00 
 JPN=      ♪のむ さけは{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 06{NL}{03}{FF}{03}{EL}
 
 POINTER=583DE;5C961
 DATA=5C961;FF FF FF FF FF FD 53 5D A9 FF DF CD 6E CB 03 FF 03 00 
@@ -1841,22 +1841,22 @@ ENG=
 POINTER=583E0;5C973
 DATA=5C973;FF FF FF FF FF FF FF FD B3 4F 95 D3 DB 03 FF 03 00 
 JPN=       ♪なぐさめる{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 18{NL}{03}{FF}{03}{EL}
 
 POINTER=583E2;5C984
 DATA=5C984;FF FF FF FF FF FD 9D DD 37 B1 A7 93 BB 03 FF 03 00 
 JPN=     ♪それが おとこの{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 19{NL}{03}{FF}{03}{EL}
 
 POINTER=583E4;5C995
 DATA=5C995;FF FF FF FF FF FD B1 8D 30 8A D4 D2 81 03 FF 03 00 
 JPN=     ♪おきの カモメは{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 11{NL}{03}{FF}{03}{EL}
 
 POINTER=583E6;5C9A6
 DATA=5C9A6;FF FF FF FF FD 82 E0 DA D8 D6 FF 82 E0 DA D8 03 FF 03 00 
 JPN=    ♪ヒュルリラ ヒュルリ{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 02{NL}{03}{FF}{03}{EL}
 
 POINTER=583E8;5C9B9
 DATA=5C9B9;FF FF FF FF FF FD A5 4B BF 36 8B AD 9F 03 FF 03 00 
@@ -1866,17 +1866,17 @@ ENG=
 POINTER=583EA;5C9CA
 DATA=5C9CA;FF FF FF FF FD EE B1 85 8F DF 95 C9 32 EF 03 FF 03 00 
 JPN=    ♪『おふくろさん……』{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 04{NL}{03}{FF}{03}{EL}
 
 POINTER=583EC;5C9DC
 DATA=5C9DC;FF FF FF FF FF FD 95 91 A7 FF B3 BF 5F 65 03 FF 03 00 
 JPN=     ♪さけと なみだで{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 05{NL}{03}{FF}{03}{EL}
 
 POINTER=583EE;5C9EE
 DATA=5C9EE;FF FF FF FF FF FF FF FD 83 A7 D9 9F 43 03 FF 03 00 
 JPN=       ♪ひとりたび{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 16{NL}{03}{FF}{03}{EL}
 
 POINTER=583F0;5C9FF
 DATA=5C9FF;FF FF FF FF FF FD B1 C9 B3 FF 53 93 DF CB 03 FF 03 00 
@@ -1911,12 +1911,12 @@ ENG=
 POINTER=583FC;5CA68
 DATA=5CA68;FF FF FF FF FF FF FD 93 30 B1 D5 AD 03 FF 03 00 
 JPN=      ♪この おもい{03} {03}{EL}
-ENG=
+ENG=♪ IDOL THEME 14{NL}{03}{FF}{03}{EL}
 
 POINTER=583FE;5CA78
 DATA=5CA78;FF FF FF FF FF FD AD CD 9D FF 93 BB BD BD 03 FF 03 00 
 JPN=     ♪いっそ このまま{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 15{NL}{03}{FF}{03}{EL}
 
 POINTER=58400;5CA8A
 DATA=5CA8A;FF FF FF FF FF FF FF FD 57 53 8F BD 65 03 FF 03 00 
@@ -1936,7 +1936,7 @@ ENG=
 POINTER=58406;5CABD
 DATA=5CABD;FF FF FF FF FF FD C5 8B 5B 37 A3 D7 AD 03 FF 03 00 
 JPN=     ♪よかぜが つらい{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 09{NL}{03}{FF}{03}{EL}
 
 POINTER=58408;5CACE
 DATA=5CACE;FF FF FF FF FF FD B1 DD 30 80 F8 A6 81 03 FF 03 00 
@@ -1951,12 +1951,12 @@ ENG=
 POINTER=5840C;5CAF1
 DATA=5CAF1;FF FF FF FF FF FD 95 91 43 FF A3 63 91 DF 03 FF 03 00 
 JPN=     ♪さけび つづけろ{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 03{NL}{03}{FF}{03}{EL}
 
 POINTER=5840E;5CB03
 DATA=5CB03;FF FF FF FF FD EE B0 F8 FF AC AE F8 7E EF 03 FF 03 00 
 JPN=    ♪『オー イエー!』{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 04{NL}{03}{FF}{03}{EL}
 
 POINTER=58410;5CB15
 DATA=5CB15;FF FF FF FF FF FD 5F 8D AB A9 FF 9F 43 B5 03 FF 03 00 
@@ -1971,12 +1971,12 @@ ENG=
 POINTER=58414;5CB38
 DATA=5CB38;FF FF FF FF FF FD 93 C9 C1 FF B1 BD AF CB 03 FF 03 00 
 JPN=     ♪こんや おまえを{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 07{NL}{03}{FF}{03}{EL}
 
 POINTER=58416;5CB4A
 DATA=5CB4A;FF FF FF FF FF FF FD 88 F8 DA 66 FF B0 C8 03 FF 03 00 
 JPN=      ♪ホールド オン{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 08{NL}{03}{FF}{03}{EL}
 
 POINTER=58418;5CB5C
 DATA=5CB5C;FF FF FF FF FD 8C 98 BE F8 FF 46 AC 46 F8 03 FF 03 00 
@@ -1996,12 +1996,12 @@ ENG=
 POINTER=5841E;5CB92
 DATA=5CB92;FF FF FF FF FF FD B3 C9 67 D5 FF AD A9 5B 03 FF 03 00 
 JPN=     ♪なんども いうぜ{03} {03}{EL}
-ENG=
+ENG=♪ ROCK THEME 13{NL}{03}{FF}{03}{EL}
 
 POINTER=58420;5CBA4
 DATA=5CBA4;FF FF FF FF FF FD EE 84 EC F8 AE 40 F8 EF 03 FF 03 00 
 JPN=     ♪『フォーエバー』{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 04{NL}{03}{FF}{03}{EL}
 
 POINTER=58422;5CBB6
 DATA=5CBB6;FF FF FF FF FF FD B0 F8 DA B2 AC A6 65 03 FF 03 00 
@@ -2016,12 +2016,12 @@ ENG=
 POINTER=58426;5CBD9
 DATA=5CBD9;FF FF FF FF FD 44 DE F8 8E C8 80 F8 A6 CB 03 FF 03 00 
 JPN=    ♪ブロークンハートを{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 07{NL}{03}{FF}{03}{EL}
 
 POINTER=58428;5CBEB
 DATA=5CBEB;FF FF FF FF FF FF FF FD 99 A5 A1 BD AF 03 FF 03 00 
 JPN=       ♪すてちまえ{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 18{NL}{03}{FF}{03}{EL}
 
 POINTER=5842A;5CBFC
 DATA=5CBFC;FF FF FF FF FD C6 C8 A8 EA AC FF D6 44 95 03 FF 03 00 
@@ -2036,7 +2036,7 @@ ENG=
 POINTER=5842E;5CC20
 DATA=5CC20;FF FF FF FF FF FD 93 93 DF 30 95 91 43 03 FF 03 00 
 JPN=     ♪こころの さけび{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 02{NL}{03}{FF}{03}{EL}
 
 POINTER=58430;5CC31
 DATA=5CC31;FF FF FF FF FF FD B1 BD AF 30 83 A7 BF B5 03 FF 03 00 
@@ -2046,7 +2046,7 @@ ENG=
 POINTER=58432;5CC43
 DATA=5CC43;FF FF FF FF FD EE 8A D4 C8 FF A6 E8 B2 AC A6 EF 03 FF 03 00 
 JPN=    ♪『カモン トゥナイト』{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 14{NL}{03}{FF}{03}{EL}
 
 POINTER=58434;5CC57
 DATA=5CC57;FF FF FF FF FF FD 80 AC B3 FF 42 F8 A6 65 03 FF 03 00 
@@ -2061,7 +2061,7 @@ ENG=
 POINTER=58438;5CC7A
 DATA=5CC7A;FF FF FF FF FF FD B1 A7 B3 30 DA F8 DA 03 FF 03 00 
 JPN=     ♪おとなの ルール{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 17{NL}{03}{FF}{03}{EL}
 
 POINTER=5843A;5CC8B
 DATA=5CC8B;FF FF FF FF FF FF FF FD 45 CD 93 C7 99 03 FF 03 00 
@@ -2076,12 +2076,12 @@ ENG=
 POINTER=5843E;5CCAF
 DATA=5CCAF;FF FF FF FF FF FD 93 AD 30 DC F8 98 81 03 FF 03 00 
 JPN=     ♪こいの レースは{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 01{NL}{03}{FF}{03}{EL}
 
 POINTER=58440;5CCC0
 DATA=5CCC0;FF FF FF FF FD 84 E4 AC B2 DA FF D6 CC 6D 03 FF 03 00 
 JPN=    ♪ファイナル ラップ{03} {03}{EL}
-ENG=
+ENG=♪ HERO THEME 12{NL}{03}{FF}{03}{EL}
 
 POINTER=58442;5CCD2
 DATA=5CCD2;FF FF FF FF FF FD A3 8D 36 89 AF DF C5 03 FF 03 00 
@@ -2120,16 +2120,16 @@ ENG=
 
 POINTER=58450;5CD4D
 DATA=5CD4D;FF FF FF FF FF FF FF FD B0 8E 9E F8 44 03 0A 03 00 
-JPN=       ♪オクターブ{03}{CLTB}{03}{EL}
-ENG=
+JPN=       ♪オクターブ{03}{0A}{03}{EL}
+ENG=♪ Octave{NL}{03}{0A}{03}{EL}
 
 POINTER=58452;5CD5E
 DATA=5CD5E;FF FF FF FF FF FF FF FD B0 8E 9E F9 44 03 0B 03 00 
-JPN=       ♪オクタ〜ブ{03}{WPCL}{03}{EL}
-ENG=
+JPN=       ♪オクタ〜ブ{03}{0B}{03}{EL}
+ENG=♪ Octa~ve{NL}{03}{0B}{03}{EL}
 
 POINTER=58454;5CD6F
 DATA=5CD6F;FF FF FF FF FF FF FD B0 8E 9E F9 44 F9 03 1D 03 00 
 JPN=      ♪オクタ〜ブ〜{03}{1D}{03}{EL}
-ENG=
+ENG=♪ Octa~ve~{NL}{03}{1D}{03}{EL}
 

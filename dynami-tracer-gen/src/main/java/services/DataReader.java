@@ -1,9 +1,12 @@
 package services;
 
 import entities.Constants;
+import enums.Language;
 import org.apache.commons.lang.ArrayUtils;
+import resources.ResIO;
 import services.pointers.PointerTable;
 import services.pointers.PointerTableType;
+import services.vwf.Font;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -66,9 +69,17 @@ public class DataReader {
 
     public static byte[] readUntil(byte[] bytes, int start, byte end) {
         byte[] result = new byte[0];
+        boolean ignoreByte = false; // used for the control code 03 that eats the next byte for the pause duration
         for (int i = start; i < bytes.length; i++) {
             byte a = bytes[i];
             result = ArrayUtils.addAll(result, new byte[]{a});
+            /*if ((a & 0xFF) == (0x03) || ignoreByte) {
+                i++;
+                byte b = bytes[i];
+                result = ArrayUtils.addAll(result, new byte[]{b});
+                if (ignoreByte) ignoreByte = false;
+                else ignoreByte = true;
+            }*/
             if ((a & 0xFF) == (end & 0xFF)) {
                 return result;
             } else if ((a & 0xFF) >= 0x80 && (a & 0xFF) < 0xA0) {
@@ -104,6 +115,7 @@ public class DataReader {
         BufferedReader br = new BufferedReader(
                 new InputStreamReader(
                         Objects.requireNonNull(DataReader.class.getClassLoader().getResourceAsStream(file)), StandardCharsets.UTF_8));
+        int songLineId = 1;
         String line = null;
         try {
             line = br.readLine();
@@ -138,25 +150,37 @@ public class DataReader {
                         //translationCount++;
                         jpnCount++;
                     }
-                    if (split[0].equals(Constants.TRANSLATION_FILE_ENG)) {
-                        if (split.length>1 && split[1].length()>0) {
-                            String english = split[1];
-                            if (english!=null && !english.isEmpty()) {
-                                t.setEnglish(english);
-                                byte[] bytes = dictionary.getCode(english);
+                    if (Language.codes().contains(split[0])) {
+                        Language language = Language.getLanguage(split[0]);
+                        if (isSongLine(t) && songLineId<145) {
+                            String format = "{NL}{03}{FF}{03}{EL}";
+                            //if (songLineId == 145) format = "♪ Octave{NL}{03}{CLTB}{03}{EL}";
+                            //String value = String.format(format, songLineId);
+                            String value = "♪ " +getSongLine(language, songLineId)+format;//String.format(format, getSongLine(language, songLineId));
+                            //System.out.println(songLineId+"\t"+h(t.getOffsetData())+"\t"+ Font.stripStringSpecialCode(t.getJapanese()));
+                            songLineId++;
+                            t.setTranslation(language, value);
+                            byte[] bytes = dictionary.getCode(value);
+                            t.setData(bytes);
+                        }
+                        else if (split.length>1 && split[1].length()>0) {
+                            String value = split[1];
+                            if (value!=null && !value.isEmpty()) {
+                                t.setTranslation(language, value);
+                                byte[] bytes = dictionary.getCode(value);
                                 t.setData(bytes);
                             }
                             //translationEngCount++;
                             engCount++;
                         } else if (replaceMissingWithAddress) {
                             t.setAddressReplacement(true);
-                            String english = h(t.getOffsetData())+"{EL}";
+                            String value = h(t.getOffsetData())+"{EL}";
                             if (table.getType() == PointerTableType.SIZE_PREFIX) {
-                                english = h(t.getOffsetData());
-                                english = "{"+h2(english.length())+"}"+english;
+                                value = h(t.getOffsetData());
+                                value = "{"+h2(value.length())+"}"+value;
                             }
-                            t.setEnglish(english);
-                            byte[] bytes = dictionary.getCode(english);
+                            t.setTranslation(language, value);
+                            byte[] bytes = dictionary.getCode(value);
                             t.setData(bytes);
                         }
                         /*if (translationMap.containsKey(t.getDataOffset())) {
@@ -175,5 +199,31 @@ public class DataReader {
         }
         System.out.println("Trans Count "+file+" "+engCount+"/"+jpnCount);
         return translationMap;
+    }
+
+    private static boolean isSongLine(Translation t) {
+        return (t.getOffsetData()>=0x5C368 && t.getOffsetData()<=0x5CD6F);
+    }
+    
+    private static String getSongLine(Language language, int id) {
+        Map<Integer, String> map = songLines.get(language);
+        if (map == null) {
+            map = loadSongLines(language);
+        }
+        return map == null ? null : map.get(id);
+    }
+    
+    static Map<Language, Map<Integer, String>> songLines = new HashMap<>();
+    
+    public static Map<Integer, String> loadSongLines(Language language) {
+        Map<Integer, String> lines = new HashMap<>();
+        ResIO textResource = ResIO.getTextResource(String.format("translations/00-LYRICS-%s.txt", language.getCode()));
+        int id = 1;
+        while (textResource.hasNext()){
+            String line = textResource.next().toString();
+            lines.put(id++, line);
+        }
+        songLines.put(language, lines);
+        return songLines.get(language);
     }
 }

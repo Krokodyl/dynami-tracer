@@ -1,11 +1,17 @@
 package services;
 
+import enums.Language;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Translation {
     
     int offsetData;
     byte[] data;// english data
     String japanese;
-    String english;
+    Map<Language, String> translations = new HashMap<>();
+    //String english;
     
     boolean addressReplacement = false;
 
@@ -24,13 +30,13 @@ public class Translation {
     public void setJapanese(String japanese) {
         this.japanese = japanese;
     }
-
-    public String getEnglish() {
-        return english;
+    
+    public void setTranslation(Language l, String value) {
+        translations.put(l, value);
     }
-
-    public void setEnglish(String english) {
-        this.english = english;
+    
+    public String getTranslation(Language l) {
+        return translations.get(l);
     }
 
     public byte[] getData() {

@@ -26,9 +26,9 @@ STZ $73; set shift to 0
 CMP #$00
 BEQ 10; shift_reset
 CMP #$05
-BEQ 6; shift_reset
-CMP #$0B
-BEQ 2; shift_reset
+BMI 4; no_shift_reset
+CMP #$19
+BMI 2; shift_reset
 BRA 8; no_shift_reset
 shift_reset:
 LDA #$10

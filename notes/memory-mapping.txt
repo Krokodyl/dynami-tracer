@@ -16,3 +16,4 @@ x10100-x1018F	Items acquired
 01 = owned
 
 
+x10040			Player name

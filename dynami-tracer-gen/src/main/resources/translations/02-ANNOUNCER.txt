@@ -1,22 +1,22 @@
 POINTER=1A92D;1A965
 DATA=1A965;AB F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 B1 C9 4B 8F C7 8F 9B AD EE B0 8E 9E F8 44 EF B5 05 A1 CF 8F D9 8F 5F F8 CC 7E 00 
 JPN=あーっと ゼッケン{0D}ばん{NL}おんがくわくせい『オクターブ』に{NL}ちゃくりくだーッ!{EL}
-ENG=
+ENG=The contestant #{0D} is landing on{NL}the music planet "Octave"!{EL}
 
 POINTER=1A92F;1A98D
 DATA=1A98D;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 B8 58 BE BB 89 97 EE A2 AC C8 7D 98 9E F8 EF B5 05 9F A1 C5 CD 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}ネズミのほし『ツイン・スター』に{NL}たちよったーッ!{EL}
-ENG=The racer #{0D} is stopping{NL}by the mouse planet{NL}"Twin Star"!{EL}
+ENG=Contestant #{0D} is stopping{NL}by the mouse planets{NL}"Twin Star"!{EL}
 
 POINTER=1A931;1A9B4
 DATA=1A9B4;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 EE 8E DE CC 8E C6 F8 8E 7D 98 9E F8 EF B5 05 A1 CF 8F D9 8F 97 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}『クロックワーク・スター』に{NL}ちゃくりくしたーッ!{EL}
-ENG=
+ENG=Contestant #1, in the middle of the race, goes to the "Adults" planet!
 
 POINTER=1A933;1A9DB
 DATA=1A9DB;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 DC F8 98 A1 E1 A9 5F A7 AD A9 BB B5 05 EE AA 5E DA A2 EF 36 9F A1 C5 DB BB 8B 7E 7F 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}レースちゅうだというのに{NL}『アダルツ』に たちよるのか!?{EL}
-ENG=
+ENG=Contestant #{0D} is stopping{NL}by the mouse planets{NL}"Twin Star"!{EL}
 
 POINTER=1A935;1AA05
 DATA=1AA05;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 64 C8 56 CE F8 B3 EE 98 8A DA 7D 48 F8 C8 EF B5 05 B1 D9 A5 97 BD CD 9F F8 CC 7E 00 
@@ -50,7 +50,7 @@ ENG=
 
 POINTER=1A941;1AAE8
 DATA=1AAE8;A9 B1 B1 CC 7E FF C1 CD 9F 5B FF B0 C0 56 7E 05 15 CB FF B7 AD 9F 5B AF CC 7E 7E 00 
-JPN=うおおッ! やったぜ オヤジ!{NL}ヒァクインを ぬいたぜえッ!!{EL}
+JPN=うおおッ! やったぜ オヤジ!{NL}アーリーを ぬいたぜえッ!!{EL}
 ENG=
 
 POINTER=1A943;1AB04
@@ -75,7 +75,7 @@ ENG=
 
 POINTER=1A94B;1AB6D
 DATA=1AB6D;5A CC 90 C8 76 41 C9 05 EE 23 15 EF FF AD BD 05 0D A1 CF 8F 65 FF 52 F8 DA AC F9 C8 CC 7E 7E 00 
-JPN=ゼッケン3ばん{NL}『キャプテン・ヒァクイン』 いま{NL}{0D}ちゃくで ゴールイ〜ンッ!!{EL}
+JPN=ゼッケン3ばん{NL}『キャプテン・アーリー』 いま{NL}{0D}ちゃくで ゴールイ〜ンッ!!{EL}
 ENG=
 
 POINTER=1A94D;1AB8D

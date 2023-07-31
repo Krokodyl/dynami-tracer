@@ -26,7 +26,7 @@ public class JapaneseTest {
 
     @Test
     public void encodeEnglish() {
-        String s = "0";
+        String s = "xyz~♪";
         byte[] code = latinDictionary.getCode(s);
         System.out.println(Hex.getHexString(code));
     }

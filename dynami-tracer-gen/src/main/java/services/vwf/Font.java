@@ -3,10 +3,8 @@ package services.vwf;
 import entities.Patch;
 import old.ImageParser;
 import old.Palette2bpp;
-import old.Palette4bpp;
 import palette.ColorGraphics;
 import resources.Bytes;
-import resources.Hex;
 import resources.ResIO;
 import services.DataWriter;
 import services.Dictionary;
@@ -20,17 +18,32 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-import static resources.Hex.h2;
 import static services.Utils.x;
 
 public class Font {
 
-    final static String FONT_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{}~";
-    final static String FONT_SMALL_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{}αβ…";
+    final static String FONT_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{|}~α♪…āūēō♥";
+    final static String FONT_SMALL_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{|}~β…γ";
     
     // Greek    α	β	γ	δ	ε	ζ	η	θ	ι	κ	λ	μ	ν	ξ	ο	π	ρ	ς	σ	τ	υ	φ	χ	ψ	ω
     
     static Map<Character, Integer> characterLengthMap = new HashMap<>();
+    
+    public final static List<String> SPECIAL_CODES = new ArrayList<>(List.of(
+            "{EL}", // end of line
+            "{NL}", // new line
+            "{NLTB}", // new line + tab
+            "{WPNL}", // wait for player input + new line
+            "{WPNLTB}", // wait for player input + new line + tab
+            "{CL}", // clear dialog box
+            "{CLTB}", // clear dialog box + tab
+            "{WPCL}", // wait for player input + clear text
+            "{WPCLTB}", // wait for player input + clear text + tab
+            "{0D}",
+            "{03}",
+            "{04}",
+            "{13}","{14}","{15}","{16}","{17}"
+            ));
     
     public static Dictionary getLatinDictionary() {
         Dictionary dictionary = new Dictionary();
@@ -121,13 +134,57 @@ public class Font {
     }
     
     public static int getStringLength(String s) {
-        s = '"' + s + '"';
         int length = 0;
         for (char c : s.toCharArray()) {
             length += Font.getCharacterLength(c);
             length++;
         }
         return length;
+    }
+
+    public static String stripStringSpecialCode(String s) {
+        String res = "";
+        boolean skip = false;
+        for (char c : s.toCharArray()) {
+            if (c == '{' || skip) {
+                skip = true;
+            } else if (c == '}'){
+                skip = false;
+                res += " ";
+            } else {
+                res += c;
+            }
+        }
+        return res;
+    }
+    
+    public static String[] splitString(String s, int lineLength) {
+        List<String> list = new ArrayList<>();
+        String[] split = s.split(" ");
+        int spaceLength = getCharacterLength(' ');
+        int segmentLength = 0;
+        String segment = "";
+        for (String s1 : split) {
+            int wordLength = getStringLength(s1);
+            if (segment.isEmpty()) {
+                // first word of the segment doesn't get prefix with a space
+                segment += s1;
+                segmentLength += wordLength;
+            }
+            else {
+                if (segmentLength+spaceLength+wordLength<lineLength) {
+                    segment += " " + s1;
+                    segmentLength += spaceLength+wordLength;
+                } else {
+                    list.add(segment);
+                    segment = s1;
+                    segmentLength = wordLength;
+                }
+            }
+        }
+        if (!segment.isEmpty())
+            list.add(segment);
+        return list.toArray(new String[0]);
     }
 
     public static void generateVWFFontData() {
@@ -165,7 +222,7 @@ public class Font {
                     }
                 }
                 if (width==8) width--;
-                if (tile==0) width = 6;
+                if (tile==0) width = 5;
                 //System.out.println(String.format("'%s'\twidth=%d (%d)", c+"", width, tile));
                 characterLengthMap.put(c, width);
                 c = (char)(((int)c)+1);

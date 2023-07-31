@@ -1,0 +1,46 @@
+x10096
+Winner Theme
+01 = Hero
+02 = Idol
+03 = Enka
+04 = Rock
+
+x10080
+00 00 00 00 00 00 2F 00 05 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+Checkpoint 1	Hero
+Write 01 in 8D
+Write 02 in 8B
+Write 00 in 87
+
+Checkpoint 2	Idol
+09	in	8E
+06	in	8B
+0A		87
+
+Checkpoint 3	Hero
+02		8F
+0E		8B
+0A		87
+
+Checkpoint 4	Idol
+0A		90
+1E		8B
+0A		87
+
+Checkpoint 5	Idol
+00		91
+0B		91
+3E		8B
+0A		87
+3E		8B
+0A		87
+
+
+rock	idol	rock	idol	idol
+hero	idol	rock	idol	hero?
+127		11		129		13		23
+51		34		125		36		
+136		20		138		22		32
+60		7		134		9		

@@ -1,5 +1,6 @@
 import entities.Constants;
 import entities.Patch;
+import enums.Language;
 import images.Sprite;
 import resources.Hex;
 import resources.ResIO;
@@ -38,8 +39,11 @@ public class DynamiTracer {
     static Dictionary latin = new Dictionary();
 
     static List<Patch> patches = new ArrayList<>();
-    
+
     public static boolean VERBOSE = false;
+    public static boolean SKIP_FILES_GENERATION = true;
+    
+    public static Language TARGET_LANGUAGE = Language.ENGLISH;
     
     public static void main(String[]args) {
         
@@ -85,15 +89,17 @@ public class DynamiTracer {
         table1.loadPointers(data);
         generateEmptyTranslationFiles(data, table1, japaneseDictionary);
         table1.loadTranslations(latin);
-        table1.checkTranslationsLength();
+        //table1.checkTranslationsLength();
         table1.writeEnglish(data);
 
         PointerTable table2 = new PointerTable(0x50000, 0x54272);
         table2.addRange(new PointerRange(0x54000, 0x54271));
         table2.setName("03-TWIN-STAR");
+        table2.setMaxLineLength(30);
         table2.loadPointers(data);
         generateEmptyTranslationFiles(data, table2, japaneseDictionary);
         table2.loadTranslations(latin);
+        table2.checkTranslationsLength(TARGET_LANGUAGE);
         table2.writeEnglish(data);
 
         PointerTable table3 = new PointerTable(0x50000, 0x58004);
@@ -117,9 +123,11 @@ public class DynamiTracer {
         PointerTable table6 = new PointerTable(0x50000, 0x58456);
         table6.addRange(new PointerRange(0x58100, 0x58455));
         table6.setName("06-MUSIC-FACTORY");
+        table6.setMaxLineLength(30);
         table6.loadPointers(data);
         generateEmptyTranslationFiles(data, table6, japaneseDictionary);
         table6.loadTranslations(latin, true);
+        table6.checkTranslationsLength(TARGET_LANGUAGE);
         table6.writeEnglish(data);
 
         PointerTable table7 = new PointerTable(0x50000, 0x50268);
@@ -309,6 +317,7 @@ public class DynamiTracer {
     }
 
     public static void generateEmptyTranslationFiles(byte[] bytes, PointerTable table, Dictionary dictionary) {
+        if (SKIP_FILES_GENERATION) return;
         Map<Integer, PointerEntry> pointers = table.getPointers();
         PrintWriter pw = null;
         try {
@@ -339,7 +348,7 @@ public class DynamiTracer {
             if (pw!=null) pw.write(out+"\n");
             if (VERBOSE) System.out.println(out);
 
-            out = Constants.TRANSLATION_FILE_ENG+"=";
+            out = TARGET_LANGUAGE.getCode()+"=";
             if (pw!=null) pw.write(out+"\n");
             if (VERBOSE) System.out.println(out);
 

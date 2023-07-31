@@ -1,14 +1,13 @@
 package services.pointers;
 
+import enums.Language;
 import services.DataReader;
 import services.Dictionary;
 import services.Translation;
 import services.vwf.Font;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static services.Utils.h;
 
@@ -105,19 +104,29 @@ public class PointerTable {
         translationMap = DataReader.loadTranslations(this, dictionary, replaceMissingWithAddress);
     }
 
-    public void checkTranslationsLength() {
+    public void checkTranslationsLength(Language targetLanguage) {
         for (Map.Entry<Integer, Translation> e : translationMap.entrySet()) {
             Translation translation = e.getValue();
-            String english = translation.getEnglish();
-            if (!translation.isAddressReplacement() && english!=null && !english.isEmpty()) {
-                english = english.replaceAll("\\{NL}","§");
-                english = english.replaceAll("\\{WPCL}","§");
-                String[] split = english.split("§");
+            String value = translation.getTranslation(targetLanguage);
+            if (!translation.isAddressReplacement() && value!=null && !value.isEmpty()) {
+                for (String specialCode : Font.SPECIAL_CODES) {
+                    value = value.replaceAll(specialCode.replaceAll("\\{", "\\\\{"),"§");
+                }
+                String[] split = value.split("§");
                 for (String s : split) {
                     int length = Font.getStringLength(s);
-                    if (length/8>maxLineLength)
-                        System.err.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
-                    else System.out.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
+                    if (Math.ceil(length/8.0)>maxLineLength) {
+                        System.err.println(String.format("%d px\t%d tiles\t%s", length, (int)Math.ceil(length/8.0), s));
+                        System.err.println("Suggestion:");
+                        String[] strings = Font.splitString(Font.stripStringSpecialCode(s), maxLineLength * 8);
+                        for (String s1 : strings) {
+                            System.err.println(s1);
+                        }
+                        String collect = Arrays.stream(strings).collect(Collectors.joining("{NL}"));
+                        System.err.println(collect+"{EL}");
+                    }
+                        
+                    //else System.out.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
                 }
 
 
