@@ -1,0 +1,126 @@
+BS-X SRAM BANKS
+16
+17
+
+TOTAL SPACE $390 bytes
+$6410 - $679F
+$6410	Rom name		44 59 4E 41 4D 49 54 52 41 43 45 52 20 20 20 20
+$6420	Save 1 ($1C0 bytes)
+$65E0	Save 2 ($1C0 bytes)
+
+SETTING BANK
+C22EEF  09 16          ORA #$16
+...
+
+LOADING SAVE DATA
+C22F09  C9 16          CMP #$16
+C22F0B  D0 08          BNE $C22F15
+C22F0D  C2 20          REP #$20
+C22F0F  68             PLA
+C22F10  54 00 16       MVN $16,$00
+C22F13  80 0C          BRA $C22F21
+C22F15  E2 20          SEP #$20
+C22F17  C9 17          CMP #$17
+C22F19  D0 06          BNE $C22F21
+C22F1B  C2 20          REP #$20
+C22F1D  68             PLA
+C22F1E  54 00 17       MVN $17,$00
+C22F21  28             PLP
+C22F22  60             RTS
+                     ----------------
+
+WRITING SAVE DATA
+C22F2C  C9 16          CMP #$16
+C22F2E  D0 08          BNE $C22F38
+C22F30  C2 20          REP #$20
+C22F32  68             PLA
+C22F33  54 16 00       MVN $00,$16
+C22F36  80 0C          BRA $C22F44
+C22F38  E2 20          SEP #$20
+C22F3A  C9 17          CMP #$17
+C22F3C  D0 06          BNE $C22F44
+C22F3E  C2 20          REP #$20
+C22F40  68             PLA
+C22F41  54 17 00       MVN $00,$17
+C22F44  28             PLP
+C22F45  60             RTS
+                     ----------------
+
+
+
+C22F2C  C9 30          CMP #$30			A:0130	X:1000	Y:6020
+C22F2E  D0 08          BNE $C22F38
+C22F30  C2 20          REP #$20
+C22F32  68             PLA
+C22F33  54 30 00       MVN $00,$30
+C22F36  80 0C          BRA $C22F44		A:FFFF	X:11C0	Y:61E0
+CPY #$6400
+BEQ
+TYA
+ADD #$0220
+TAY
+LDX #$F000
+LDA #$0030
+MVN $7F,$30
+
+
+OPEN SAVE SCREEN
+C22F09  C9 30          CMP #$30			A:0030	X:6010	Y:1800		Loads DYNAMITRACER
+C22F09  C9 30          CMP #$30			...
+C22F09  C9 30          CMP #$30			A:0130	X:6020	Y:1000		Loads Save 1 data
+...
+C22F09  C9 30          CMP #$30			A:0130	X:61E0	Y:1000		Loads Save 2 data
+
+
+C233B6  AD 02 10       LDA $1002
+C233B9  3A             DEC
+C233BA  85 61          STA $61
+C233BC  0A             ASL
+C233BD  85 10          STA $10
+C233BF  0A             ASL
+C233C0  18             CLC
+C233C1  65 10          ADC $10
+C233C3  C2 20          REP #$20
+C233C5  29 FF 00       AND #$00FF
+C233C8  18             CLC
+C233C9  69 40 10       ADC #$1040
+C233CC  AA             TAX
+C233CD  A0 80 1C       LDY #$1C80
+C233D0  A9 05 00       LDA #$0005
+C233D3  54 00 00       MVN $00,$00
+
+
+READING SAVE GAME
+CALL 1		
+
+########## OPEN SAVE MENU ########## 
+C231AF  E2 20          SEP #$20
+C231B1  20 E4 30       JSR $30E4
+
+########## SET FLAG SAVE MENU ########## 
+PHA
+LDA #$AA
+STA $7FF030
+PLA
+SEP #$20
+JSR $30E4
+RTL
+
+########## OPEN LOAD MENU ########## 
+C22708  E2 20          SEP #$20
+C2270A  A9 01          LDA #$01
+
+########## SET FLAG LOAD MENU ########## 
+PHA
+LDA #$BB
+STA $7FF030
+PLA
+SEP #$20
+LDA #$01
+RTL
+
+########## GAME INIT ########## 
+C0FF03  5C 43 1C C1    JML $C11C43
+
+########## SRAM INIT ########## 
+

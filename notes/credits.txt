@@ -1,0 +1,31 @@
+Director			Hiroki Chiba
+Event Design		Jun Akiyama
+					Takayuki Suguro
+Design Assist		Kazutoyo Maehiro
+Field Program		Keizo Kokubo
+Visual Program		Yasuo Kuwahara
+Space Map Program	Shinichi Tanaka
+Character Graphics	Masanori Hoshino
+Planet Graphics		Takayuki Odachi
+Background Graphics	Matsuzou Itakura
+					Mami Kawai
+					Kouichi Ebe
+					Yukio Nakatani
+					Hiroaki Kusano
+Vehicle Graphics	Shinichiro Hamasaka
+Sound Design		Eiji Nakamura
+					Motoko Watanabe
+Sound Effects		Kazumi Mitome
+					Hironobu Izumi
+Voice				Chiharu Minekawa
+Sound Program		Minoru Akao
+Utility Program		Kazumi Kobayashi
+					Kouji Sugimoto
+Test Coordinators	Norimasa Hanada
+					Kozue Kaneko
+					Rei Komatsu
+Advertisement		Kouji Yamashita
+					Katsunobu Iida
+Concept Design		Tetsuya Nomura
+Music Composer		Nobuo Uematsu
+Producer			Takashi Tokita

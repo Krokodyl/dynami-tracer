@@ -1,0 +1,186 @@
+POINTER=50002;50277
+DATA=50277;06 EE 1F EF CB FF 50 CC A6 7E 00 
+JPN={NLTB}『{1F}』を ゲット!{EL}
+ENG={NLTB}You get {NLTB}"{1F}"{EL}
+
+############ 1A92D ###############
+C19AB4  A9 2D A9       LDA #$A92D
+C19AB7  8D 0D 04       STA $040D
+C19ABA  A9 C1 00       LDA #$00C1
+C19ABD  8D 0F 04       STA $040F
+
+############ 54000 ###############
+
+...
+C018E0  A6 15          LDX $15
+C018E2  8E 0D 04       STX $040D
+C018E5  A5 17          LDA $17
+C018E7  8D 0F 04       STA $040F
+
+
+######### LOADING BANK AND BASE ADDRESS ####
+
+                     --------sub start--------
+C0242E  BB             TYX
+C0242F  E8             INX
+C02430  BF 01 20 7F    LDA $7F2001,X
+C02434  85 15          STA $15
+C02436  E8             INX
+C02437  BF 01 20 7F    LDA $7F2001,X
+C0243B  85 16          STA $16
+C0243D  E8             INX
+C0243E  BF 01 20 7F    LDA $7F2001,X
+C02442  85 17          STA $17
+C02444  E8             INX
+C02445  38             SEC
+C02446  60             RTS
+                     ----------------
+
+SKULL	(C50000)
+7F2362		00 00 C5		39569
+
+TWIN STAR	(C54000)
+7F21E4		00 40 C5		3F765
+7F21BD		00 40 C5		3F4B6
+			00 40 C5		42C03
+			
+C50000		508000 (x108000)
+C54000		510000 (x110000)
+
+
+BREAKPOINT:		C02430
+22 00 B7 C2
+x2B700
+
+
+########### LOADING TABLE INTRO ##########
+                     --------sub start--------
+C21409  08             PHP
+C2140A  8B             PHB
+C2140B  E2 20          SEP #$20
+C2140D  A0 00 18       LDY #$1800
+C21410  4B             PHK
+C21411  AB             PLB
+C21412  BD 00 00       LDA $0000,X
+C21415  F0 41          BEQ $C21458
+C21417  E8             INX
+C21418  C9 0A          CMP #$0A
+C2141A  F0 3C          BEQ $C21458
+C2141C  C9 0B          CMP #$0B
+C2141E  F0 15          BEQ $C21435
+C21420  C9 0C          CMP #$0C
+C21422  F0 11          BEQ $C21435
+C21424  C9 13          CMP #$13
+C21426  90 04          BCC $C2142C
+C21428  C9 19          CMP #$19
+C2142A  90 11          BCC $C2143D
+C2142C  0B             PHD
+C2142D  AB             PLB
+C2142E  AB             PLB
+C2142F  99 00 00       STA $0000,Y
+C21432  C8             INY
+C21433  80 DB          BRA $C21410
+C21435  98             TYA
+C21436  38             SEC
+C21437  E9 00          SBC #$00
+C21439  85 77          STA $77
+C2143B  80 D3          BRA $C21410
+
+
+C21410  4B             PHK
+C21411  AB             PLB
+C21412  BD 00 00       LDA $0000,X
+
+x21412	20 00 B6		JSR $C2B600
+x2B600	BF 00 00 CA
+x244AF	69 00 00
+
+
+INTRO TIMINGS
+C21F04  A5 69          LDA $69
+C21F06  C9 80 0F       CMP #$0F80
+C21F09  90 06          BCC $C21F11
+
+C21F11  C9 80 0C       CMP #$0C80
+C21F14  90 46          BCC $C21F5C
+C21F16  C9 00 0E       CMP #$0E00
+C21F19  B0 41          BCS $C21F5C
+
+INTRO X 
+21CE9	00 01 08 09
+		00 02 10 12
+
+C214AB  BD 80 C9       LDA $C980,X
+C214AE  18             CLC
+C214AF  69 E0 C9       ADC #$C9E0
+C214B2  85 67          STA $67
+C214B4  AA             TAX
+C214B5  E2 20          SEP #$20
+C214B7  20 09 14       JSR $1409
+C214BA  BD 00 00       LDA $0000,X
+C214BD  D0 03          BNE $C214C2
+C214BF  A2 00 00       LDX #$0000
+C214C2  86 67          STX $67
+
+########### LOADING DEFAULT NAME ##########
+
+C238CD  A0 00 18       LDY #$1800
+C238D0  C2 20          REP #$20
+C238D2  A9 05 00       LDA #$0005
+C238D5  54 00 C2       MVN $C2,$00		X=D595
+
+Input length (05)
+C238F9  A2 05 18       LDX #$1805
+
+
+C04D7E  69 01 20       ADC #$2001
+C04D81  AA             TAX
+C04D82  A5 8A          LDA $8A
+C04D84  8B             PHB
+C04D85  54 7F 7F       MVN $7F,$7F		X:2281	Y:0040
+
+2390-280 = 2110
+2F
+
+C04D82  A5 8A          LDA $8A			A:2281	X:2281	Y:0040
+C04D84  8B             PHB
+C04D85  54 7F 7F       MVN $7F,$7F
+C04D88  AB             PLB				A:FFFF	X:22A5	Y:0070
+
+2A4 2A5 0064
+
+x7F210A = x10A	3E200.data		64 (target mvn)
+
+
+
+
+########### CHANGE character id INTO NAME offset #######
+
+C20215  0A             ASL
+C20216  85 10          STA $10
+C20218  0A             ASL
+C20219  18             CLC
+C2021A  65 10          ADC $10
+C2021C  C2 20          REP #$20
+C2021E  29 3F 00       AND #$003F
+C20221  18             CLC
+C20222  69 40 00       ADC #$0040
+C20225  AA             TAX
+
+00 = 40
+01 = 46
+02 = 4C
+
+x			01
+x*2			02		$10
+x*2			04
+x+$10		06
+
+(x*2+x*4) = x*6
+
+######## LOADING TABLE 2 ########
+C19AB4  A9 2D A9       LDA #$A92D
+C19AB7  8D 0D 04       STA $040D
+C19ABA  A9 C1 00       LDA #$00C1
+C19ABD  8D 0F 04       STA $040F
+

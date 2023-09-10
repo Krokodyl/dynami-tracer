@@ -3,9 +3,12 @@ Characters
 こうそくの ダニエル			Kōsokuno Danieru			Daniel Kosokuno			(高速 (kosokuno) = rapid)
 てつわん ローゼ				Tetsuwan rōze				Rose Tetsuwan			(鉄腕 (tetsuwan) = strong arm)
 キャプテン・アーリー			Kyaputen ārī					Captain Early
-はかいてんし ワイルド		Hakaitenshi wairudo			Wilde Hakaitenshi		(はかいてき = destructive)
+はかいてんし ワイルド		Hakaitenshi wairudo			Wilde Hakaitenshi			(破壊天使 = destruction angel)
+破壊 (はかい hakai) = destruction
+天使 (てんし tenshi) = angel
 ミリオンブレイン・ハーパー	Mirionburein hāpā			Harper Millionbrain
 たそがれの ジム				Tasogareno jimu				Jim Tasogareno			(黄昏 (たそがれ) = twilight)
+黄昏 (たそがれ tasogare) = dusk/twilight
 
 Vehicles
 
@@ -14,7 +17,7 @@ Vehicles
 ライトニング					Raitoningu					Lightning
 ヘルハーレー					Heruhārē					Hell Harley
 ザ・キャッスル				Za kyassuru					The Castle
-ポピュッピー					Popyuppī						Popyupi
+ポピュッピー					Popyuppī						Popuppy
 
 ミツトモ・ギャラクシー・カンパニー		Mitsutomo gyarakushī kanpanī	
 										Mitsutomo Galaxy Company
@@ -23,6 +26,7 @@ Vehicles
 ダイナマイ・トレース		Dainamai torēsu		Dynami Trace
 ダイナマイ・トレーサー	Dainamai torēsā		Dynami Tracer
 
+コズモ・コンボイ			Kozumo konboi		Cozmo Convoy
 
 レース				Rēsu		Race
 トレジャー			Torejā		Treasure

@@ -1,0 +1,442 @@
+########### ALGORITHM ################
+
+                     --------sub start--------
+C31000  8B             PHB
+C31001  0B             PHD
+C31002  08             PHP
+C31003  C2 30          REP #$30
+C31005  48             PHA
+C31006  DA             PHX
+C31007  5A             PHY
+C31008  A9 00 04       LDA #$0400
+C3100B  5B             TCD
+C3100C  A5 80          LDA $80					Program counter
+C3100E  1A             INC						
+C3100F  1A             INC						Program counter + 2 (header size)
+C31010  AA             TAX
+C31011  18             CLC
+C31012  67 80          ADC [$80]				Add header to program counter
+C31014  85 8A          STA $8A
+C31016  A5 84          LDA $84
+C31018  8F 81 21 00    STA WMADDL
+C3101C  A8             TAY
+C3101D  E2 20          SEP #$20
+C3101F  64 91          STZ $91
+C31021  A5 82          LDA $82
+C31023  48             PHA
+C31024  AB             PLB
+C31025  B2 8A          LDA ($8A)
+C31027  29 C0          AND #$C0
+C31029  D0 0C          BNE $C31037
+C3102B  A5 86          LDA $86
+C3102D  8F 83 21 00    STA WMADDH
+C31031  4A             LSR
+C31032  90 5A          BCC $C3108E
+C31034  4C 51 11       JMP $1151
+C31037  A5 86          LDA $86
+C31039  8F 83 21 00    STA WMADDH
+C3103D  4A             LSR
+C3103E  90 03          BCC $C31043
+C31040  4C D6 12       JMP $12D6
+C31043  4C 14 12       JMP $1214
+C31046  BD 01 00       LDA $0001,X
+C31049  8F 80 21 00    STA WMDATA
+C3104D  BD 02 00       LDA $0002,X
+C31050  8F 80 21 00    STA WMDATA
+C31054  BD 03 00       LDA $0003,X
+C31057  8F 80 21 00    STA WMDATA
+C3105B  BD 04 00       LDA $0004,X
+C3105E  8F 80 21 00    STA WMDATA
+C31062  BD 05 00       LDA $0005,X
+C31065  8F 80 21 00    STA WMDATA
+C31069  BD 06 00       LDA $0006,X
+C3106C  8F 80 21 00    STA WMDATA
+C31070  BD 07 00       LDA $0007,X
+C31073  8F 80 21 00    STA WMDATA
+C31077  BD 08 00       LDA $0008,X
+C3107A  8F 80 21 00    STA WMDATA
+C3107E  C2 21          REP #$21
+C31080  8A             TXA
+C31081  69 09 00       ADC #$0009
+C31084  AA             TAX
+C31085  98             TYA
+C31086  69 08 00       ADC #$0008
+C31089  A8             TAY
+C3108A  E2 20          SEP #$20
+C3108C  80 04          BRA $C31092
+C3108E  A9 08          LDA #$08
+C31090  85 8C          STA $8C
+C31092  E4 8A          CPX $8A
+C31094  F0 57          BEQ $C310ED
+C31096  BD 00 00       LDA $0000,X
+C31099  F0 AB          BEQ $C31046
+C3109B  E8             INX
+C3109C  4A             LSR
+C3109D  85 8E          STA $8E
+C3109F  B0 1C          BCS $C310BD
+C310A1  BD 00 00       LDA $0000,X
+C310A4  8F 80 21 00    STA WMDATA
+C310A8  C8             INY
+C310A9  E8             INX
+C310AA  C6 8C          DEC $8C
+C310AC  F0 E0          BEQ $C3108E
+C310AE  46 8E          LSR $8E
+C310B0  B0 0B          BCS $C310BD
+C310B2  BD 00 00       LDA $0000,X
+C310B5  8F 80 21 00    STA WMDATA
+C310B9  C8             INY
+C310BA  E8             INX
+C310BB  80 ED          BRA $C310AA
+C310BD  BD 01 00       LDA $0001,X
+C310C0  4A             LSR
+C310C1  4A             LSR
+C310C2  4A             LSR
+C310C3  4A             LSR
+C310C4  1A             INC
+C310C5  1A             INC
+C310C6  85 90          STA $90
+C310C8  C2 20          REP #$20
+C310CA  BD 00 00       LDA $0000,X
+C310CD  29 FF 0F       AND #$0FFF
+C310D0  85 92          STA $92
+C310D2  98             TYA
+C310D3  38             SEC
+C310D4  E5 92          SBC $92
+C310D6  86 92          STX $92
+C310D8  AA             TAX
+C310D9  A5 90          LDA $90
+C310DB  8B             PHB
+C310DC  54 7E 7E       MVN $7E,$7E
+C310DF  AB             PLB
+C310E0  98             TYA
+C310E1  8F 81 21 00    STA WMADDL
+C310E5  E2 20          SEP #$20
+C310E7  A6 92          LDX $92
+C310E9  E8             INX
+C310EA  E8             INX
+C310EB  80 BD          BRA $C310AA
+C310ED  BD 00 00       LDA $0000,X
+C310F0  29 3F          AND #$3F
+C310F2  F0 12          BEQ $C31106
+C310F4  85 8C          STA $8C
+C310F6  C2 21          REP #$21
+C310F8  BD 01 00       LDA $0001,X
+C310FB  65 80          ADC $80
+C310FD  85 8A          STA $8A
+C310FF  E8             INX
+C31100  E8             INX
+C31101  E8             INX
+C31102  E2 20          SEP #$20
+C31104  80 8C          BRA $C31092
+C31106  4C 4D 13       JMP $134D
+C31109  BD 01 00       LDA $0001,X
+C3110C  8F 80 21 00    STA WMDATA
+C31110  BD 02 00       LDA $0002,X
+C31113  8F 80 21 00    STA WMDATA
+C31117  BD 03 00       LDA $0003,X
+C3111A  8F 80 21 00    STA WMDATA
+C3111E  BD 04 00       LDA $0004,X
+C31121  8F 80 21 00    STA WMDATA
+C31125  BD 05 00       LDA $0005,X
+C31128  8F 80 21 00    STA WMDATA
+C3112C  BD 06 00       LDA $0006,X
+C3112F  8F 80 21 00    STA WMDATA
+C31133  BD 07 00       LDA $0007,X
+C31136  8F 80 21 00    STA WMDATA
+C3113A  BD 08 00       LDA $0008,X
+C3113D  8F 80 21 00    STA WMDATA
+C31141  C2 21          REP #$21
+C31143  8A             TXA
+C31144  69 09 00       ADC #$0009
+C31147  AA             TAX
+C31148  98             TYA
+C31149  69 08 00       ADC #$0008
+C3114C  A8             TAY
+C3114D  E2 20          SEP #$20
+C3114F  80 04          BRA $C31155
+C31151  A9 08          LDA #$08
+C31153  85 8C          STA $8C
+C31155  E4 8A          CPX $8A
+C31157  F0 57          BEQ $C311B0
+C31159  BD 00 00       LDA $0000,X
+C3115C  F0 AB          BEQ $C31109
+C3115E  E8             INX
+C3115F  4A             LSR
+C31160  85 8E          STA $8E
+C31162  B0 1C          BCS $C31180
+C31164  BD 00 00       LDA $0000,X
+C31167  8F 80 21 00    STA WMDATA
+C3116B  C8             INY
+C3116C  E8             INX
+C3116D  C6 8C          DEC $8C
+C3116F  F0 E0          BEQ $C31151
+C31171  46 8E          LSR $8E
+C31173  B0 0B          BCS $C31180
+C31175  BD 00 00       LDA $0000,X
+C31178  8F 80 21 00    STA WMDATA
+C3117C  C8             INY
+C3117D  E8             INX
+C3117E  80 ED          BRA $C3116D
+C31180  BD 01 00       LDA $0001,X
+C31183  4A             LSR
+C31184  4A             LSR
+C31185  4A             LSR
+C31186  4A             LSR
+C31187  1A             INC
+C31188  1A             INC
+C31189  85 90          STA $90
+C3118B  C2 20          REP #$20
+C3118D  BD 00 00       LDA $0000,X
+C31190  29 FF 0F       AND #$0FFF
+C31193  85 92          STA $92
+C31195  98             TYA
+C31196  38             SEC
+C31197  E5 92          SBC $92
+C31199  86 92          STX $92
+C3119B  AA             TAX
+C3119C  A5 90          LDA $90
+C3119E  8B             PHB
+C3119F  54 7F 7F       MVN $7F,$7F
+C311A2  AB             PLB
+C311A3  98             TYA
+C311A4  8F 81 21 00    STA WMADDL
+C311A8  E2 20          SEP #$20
+C311AA  A6 92          LDX $92
+C311AC  E8             INX
+C311AD  E8             INX
+C311AE  80 BD          BRA $C3116D
+C311B0  BD 00 00       LDA $0000,X
+C311B3  29 3F          AND #$3F
+C311B5  F0 12          BEQ $C311C9
+C311B7  85 8C          STA $8C
+C311B9  C2 21          REP #$21
+C311BB  BD 01 00       LDA $0001,X
+C311BE  65 80          ADC $80
+C311C0  85 8A          STA $8A
+C311C2  E8             INX
+C311C3  E8             INX
+C311C4  E8             INX
+C311C5  E2 20          SEP #$20
+C311C7  80 8C          BRA $C31155
+C311C9  4C 4D 13       JMP $134D
+C311CC  BD 01 00       LDA $0001,X
+C311CF  8F 80 21 00    STA WMDATA
+C311D3  BD 02 00       LDA $0002,X
+C311D6  8F 80 21 00    STA WMDATA
+C311DA  BD 03 00       LDA $0003,X
+C311DD  8F 80 21 00    STA WMDATA
+C311E1  BD 04 00       LDA $0004,X
+C311E4  8F 80 21 00    STA WMDATA
+C311E8  BD 05 00       LDA $0005,X
+C311EB  8F 80 21 00    STA WMDATA
+C311EF  BD 06 00       LDA $0006,X
+C311F2  8F 80 21 00    STA WMDATA
+C311F6  BD 07 00       LDA $0007,X
+C311F9  8F 80 21 00    STA WMDATA
+C311FD  BD 08 00       LDA $0008,X
+C31200  8F 80 21 00    STA WMDATA
+C31204  C2 21          REP #$21
+C31206  8A             TXA
+C31207  69 09 00       ADC #$0009
+C3120A  AA             TAX
+C3120B  98             TYA
+C3120C  69 08 00       ADC #$0008
+C3120F  A8             TAY
+C31210  E2 20          SEP #$20
+C31212  80 04          BRA $C31218
+C31214  A9 08          LDA #$08
+C31216  85 8C          STA $8C
+C31218  E4 8A          CPX $8A
+C3121A  F0 56          BEQ $C31272
+C3121C  BD 00 00       LDA $0000,X
+C3121F  F0 AB          BEQ $C311CC
+C31221  E8             INX
+C31222  4A             LSR
+C31223  85 8E          STA $8E
+C31225  B0 1C          BCS $C31243
+C31227  BD 00 00       LDA $0000,X
+C3122A  8F 80 21 00    STA WMDATA
+C3122E  C8             INY
+C3122F  E8             INX
+C31230  C6 8C          DEC $8C
+C31232  F0 E0          BEQ $C31214
+C31234  46 8E          LSR $8E
+C31236  B0 0B          BCS $C31243
+C31238  BD 00 00       LDA $0000,X
+C3123B  8F 80 21 00    STA WMDATA
+C3123F  C8             INY
+C31240  E8             INX
+C31241  80 ED          BRA $C31230
+C31243  BD 01 00       LDA $0001,X
+C31246  4A             LSR
+C31247  4A             LSR
+C31248  4A             LSR
+C31249  1A             INC
+C3124A  1A             INC
+C3124B  85 90          STA $90
+C3124D  C2 20          REP #$20
+C3124F  BD 00 00       LDA $0000,X
+C31252  29 FF 07       AND #$07FF
+C31255  85 92          STA $92
+C31257  98             TYA
+C31258  38             SEC
+C31259  E5 92          SBC $92
+C3125B  86 92          STX $92
+C3125D  AA             TAX
+C3125E  A5 90          LDA $90
+C31260  8B             PHB
+C31261  54 7E 7E       MVN $7E,$7E
+C31264  AB             PLB
+C31265  98             TYA
+C31266  8F 81 21 00    STA WMADDL
+C3126A  E2 20          SEP #$20
+C3126C  A6 92          LDX $92
+C3126E  E8             INX
+C3126F  E8             INX
+C31270  80 BE          BRA $C31230
+C31272  BD 00 00       LDA $0000,X
+C31275  29 3F          AND #$3F
+C31277  F0 12          BEQ $C3128B
+C31279  85 8C          STA $8C
+C3127B  C2 21          REP #$21
+C3127D  BD 01 00       LDA $0001,X
+C31280  65 80          ADC $80
+C31282  85 8A          STA $8A
+C31284  E8             INX
+C31285  E8             INX
+C31286  E8             INX
+C31287  E2 20          SEP #$20
+C31289  80 8D          BRA $C31218
+C3128B  4C 4D 13       JMP $134D
+C3128E  BD 01 00       LDA $0001,X
+C31291  8F 80 21 00    STA WMDATA
+C31295  BD 02 00       LDA $0002,X
+C31298  8F 80 21 00    STA WMDATA
+C3129C  BD 03 00       LDA $0003,X
+C3129F  8F 80 21 00    STA WMDATA
+C312A3  BD 04 00       LDA $0004,X
+C312A6  8F 80 21 00    STA WMDATA
+C312AA  BD 05 00       LDA $0005,X
+C312AD  8F 80 21 00    STA WMDATA
+C312B1  BD 06 00       LDA $0006,X
+C312B4  8F 80 21 00    STA WMDATA
+C312B8  BD 07 00       LDA $0007,X
+C312BB  8F 80 21 00    STA WMDATA
+C312BF  BD 08 00       LDA $0008,X
+C312C2  8F 80 21 00    STA WMDATA
+C312C6  C2 21          REP #$21
+C312C8  8A             TXA
+C312C9  69 09 00       ADC #$0009
+C312CC  AA             TAX
+C312CD  98             TYA
+C312CE  69 08 00       ADC #$0008
+C312D1  A8             TAY
+C312D2  E2 20          SEP #$20
+C312D4  80 04          BRA $C312DA
+C312D6  A9 08          LDA #$08
+C312D8  85 8C          STA $8C
+C312DA  E4 8A          CPX $8A
+C312DC  F0 56          BEQ $C31334
+C312DE  BD 00 00       LDA $0000,X					Read flags
+C312E1  F0 AB          BEQ $C3128E
+C312E3  E8             INX
+C312E4  4A             LSR
+C312E5  85 8E          STA $8E
+C312E7  B0 1C          BCS $C31305
+C312E9  BD 00 00       LDA $0000,X
+C312EC  8F 80 21 00    STA WMDATA					Write byte
+C312F0  C8             INY
+C312F1  E8             INX
+C312F2  C6 8C          DEC $8C						Write command loop
+C312F4  F0 E0          BEQ $C312D6
+C312F6  46 8E          LSR $8E
+C312F8  B0 0B          BCS $C31305
+C312FA  BD 00 00       LDA $0000,X
+C312FD  8F 80 21 00    STA WMDATA					Write byte
+C31301  C8             INY
+C31302  E8             INX
+C31303  80 ED          BRA $C312F2					Goto Write command loop
+													Reapeat command
+C31305  BD 01 00       LDA $0001,X					Read byte b
+C31308  4A             LSR
+C31309  4A             LSR
+C3130A  4A             LSR							b = b >> 3
+C3130B  1A             INC
+C3130C  1A             INC							b += 2
+C3130D  85 90          STA $90
+C3130F  C2 20          REP #$20
+C31311  BD 00 00       LDA $0000,X					Read both bytes (b*0x100 + a)
+C31314  29 FF 07       AND #$07FF					Keep 11 bits
+C31317  85 92          STA $92
+C31319  98             TYA
+C3131A  38             SEC
+C3131B  E5 92          SBC $92
+C3131D  86 92          STX $92
+C3131F  AA             TAX
+C31320  A5 90          LDA $90
+C31322  8B             PHB
+C31323  54 7F 7F       MVN $7F,$7F
+C31326  AB             PLB
+C31327  98             TYA
+C31328  8F 81 21 00    STA WMADDL
+C3132C  E2 20          SEP #$20
+C3132E  A6 92          LDX $92
+C31330  E8             INX
+C31331  E8             INX
+C31332  80 BE          BRA $C312F2
+C31334  BD 00 00       LDA $0000,X
+C31337  29 3F          AND #$3F
+C31339  F0 12          BEQ $C3134D
+C3133B  85 8C          STA $8C
+C3133D  C2 21          REP #$21
+C3133F  BD 01 00       LDA $0001,X
+C31342  65 80          ADC $80
+C31344  85 8A          STA $8A
+C31346  E8             INX
+C31347  E8             INX
+C31348  E8             INX
+C31349  E2 20          SEP #$20
+C3134B  80 8D          BRA $C312DA
+C3134D  C2 20          REP #$20
+C3134F  98             TYA
+C31350  38             SEC
+C31351  E5 84          SBC $84
+C31353  85 88          STA $88
+C31355  7A             PLY
+C31356  FA             PLX
+C31357  68             PLA
+C31358  28             PLP
+C31359  2B             PLD
+C3135A  AB             PLB
+C3135B  6B             RTL
+                     ----------------
+
+
+#####################################
+
+
+Repeat	02 D0
+00000010	11010000
+
+shift 2
+length 1D	00011101
+
+
+
+
+Repeat	02 C8
+00000010	11001000
+
+shift 2
+length 1C	00011100
+
+a = 02
+b = C8
+b >> 3		19
+b = b + 2	1B
+a = 0xC802
+a = a & 0x7FF
+
+
+
+00000010	11001000

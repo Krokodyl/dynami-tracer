@@ -1,0 +1,8 @@
+58EF6
+58E4C
+9A81
+
+BUG		07-SKULL	offsetData 	51F1D
+Generation of pointerData doesn't stop at the first EL
+FIXED
+

@@ -1,0 +1,15 @@
+Daniel / Jim
+
+11	Pince-nez
+12	Fake mustache
+13	Top Hat
+14	Cane
+15	Tuxedo
+46	VIP Card
+
+16	Bra Inserts
+17	Fishnet Tights
+18	Rouge
+19	High Heels
+1A	Pantsuit
+46	VIP Card

@@ -9,7 +9,7 @@ FFC0		ﾀﾞｲﾅﾏｲ･ﾄﾚｰｻｰ
 
 FFD8		31		00110001		FastROM HiROM
 
-
+###############  BSX HEADER REF  #####################
 xFB0-xFB1 = Licensee / Maker Code
 xFB2-xFB5 = Program Type
 xFB6-xFBF = Reserved
@@ -25,3 +25,4 @@ xFDB      = Version Number (unconfirmed)
 xFDC-xFDD = Inverse Checksum
 xFDE-xFDF = Checksum
 xFE0-xFFF = Exception Vectors (Identical to SNES ROM header)
+

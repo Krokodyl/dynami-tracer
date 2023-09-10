@@ -2,3 +2,6 @@
 Printing normal characters
 $300D9
 $305F1
+
+Loading Intro text
+C21409		PRG ROM

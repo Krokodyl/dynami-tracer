@@ -1,0 +1,9 @@
+ 3F - bottom door (key required) leads to the elevator to 2F - central room
+ 
+ 2F - Central room - top door -> elevator to 1F - control room
+ 
+S - hidden room: locked chest
+NW - hidden room: torchlight
+SW - hidden room: key to the locked chests
+
+NE - hidden room: locked chest

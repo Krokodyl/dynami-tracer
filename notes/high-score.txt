@@ -1,0 +1,154 @@
+JAPANESE VERSION
+NO SAVE FILE
+FIRST WRITE
+
+SRAM	x63A0
+MVN 001380 1653A0
+
+C23061  A2 AE 30       LDX #$30AE
+C23064  A0 80 13       LDY #$1380
+C23067  C2 20          REP #$20
+C23069  A9 5A 00       LDA #$005A
+C2306C  54 00 C2       MVN $C2,$00
+
+x230AE
+
+CHECKSUM HIGH SCORE
+C23579  A9 00 00       LDA #$0000
+C2357C  18             CLC
+C2357D  7D 00 00       ADC $0000,X
+C23580  E8             INX
+C23581  E8             INX
+C23582  E0 5C 10       CPX #$105C
+C23585  D0 F5          BNE $C2357C
+
+
+
+DEFAULT HIGH SCORE
+F8 0C 01 02 AA F8 D8 F8 00 
+CD 08 02 01 DE F8 5A 00 00 
+F6 02 03 00 5E B4 AE DA 00 
+FD 01 04 03 C6 AC DA 66 00 
+64 00 05 04 80 F8 69 F8 00 
+00 00 06 05 56 D0 00 00 00 
+08 E2 20 A9 00 48 20 46 2F
+20 1F 30 C9 00 F0 0A 68 1A 
+C9 08 90 EF A9 FF 80 01 68 
+85 7C 28 60 08 E2 20 A5 7C 
+20 00 00 00 00 00
+
+EXAMPLE
+D9 1D 01 01 AB AB AB AB AB F8 0C 01 02 AA F8 D8
+F8 00 CD 08 02 01 DE F8 5A 00 00 F6 02 03 00 5E
+B4 AE DA 00 FD 01 04 03 C6 AC DA 66 00 64 00 05
+04 80 F8 69 F8 00 00 00 06 05 56 D0 00 00 00 08
+E2 20 A9 00 48 20 46 2F 20 1F 30 C9 00 F0 0A 68
+1A C9 08 90 EF A9 FF 80 01 68 1A 1B 00 00 00 00
+
+
+READ HIGH SCORE AFTER CHECKSUM
+WRAM x1000
+
+Read character
+C22CF6  BD 03 10       LDA $1003,X
+
+Read name
+C22D2F  A9 05          LDA #$05
+C22D31  48             PHA
+C22D32  BD 04 10       LDA $1004,X
+C22D35  F0 0F          BEQ $C22D46
+C22D37  E8             INX
+C22D38  88             DEY
+C22D39  DA             PHX
+C22D3A  5A             PHY
+C22D3B  20 2E 0F       JSR $0F2E
+
+Read points
+C22D60  BC 00 10       LDY $1000,X
+C22D63  84 00          STY $00
+C22D65  A0 05 00       LDY #$0005
+C22D68  84 02          STY $02
+C22D6A  84 04          STY $04
+
+Read rank
+C22D7C  BD 02 10       LDA $1002,X
+C22D7F  29 07          AND #$07
+C22D81  09 30          ORA #$30
+
+Shift X
+C22CBE  E9 02          SBC #$02
+C22CC0  C9 0C          CMP #$0C
+C22CC2  90 03          BCC $C22CC7
+C22CC4  4C 98 2D       JMP $2D98
+C22CC7  4A             LSR
+C22CC8  48             PHA
+
+C22CBE		A= 00 04 06 08 0A 0C
+			-2
+			/2
+			X= 00 01 02 03 04 05
+			X= 00 03 06 09 0C 0F
+
+				0 4 6 8 10 12
+				0 2 4 6 8 10
+				0 1 2 3 4 5
+				
+				0 3 6 9 12 15
+---------------------
+
+SRAM
+x67A0
+length 5C
+
+WRITING
+C22EEF  09 16          ORA #$16
+...
+C22F2C  C9 16          CMP #$16
+
+From 7E1000 to 1667A0
+
+READING
+C23552
+
+C22EEF  09 16          ORA #$16
+...
+C22F09  C9 16          CMP #$16
+
+
+
+C23552  08             PHP
+C23553  E2 20          SEP #$20
+C23555  A5 7C          LDA $7C		= $FF01
+C23557  20 E7 2E       JSR $2EE7
+
+C22EE7  08             PHP
+C22EE8  E2 20          SEP #$20
+C22EEA  48             PHA
+C22EEB  4A             LSR			= $FF00
+C22EEC  4A             LSR
+C22EED  29 01          AND #$01		
+C22EEF  09 16          ORA #$16		= $FF16
+C22EF1  48             PHA
+C22EF2  AB             PLB
+C22EF3  68             PLA			= $FF01
+C22EF4  0A             ASL
+C22EF5  0A             ASL
+C22EF6  29 0C          AND #$0C
+C22EF8  09 50          ORA #$50		= $FF54
+C22EFA  EB             XBA
+C22EFB  A9 00          LDA #$00		= $5400
+C22EFD  AA             TAX
+C22EFE  28             PLP
+C22EFF  60             RTS
+                     ----------------
+C2355A  8B             PHB
+C2355B  C2 20          REP #$20
+C2355D  8A             TXA
+C2355E  18             CLC
+C2355F  69 A0 03       ADC #$03A0
+C23562  AA             TAX
+C23563  AB             PLB
+C23564  28             PLP
+C23565  60             RTS
+                     ----------------
+
