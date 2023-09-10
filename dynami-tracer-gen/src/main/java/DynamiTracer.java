@@ -164,13 +164,12 @@ public class DynamiTracer {
 
 
 
-        PointerTable table8 = new PointerTable(0x50000, 0x12009E, 0x120000);
-        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x120000));
-        /*PointerTable table8 = new PointerTable(0x50000, 0x5E800+0x9E, 0x50000);
-        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x5E800));*/
+        //PointerTable table8 = new PointerTable(0x50000, 0x12009E, 0x120000);
+        //table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x120000));
+        PointerTable table8 = new PointerTable(0x50000, 0x5E800+0x9E, 0x50000);
+        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x5E800));
         table8.setName("08-STATION");
         table8.setMaxLineLength(30);
-        tables.add(table8);
         /*table8.loadPointers(data);
         //generateEmptyTranslationFiles(data, table8, japaneseDictionary);
         table8.loadTranslations(latin, true);
@@ -208,13 +207,22 @@ public class DynamiTracer {
         //tableIntro.setMaxLineLength(26);
         //tableIntro.checkTranslationsLength(TARGET_LANGUAGE);
 
+
+        tables.add(table8); // STATION
+
         for (PointerTable table : tables) {
             table.loadPointers(data);
+        }
+        for (PointerTable table : tables) {
             //generateEmptyTranslationFiles(data, table6, japaneseDictionary);
+        }
+        for (PointerTable table : tables) {
             table.loadTranslations(latin, true);
+        }
+        for (PointerTable table : tables) {
             table.writeEnglish(data);
         }
-
+        
 
         // Switch bank to load texts
         /**
@@ -272,7 +280,8 @@ public class DynamiTracer {
                 "85 16 80 22 C9 40 C5 D0 07 " +
                 "A9 00 51 " +
                 "85 16 80 16 C9 CF C5 D0 07 " +
-                "A9 00 52 " +
+                //"A9 00 52 " +
+                "A9 E8 C5 " +
                 "85 16 80 0A C9 E0 C5 D0 05 " +
                 "A9 80 52 " +
                 "85 16 28 A5 17 6B")));
