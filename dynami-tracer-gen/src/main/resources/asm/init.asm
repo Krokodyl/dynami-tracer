@@ -23,11 +23,15 @@ STA $70
 STZ $71
 STZ $73; set shift to 0
 
+CMP #$0E
+BEQ 16
+CMP #$0D
+BEQ 12
 CMP #$00
 BEQ 10; shift_reset
 CMP #$05
 BMI 4; no_shift_reset
-CMP #$19
+CMP #$13
 BMI 2; shift_reset
 BRA 8; no_shift_reset
 shift_reset:

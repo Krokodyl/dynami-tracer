@@ -15,11 +15,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static services.Utils.*;
 
 public class DataReader {
-    
+
+    private static final boolean PRINT_JAPANESE = true;
+
     public static List<Integer> loadPointers(byte[] data, int start, int end) {
         List<Integer> result = new ArrayList<>();
         int offset = start;
@@ -82,11 +85,11 @@ public class DataReader {
             }*/
             if ((a & 0xFF) == (end & 0xFF)) {
                 return result;
-            } else if ((a & 0xFF) >= 0x80 && (a & 0xFF) < 0xA0) {
+            } /*else if ((a & 0xFF) >= 0x80 && (a & 0xFF) < 0xA0) {
                 i++;
                 byte b = bytes[i];
                 result = ArrayUtils.addAll(result, new byte[]{b});
-            }
+            }*/
         }
         return result;
     }
@@ -162,16 +165,51 @@ public class DataReader {
                             t.setTranslation(language, value);
                             byte[] bytes = dictionary.getCode(value);
                             t.setData(bytes);
+                            engCount++;
                         }
                         else if (split.length>1 && split[1].length()>0) {
                             String value = split[1];
-                            if (value!=null && !value.isEmpty()) {
+                            if (value != null && !value.isEmpty()) {
                                 t.setTranslation(language, value);
                                 byte[] bytes = dictionary.getCode(value);
                                 t.setData(bytes);
                             }
                             //translationEngCount++;
                             engCount++;
+                        } else if (t.getOffsetData() == 0x5E128 || t.getOffsetData() == 0x5F109) {
+                            Map<Integer, String> lines = new HashMap<>();
+                            ResIO textResource = ResIO.getTextResource(String.format("translations/00-MOLEMAN-%s-%s.txt", h(t.getOffsetData()), language.getCode()));
+                            String value = "";
+                            while (textResource.hasNext()){
+                                String segment = textResource.next().toString();
+                                
+                                /*for (String specialCode : Font.SPECIAL_CODES) {
+                                    segment = segment.replaceAll(specialCode.replaceAll("\\{", "\\\\{"),"§");
+                                }*/
+                                
+                                String[] splitNL = segment.split("\\{NL}");
+                                
+                                segment = Arrays.stream(splitNL).map(
+                                        s -> {
+                                            String[] splitWPNL = s.split("\\{WPNL}");
+                                            return Arrays.stream(splitWPNL).map(
+                                                    s1 -> Font.autoInsertNewLines(s1, table.getMaxLineLength() - 1, false)
+                                                    ).collect(Collectors.joining("{WPNL}"));
+                                        }
+                                ).collect(Collectors.joining("{NL}"));
+                                /*for (String s : splitNL) {
+                                    segment = Font.autoInsertNewLines(s, table.getMaxLineLength() - 1, false);
+                                }*/
+                                if (textResource.hasNext()) {
+                                    segment = segment + "{WPCL}";
+                                }
+                                value += segment;
+                            }
+                            value += "{EL}";
+                            System.err.println("MOLEMAN\t"+value);
+                            t.setTranslation(language, value);
+                            byte[] bytes = dictionary.getCode(value);
+                            t.setData(bytes);
                         } else if (replaceMissingWithAddress) {
                             t.setAddressReplacement(true);
                             String value = h(t.getOffsetData())+"{EL}";
@@ -186,6 +224,20 @@ public class DataReader {
                         /*if (translationMap.containsKey(t.getDataOffset())) {
                             System.err.println(t);
                         }*/
+                        if (!table.getName().contains("PRESET") && !table.getName().contains("INTRO")) {
+                            String translation = t.getTranslation(language);
+                            if (dictionary.containsPresets(translation)) {
+                                translation = dictionary.applyPresets(translation);
+                                t.setTranslation(language, translation);
+                                byte[] bytes = dictionary.getCode(translation);
+                                t.setData(bytes);
+                            }
+                        }
+                        
+                        if (PRINT_JAPANESE) {
+                            if (t.getTranslation(language) == null || (t.getTranslation(language).isEmpty() || t.isAddressReplacement()) )
+                            System.out.println(String.format("%s-%s", h(t.getOffsetData()), Font.stripStringSpecialCode(t.getJapanese())));
+                        }
                         translationMap.put(t.getOffsetData(), t);
                         t = new Translation();
                     }

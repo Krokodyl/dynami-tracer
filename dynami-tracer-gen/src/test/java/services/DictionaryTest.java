@@ -16,4 +16,12 @@ public class DictionaryTest extends TestCase {
             System.out.println("yes");
         }
     }
+
+    public void testApplyPresets() {
+        String translation = "ABC the blank is the blank.";
+        String value = "{3F}";
+        String key = "the";
+        translation = translation.replaceAll(key, value);
+        System.out.println(translation);
+    }
 }

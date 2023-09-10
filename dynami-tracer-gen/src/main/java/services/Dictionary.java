@@ -12,11 +12,16 @@ public class Dictionary {
 
     Map<Integer, String> map = new TreeMap<>();
     Map<String, Integer> reverseMap = new TreeMap<>();
+
+    /**
+     * English String / Hexadecimal code 
+     */
+    Map<String, String> presets = new HashMap<>();
     
     public Dictionary(){
         
     }
-    
+
     public void loadDictionary(String filename) {
         ResIO io = ResIO.getTextResource(filename);
         while (io.hasNext()) {
@@ -28,6 +33,23 @@ public class Dictionary {
                     String value = split[1];
                     map.put(x(code), value);
                     reverseMap.put(value, x(code));
+                }
+            }
+        }
+    }
+
+    public void loadPresets(String filename) {
+        ResIO io = ResIO.getTextResource(filename);
+        while (io.hasNext()) {
+            String line = io.next().toString();
+            if (line!=null && line.contains("=")) {
+                String[] split = line.split("=");
+                if (split.length>1) {
+                    String code = split[0];
+                    String value = split[1];
+                    presets.put(value, code);
+                    //map.put(x(code), value);
+                    //reverseMap.put(value, x(code));
                 }
             }
         }
@@ -103,5 +125,26 @@ public class Dictionary {
             
         }
         return values.toArray(new String[0]);
+    }
+
+    public boolean containsPresets(String translation) {
+        for (Map.Entry<String, String> e : presets.entrySet()) {
+            String value = e.getValue();
+            String key = e.getKey();
+            if (translation.contains(key)) return true;
+        }
+        return false;
+    }
+    
+    public String applyPresets(String translation) {
+        for (Map.Entry<String, String> e : presets.entrySet()) {
+            String value = e.getValue();
+            String key = e.getKey();
+            while (translation.contains(key)) {
+                translation = translation.replace(key, value);
+            }
+            //translation = translation.replaceAll(key, value);
+        }
+        return translation;
     }
 }

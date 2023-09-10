@@ -1,18 +1,29 @@
+import com.google.common.primitives.Bytes;
+import compression.REPEAT_ALGORITHM;
+import compression.algorithms.DynamiTracerCompressor;
 import entities.Constants;
 import entities.Patch;
 import enums.Language;
 import images.Sprite;
+import old.ImageParser;
+import old.Palette4bpp;
+import org.apache.commons.lang.ArrayUtils;
+import palette.ColorGraphics;
 import resources.Hex;
+import resources.Memory;
 import resources.ResIO;
+import resources.ResourceLoader;
 import services.*;
 import services.Dictionary;
-import services.lz.LzCompressor;
-import services.lz.LzDecompressor;
+import services.lz.DynamiTracerAlgorithm;
+import services.lz.DynamiTracerLz;
 import services.pointers.PointerEntry;
 import services.pointers.PointerRange;
 import services.pointers.PointerTable;
 import services.pointers.PointerTableType;
 import services.vwf.Font;
+import tile.ColorDepth;
+import tile.TileParser;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -27,11 +38,12 @@ import java.util.logging.Logger;
 import static services.Utils.*;
 
 public class DynamiTracer {
-    
-    public static byte[] data;
 
-    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\original\\BS Dynami Tracer (Japan).sfc";
-    private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\work\\BS Dynami Tracer (Japan).sfc";
+    public static byte[] data;
+    public static byte[] dataInput;
+
+    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\input\\BS Dynami Tracer (Japan Extended).sfc";
+    private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\output\\BS Dynami Tracer (English Extended).sfc";
 
     static Dictionary japaneseDictionary = new Dictionary();
     static Dictionary japaneseSmallDictionary = new Dictionary();
@@ -44,10 +56,615 @@ public class DynamiTracer {
     public static boolean SKIP_FILES_GENERATION = true;
     
     public static Language TARGET_LANGUAGE = Language.ENGLISH;
-    
+
     public static void main(String[]args) {
-        
         loadRom();
+        
+        // Images fonts
+        Font.writeSmallFontData(data);
+        Font.generateVWFFontData();
+        patches.addAll(Font.getFontPatches());
+
+        // Texts
+        loadDictionaries();
+
+        int bank1PointerOffset = 0x1A92D;
+        int bank1Shift = 0x10000;
+
+        List<PointerTable> tables = new ArrayList<>();
+        
+        PointerTable tableIntro = new PointerTable(0x2C9E0, 0x10C9E0, 0x10C9E0);
+        tableIntro.addRange(new PointerRange(x("2C980"), x("2C983")));
+        tableIntro.addRange(new PointerRange(x("2C990"), x("2C9DB")));
+        tableIntro.setName("01-INTRO");
+        tables.add(tableIntro);
+        /*tableIntro.loadPointers(data);
+        generateEmptyTranslationFiles(data, tableIntro, japaneseSmallDictionary);
+        tableIntro.loadTranslations(latinSmall);
+        tableIntro.writeEnglish(data);*/
+
+        /**
+         * C19AB4  A9 2D A9       LDA #$A92D
+         * C19AB7  8D 0D 04       STA $040D
+         * C19ABA  A9 C1 00       LDA #$00C1
+         * C19ABD  8D 0F 04       STA $040F
+         * 
+         */
+        //patches.add(new Patch(0x19AB4, Hex.parseHex("A9 00 80")));
+        //patches.add(new Patch(0x19ABA, Hex.parseHex("A9 C4 00")));
+        
+        PointerTable table1 = new PointerTable(0x10000, 0x1A965, 0x10000);
+        table1.addRange(new PointerRange(0x1A92D, 0x1A964));
+        //PointerTable table1 = new PointerTable(0x10000, 0x48100, 0x40000);
+        //table1.addRange(new PointerRange(0x1A92D, 0x1A964, 0x48000));
+        table1.setName("02-ANNOUNCER");
+        table1.setMaxLineLength(23);
+        tables.add(table1);
+        /*table1.loadPointers(data);
+        generateEmptyTranslationFiles(data, table1, japaneseDictionary);
+        table1.loadTranslations(latin);
+        table1.writeEnglish(data);*/
+        //table1.writeBlanks(data);
+        
+        bank1PointerOffset = 0x1AA00;
+
+        PointerTable table4 = new PointerTable(0x30000, 0x30E3E, 0x30000);
+        table4.addRange(new PointerRange(0x30E00, 0x30E3D));
+        table4.setName("05-PRESETS");
+        table4.setType(PointerTableType.SIZE_PREFIX);
+        //tables.add(table4);
+        table4.loadPointers(data);
+        generateEmptyTranslationFiles(data, table4, japaneseDictionary);
+        table4.loadTranslations(latin, true);
+        table4.writeEnglish(data);
+        
+        PointerTable table7 = new PointerTable(0x50000, 0x100268, 0x100000);
+        table7.addRange(new PointerRange(0x50000, 0x50267, 0x100000));
+        //PointerTable table7 = new PointerTable(0x50000, bank1PointerOffset+0x268, 0x10000);
+        //table7.addRange(new PointerRange(0x50000, 0x50267, bank1PointerOffset));
+        table7.setName("07-SKULL");
+        table7.setMaxLineLength(30);
+        tables.add(table7);
+        /*table7.loadPointers(data);
+        generateEmptyTranslationFiles(data, table7, japaneseDictionary);
+        table7.loadTranslations(latin, true);
+        table7.writeEnglish(data);*/
+        //table7.writeBlanks(data);
+
+        //patches.add(new Patch(0x3962C, Hex.parseHex("00 80 50"))); // 00 00 C5
+
+        
+        
+
+
+        PointerTable table2 = new PointerTable(0x50000, 0x110272, 0x110000);
+        table2.addRange(new PointerRange(0x54000, 0x54271, 0x110000));
+        /*PointerTable table2 = new PointerTable(0x50000, 0x53200+0x272, 0x50000);
+        table2.addRange(new PointerRange(0x54000, 0x54271, 0x53200));*/
+        table2.setName("03-TWIN-STAR");
+        table2.setMaxLineLength(30);
+        tables.add(table2);
+        /*table2.loadPointers(data);
+        generateEmptyTranslationFiles(data, table2, japaneseDictionary);
+        table2.loadTranslations(latin);
+        table2.writeEnglish(data);*/
+        //table2.writeBlanks(data);
+
+        //patches.add(new Patch(0x3F7D5, Hex.parseHex("00 00 00 51"))); // 00 40 C5
+        //patches.add(new Patch(0x3F55F, Hex.parseHex("00 00 51"))); // 00 40 C5
+
+        PointerTable table3 = new PointerTable(0x50000, 0x58004, 0x50000);
+        table3.addRange(new PointerRange(0x58000, 0x58003));
+        table3.setName("04-TWIN-STAR-CHEST");
+        //tables.add(table3);
+        table3.loadPointers(data);
+        //generateEmptyTranslationFiles(data, table3, japaneseDictionary);
+        table3.loadTranslations(latin);
+        table3.writeEnglish(data);
+
+
+
+        PointerTable table8 = new PointerTable(0x50000, 0x12009E, 0x120000);
+        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x120000));
+        /*PointerTable table8 = new PointerTable(0x50000, 0x5E800+0x9E, 0x50000);
+        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x5E800));*/
+        table8.setName("08-STATION");
+        table8.setMaxLineLength(30);
+        tables.add(table8);
+        /*table8.loadPointers(data);
+        //generateEmptyTranslationFiles(data, table8, japaneseDictionary);
+        table8.loadTranslations(latin, true);
+        table8.writeEnglish(data);*/
+
+        PointerTable table9 = new PointerTable(0x50000, 0x12801A, 0x120000);
+        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x128000));
+        /*PointerTable table9 = new PointerTable(0x50000, 0x5011A, 0x50000);
+        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x50100));*/
+        table9.setName("09-SAND");
+        table9.setMaxLineLength(30);
+        tables.add(table9);
+        /*table9.loadPointers(data);
+        //generateEmptyTranslationFiles(data, table9, japaneseDictionary);
+        table9.loadTranslations(latin, true);
+        table9.writeEnglish(data);*/
+        //table9.writeBlanks(data);
+
+        PointerTable table6 = new PointerTable(0x50000, 0x58456, 0x50000);
+        table6.addRange(new PointerRange(0x58100, 0x58455));
+        table6.setName("06-MUSIC-FACTORY");
+        table6.setMaxLineLength(30);
+        tables.add(table6);
+        /*table6.loadPointers(data);
+        //generateEmptyTranslationFiles(data, table6, japaneseDictionary);
+        table6.loadTranslations(latin, true);
+        table6.writeEnglish(data);*/
+        
+        table1.checkTranslationsLength(TARGET_LANGUAGE);
+        table2.checkTranslationsLength(TARGET_LANGUAGE);
+        table6.checkTranslationsLength(TARGET_LANGUAGE);
+        table7.checkTranslationsLength(TARGET_LANGUAGE);
+        table8.checkTranslationsLength(TARGET_LANGUAGE);
+        table9.checkTranslationsLength(TARGET_LANGUAGE);
+        //tableIntro.setMaxLineLength(26);
+        //tableIntro.checkTranslationsLength(TARGET_LANGUAGE);
+
+        for (PointerTable table : tables) {
+            table.loadPointers(data);
+            //generateEmptyTranslationFiles(data, table6, japaneseDictionary);
+            table.loadTranslations(latin, true);
+            table.writeEnglish(data);
+        }
+
+
+        // Switch bank to load texts
+        /**
+         LDA $7F2001,X
+         STA $17
+         PHP
+         REP #$20
+         LDA $16
+
+         CMP #$C501
+         BNE 7 ; jump to next cmp
+         LDA #$5000
+         STA $16
+         BRA 58 ; jump to end
+         
+         CMP #$C541
+         BNE 7 ; jump to next cmp
+         LDA #$C501
+         STA $16
+         BRA 46 ; jump to end
+
+         CMP #$C500
+         BNE 7 ; jump to next cmp
+         LDA #$5000
+         STA $16
+         BRA 34 ; jump to end
+
+         CMP #$C540
+         BNE 7 ; jump to next cmp
+         LDA #$C500
+         STA $16
+         BRA 22 ; jump to end
+
+         CMP #$C5CF
+         BNE 7 ; jump to next cmp
+         LDA #$5200
+         STA $16
+         BRA 10 ; jump to end
+         CMP #$C5E0
+         BNE 5 ; jump to next cmp
+         LDA #$5280
+         STA $16
+         PLP
+         LDA $17
+         RTL
+         */
+        patches.add(new Patch(0x243E, Hex.parseHex("22 D0 B6 C2")));
+        patches.add(new Patch(0x2B6D0, Hex.parseHex("" +
+                "BF 01 20 7F 85 17 08 C2 20 A5 16 C9 01 C5 D0 07 " +
+                "A9 01 50 " +
+                "85 16 80 3A C9 41 C5 D0 07 " +
+                "A9 01 51 " +
+                "85 16 80 2E C9 00 C5 D0 07 " +
+                "A9 00 50 " +
+                "85 16 80 22 C9 40 C5 D0 07 " +
+                "A9 00 51 " +
+                "85 16 80 16 C9 CF C5 D0 07 " +
+                "A9 00 52 " +
+                "85 16 80 0A C9 E0 C5 D0 05 " +
+                "A9 80 52 " +
+                "85 16 28 A5 17 6B")));
+
+        /**
+         * Reading text pointers
+         C30015  B7 0D          LDA [$0D],Y
+         C30017  85 1A          STA $1A
+
+         PHP
+         ;shift_reset:
+         LDA #$10
+         STA $70
+         STZ $71
+         STZ $73; set shift to 0
+         PLP
+         LDA [$0D],Y
+         STA $1A
+         RTL
+         
+         */
+        patches.add(new Patch(0x30015, Hex.parseHex("22 A0 B6 C2")));
+        patches.add(new Patch(0x2B6A0, Hex.parseHex("08 E2 20 A9 10 85 70 64 71 64 73 28 B7 0D 85 1A 6B")));
+        
+        insertQuizAnswers();
+
+        fixItemList();
+
+        endingImages();
+        postcardImage();
+
+        patches.add(new Patch(0x107FE0, Hex.parseHex("50 72 65 76 69 65 77 20 76 65 72 73 69 6F 6E 20 66 6F 72 20 63 61 62 62 75 73 73 65 73 00 00 00")));
+        
+        loadPatches();
+        applyPatches(data);
+
+        //printQuestions(table2);
+        
+        
+        /*tables.add(tableIntro);
+        tables.add(table1);
+        tables.add(table2);
+        tables.add(table6);
+        tables.add(table7);
+        tables.add(table8);
+        tables.add(table9);*/
+
+        
+        
+        //analyzeFrequencies(tables);
+
+        //analyzeCommonFrequencies(tables);
+
+        for (PointerTable pt : tables) {
+            String name = pt.getName();
+            int oldLength = pt.getOldLength(dataInput);
+            int newLength = pt.getNewLength();
+            int diff = newLength - oldLength;
+            System.out.println(String.format("%20s"+"\t\t%05X\t\t%05X\t\t%05X", name, oldLength, newLength, diff));
+            //pt.updateFrequencies(wordFrequencies, TARGET_LANGUAGE);
+        }
+
+
+        saveRom();
+    }
+
+    private static void analyzeFrequencies(List<PointerTable> tables) {
+        Map<String, Integer> wordFrequencies = new HashMap<>();
+        for (PointerTable pt : tables) {
+            System.out.println(String.format("%20s"+"\t\t%05X\t\t%05X\t\t%05X", pt.getName(), pt.getOldLength(dataInput), pt.getNewLength(), pt.getNewLength()-pt.getOldLength(dataInput)));
+            pt.updateFrequencies(wordFrequencies, TARGET_LANGUAGE);
+        }
+
+        // Create a list from elements of HashMap
+        List<Map.Entry<String, Integer> > list =
+                new LinkedList<Map.Entry<String, Integer> >(wordFrequencies.entrySet());
+
+        // Sort the list
+        Collections.sort(list, Map.Entry.comparingByValue());
+        Collections.reverse(list);
+
+        for (Map.Entry<String, Integer> e : list) {
+            int gain = (e.getKey().length()-1)*e.getValue();
+            //if (gain>200)
+            //System.out.println(String.format("%s\t\t%s\t\t%s", e.getValue(), e.getKey(), gain));
+        }
+    }
+
+    private static void analyzeCommonFrequencies(List<PointerTable> tables) {
+        String bigrams = "th he in er an re nd on en at ou ed ha to or it is hi es ng";
+        String trigrams = "the and ing her hat his tha ere for ent ion ter was you ith ver all wit thi tio";
+        String quadrigrams = "that ther with tion here ould ight have hich whic this thin they atio ever from ough were hing ment";
+        Map<String, Integer> commonFrequencies = new HashMap<>();
+        for (String s : bigrams.split(" ")) {
+            commonFrequencies.put(s, 0);
+        }
+        for (String s : trigrams.split(" ")) {
+            commonFrequencies.put(s, 0);
+        }
+        for (String s : quadrigrams.split(" ")) {
+            commonFrequencies.put(s, 0);
+        }
+        for (PointerTable pt : tables) {
+            pt.updateCommonFrequencies(commonFrequencies, TARGET_LANGUAGE);
+        }
+        /*for (Map.Entry<String, Integer> e : commonFrequencies.entrySet()) {
+            int gain = (e.getKey().length()-1)*e.getValue();
+            System.out.println(String.format("%s\t\t%s\t\t%s", e.getKey(), e.getValue(), gain));
+        }*/
+
+        List<Map.Entry<String, Integer> > list =
+                new LinkedList<Map.Entry<String, Integer> >(commonFrequencies.entrySet());
+
+        // Sort the list
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                int gain1 = (o1.getKey().length()-1)*o1.getValue();
+                int gain2 = (o2.getKey().length()-1)*o2.getValue();
+                return gain2-gain1;
+            }
+        });
+        Collections.reverse(list);
+
+        for (Map.Entry<String, Integer> e : list) {
+            int gain = (e.getKey().length()-1)*e.getValue();
+            //if (gain>200)
+            System.out.println(String.format("%5s\t\t%5s\t\t%5s", e.getValue(), e.getKey(), gain));
+        }
+        
+    }
+
+    private static void toBeContinued() {
+        
+    }
+
+    private static void postcardImage() {
+        System.out.println("postcardImage");
+
+        /**
+         PHP
+         LDA $482
+         CMP #$00C7
+         BNE 32 ; to plp
+         LDA $480
+         CMP #$AF1B
+         BNE 14 ; to cmp
+         LDA #$0056
+         STA $482
+         LDA #$AAAA
+         STA $480
+         BRA 17; to plp
+         CMP #$B1B3
+         BNE 12; to plp
+         LDA #$0056
+         STA $482
+         LDA #$BBBB
+         STA $480
+         PLP
+         LDX #$2400
+         STX $0484
+         RTL
+         */
+
+        patches.add(new Patch(0x20A55, Hex.parseHex("22 00 40 C1 EA EA")));
+        patches.add(new Patch(0x14000, Hex.parseHex("08 E2 20 AD 82 04 C9 C7 D0 2B C2 20 AD 80 04 C9 1B AF D0 0F A9 AA AA 8D 80 04 E2 20 A9 56 8D 82 04 80 12 C9 B3 B1 D0 0D A9 BB BB 8D 80 04 E2 20 A9 56 8D 82 04 28 A2 00 24 8E 84 04 6B")));
+        
+        
+        TileParser parser = new TileParser();
+        ColorGraphics colorGraphics = new ColorGraphics();
+        colorGraphics.loadFromDataFile("images/postcard/cgram.data");
+        BufferedImage bufferedImage = ResourceLoader.loadImage("images/postcard/tilemap.png");
+        parser.parseImage(bufferedImage, colorGraphics, ColorDepth._4BPP, 8, 0);
+        byte[] characterBytes = parser.getCharacterBytes();
+        byte[] tileMapBytes = parser.getTileMapBytes();
+        //System.out.println(Hex.getHexString(characterBytes));
+        //System.out.println(Hex.getHexString(tileMapBytes));
+        
+        int offset = 0x160000;
+        int bank = 0x56;
+        //patches.add(new Patch(0x20A50, Hex.parseHex("A9 56")));
+        
+        byte[] pointer = Memory.getPointerLow(offset-0x160000);
+        //System.out.println(Arrays.toString(pointer));
+
+        patches.add(new Patch(0x14029, pointer));
+
+        System.out.println("tiles");
+        byte[] compressedData = DynamiTracerLz.compressData(characterBytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        patches.add(new Patch(offset, compressedData));
+        offset += compressedData.length;
+
+
+        System.out.println("tilemap");
+        pointer = Memory.getPointerLow(offset-0x160000);
+        patches.add(new Patch(0x14015, pointer));
+        compressedData = DynamiTracerLz.compressData(tileMapBytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        patches.add(new Patch(offset, compressedData));
+
+        // TO BE CONTINUED TILES
+        /*offset += compressedData.length;
+        pointer = Memory.getPointerLow(offset-0x168000);
+        patches.add(new Patch(0x2FF80, pointer));
+        byte[] bytes = DynamiTracerLz.decompressData(data, 0x78000, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+        compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        patches.add(new Patch(offset, compressedData));*/
+
+    }
+
+    private static void endingImages() {
+        System.out.println("ending final fantasy");
+        byte[] bytes = ImageParser.loadImage4bpp(
+                "images/ending/tiles-ff.png", new Palette4bpp("images/ending/palette-ff.png"));
+
+        int offset = 0x140000;
+        patches.add(new Patch(0x6343C, Hex.parseHex("00 00 54")));
+/*
+        byte[] decompressData = DynamiTracerLz.decompressData(data, 0x9A800, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+        
+        byte[] compressedData = DynamiTracerLz.compressData(decompressData, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+        patches.add(new Patch(offset, compressedData));
+*/
+        System.out.println("tiles");
+        int pointer = 0x9A800;
+        //byte[] expectedData = DynamiTracerLz.decompressData(data, pointer, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+        byte[] compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        //byte[] decompressData = DynamiTracerLz.decompressData(compressedData, 0, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+
+        patches.add(new Patch(offset, compressedData));
+        //byte[] decompressData = DynamiTracerLz.decompressData(data, 0x9A800, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+
+        // TILEMAP
+
+        System.out.println("tilemap");
+        offset = 0x148000;
+        patches.add(new Patch(0x6323C, Hex.parseHex("00 80 54")));
+
+        bytes = ResIO.getBinaryResource("images/ending/tilemap-ff.data").getBytes();
+        compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+
+        patches.add(new Patch(offset, compressedData));
+
+        System.out.println("ending chrono trigger");
+        System.out.println("tiles");
+        // CHRONO TILES
+        bytes = ImageParser.loadImage4bpp(
+                "images/ending/tiles-chrono.png", new Palette4bpp("images/ending/palette-chrono.png"));
+
+        offset = 0x150000;
+        patches.add(new Patch(0x63448, Hex.parseHex("00 00 55")));
+
+        //pointer = 0x9A800;
+        //byte[] expectedData = DynamiTracerLz.decompressData(data, pointer, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
+        compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        //byte[] decompressData = DynamiTracerLz.decompressData(compressedData, 0, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+
+        patches.add(new Patch(offset, compressedData));
+        patches.add(new Patch(0x6B2ED, Hex.parseHex("58")));
+        patches.add(new Patch(0x6B2EE, Hex.parseHex("08")));
+    }
+
+    private static void printQuestions(PointerTable table) {
+        table.printTranslations(0x55F3E,0x57883, TARGET_LANGUAGE, 0x56496);
+    }
+
+    private static void insertQuizAnswers() {
+        // Decompress quiz answer
+        byte[] answersData = DynamiTracerLz.decompressData(data, 0x40BFA, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        
+        byte[] newAnswersData = new byte[0x1C60+0x800];
+        System.arraycopy(answersData, 0, newAnswersData, 0, answersData.length);
+
+        List<String> quizAnswers = loadQuizAnswers(TARGET_LANGUAGE);
+        int i = 0x1C60;
+        for (String quizAnswer : quizAnswers) {
+            byte[] code = latinSmall.getCode(quizAnswer);
+            System.arraycopy(code, 0, newAnswersData, i, code.length);
+            i += 0x10;
+        }
+
+
+        byte[] compressedData = DynamiTracerLz.compressData(newAnswersData, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        
+        int offset = 0x130000;
+
+        //patches.add(new Patch(offset, answersData));
+        patches.add(new Patch(offset, compressedData));
+        //System.arraycopy(data, 0x40BFA, data, offset, 0x800);
+
+        patches.add(new Patch(0x3E06C, Hex.parseHex("00 00 53")));
+
+
+        /**
+         * Check answers main
+         JSL $C3E100
+         NOP
+         NOP
+         CMP #$0001
+         BNE 40 ;$C049F6
+         */
+        String thirtyNOP = "EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA EA ";
+        patches.add(new Patch(0x49C3, Hex.parseHex("22 00 E1 C3 EA EA C9 01 00 D0 28 "+thirtyNOP)));
+        
+
+        /**
+         * Check answers sub
+         PHP
+         PHX
+         SEP #$20
+         LDA $114
+         SEC
+         SBC #$19
+         REP #$20
+         ASL
+         ASL
+         ASL
+         ASL
+         TAX
+         LDA $7F3C60,X
+         CMP $7F0021
+         BNE 74 
+         LDA $7F3C62,X
+         CMP $7F0023
+         BNE 64
+         LDA $7F3C64,X
+         CMP $7F0025
+         BNE 54
+         LDA $7F3C66,X
+         CMP $7F0027
+         BNE 44
+         LDA $7F3C68,X
+         CMP $7F0029
+         BNE 34
+         LDA $7F3C6A,X
+         CMP $7F002B
+         BNE 24
+         LDA $7F3C6C,X
+         CMP $7F002D
+         BNE 14
+         LDA $7F3C6E,X
+         CMP $7F002F
+         BNE 4
+         LDA #$0001
+         RTL
+         LDA #$0002
+         RTL
+         */
+        patches.add(new Patch(0x3E100, Hex.parseHex("08 DA E2 20 AD 14 01 38 E9 19 C2 20 0A 0A 0A 0A AA BF 60 3C 7F CF 21 00 7F D0 4C BF 62 3C 7F CF 23 00 7F D0 42 BF 64 3C 7F CF 25 00 7F D0 38 BF 66 3C 7F CF 27 00 7F D0 2E BF 68 3C 7F CF 29 00 7F D0 24 BF 6A 3C 7F CF 2B 00 7F D0 1A BF 6C 3C 7F CF 2D 00 7F D0 10 BF 6E 3C 7F CF 2F 00 7F D0 06 A9 01 00 FA 28 6B A9 02 00 FA 28 6B")));
+
+        /**
+         Answer input length
+         23954  A9 08 00       LDA #$0008
+         */
+        patches.add(new Patch(0x23954, Hex.parseHex("A9 10 00")));
+        patches.add(new Patch(0x23932, Hex.parseHex("A2 10 18")));
+
+        /**
+         Answer panel width 23725  A2 14 00
+         */
+        patches.add(new Patch(0x23725, Hex.parseHex("A2 19 00")));
+
+        /**
+
+         Answer input position 
+         23750  A9 08          LDA #$08
+         23844  A9 09          LDA #$09
+         */
+        patches.add(new Patch(0x23750, Hex.parseHex("A9 05")));
+        patches.add(new Patch(0x23844, Hex.parseHex("A9 06")));
+
+        /**
+
+         Answer cursor position 
+         2369F  69 80          ADC #$80
+         */
+        patches.add(new Patch(0x2369F, Hex.parseHex("69 68")));
+
+    }
+
+    public static List<String> loadQuizAnswers(Language language) {
+        List<String> lines = new ArrayList<>();
+        ResIO textResource = ResIO.getTextResource(String.format("translations/00-QUIZ-%s.txt", language.getCode()));
+        while (textResource.hasNext()){
+            String line = textResource.next().toString().trim();
+            lines.add(line);
+        }
+        return lines;
+    }
+
+
+
+    private static void loadDictionaries() {
         japaneseDictionary.loadDictionary("dictionaries/japanese.txt");
         //japanese.print();
         japaneseSmallDictionary.loadDictionary("dictionaries/small-japanese.txt");
@@ -56,23 +673,30 @@ public class DynamiTracer {
 
         latinSmall = Font.getLatinSmallDictionary();
         latin = Font.getLatinDictionary();
+    }
+
+
+    public static void main2(String[]args) {
+        
+        loadRom();
+        
 
         //testDuplicate(data, x("2C600"), x("2D600"));
         
         //generateSmallLatin();
 
-        ImageReader imageReader = new ImageReader();
-        imageReader.generateSmallImages();
+        /*ImageReader imageReader = new ImageReader();
+        imageReader.generateSmallImages();*/
 
-        List<BufferedImage> alphabetImages = DataReader.readAlphabetMainImages("uppercase/uppercase", Constants.COUNT_UPPERCASE);
-        SpriteWriter spriteWriter = new SpriteWriter();
+        //List<BufferedImage> alphabetImages = DataReader.readAlphabetMainImages("uppercase/uppercase", Constants.COUNT_UPPERCASE);
+        //SpriteWriter spriteWriter = new SpriteWriter();
         //spriteWriter.writeLatinCharacterSprites(alphabetImages, data);
         //spriteWriter.writeSmallLatinCharacterSprites("small/small", data);
 
         testVWF();
         Font.writeSmallFontData(data);
 
-        PointerTable tableIntro = new PointerTable(x("2C9E0"), x("2C9E0"));
+        PointerTable tableIntro = new PointerTable(0x2C9E0, 0x100000, 0x2C9E0);
         tableIntro.addRange(new PointerRange(x("2C980"), x("2C983")));
         tableIntro.addRange(new PointerRange(x("2C990"), x("2C9DB")));
 
@@ -83,73 +707,98 @@ public class DynamiTracer {
         tableIntro.writeEnglish(data);
 
 
-        PointerTable table1 = new PointerTable(0x10000, 0x1A965);
+        PointerTable table1 = new PointerTable(0x10000, 0x1A965, 0x2C9E0);
         table1.addRange(new PointerRange(0x1A92D, 0x1A964));
         table1.setName("02-ANNOUNCER");
+        table1.setMaxLineLength(23);
         table1.loadPointers(data);
         generateEmptyTranslationFiles(data, table1, japaneseDictionary);
         table1.loadTranslations(latin);
-        //table1.checkTranslationsLength();
-        table1.writeEnglish(data);
+        //table1.writeEnglish(data);
+        //table1.writeBlanks(data);
 
-        PointerTable table2 = new PointerTable(0x50000, 0x54272);
-        table2.addRange(new PointerRange(0x54000, 0x54271));
-        table2.setName("03-TWIN-STAR");
-        table2.setMaxLineLength(30);
-        table2.loadPointers(data);
-        generateEmptyTranslationFiles(data, table2, japaneseDictionary);
-        table2.loadTranslations(latin);
-        table2.checkTranslationsLength(TARGET_LANGUAGE);
-        table2.writeEnglish(data);
-
-        PointerTable table3 = new PointerTable(0x50000, 0x58004);
-        table3.addRange(new PointerRange(0x58000, 0x58003));
-        table3.setName("04-TWIN-STAR-CHEST");
-        table3.loadPointers(data);
-        generateEmptyTranslationFiles(data, table3, japaneseDictionary);
-        table3.loadTranslations(latin);
-        table3.writeEnglish(data);
-
-        PointerTable table4 = new PointerTable(0x30000, 0x30E3E);
+        PointerTable table4 = new PointerTable(0x30000, 0x30E3E, 0x2C9E0);
         table4.addRange(new PointerRange(0x30E00, 0x30E3D));
         table4.setName("05-PRESETS");
         table4.setType(PointerTableType.SIZE_PREFIX);
         table4.loadPointers(data);
         generateEmptyTranslationFiles(data, table4, japaneseDictionary);
         table4.loadTranslations(latin, true);
-        table4.writeEnglish(data);
+        //table4.writeEnglish(data);
+
+        PointerTable table7 = new PointerTable(0x50000, 0x50268, 0x2C9E0);
+        table7.addRange(new PointerRange(0x50000, 0x50267));
+        table7.setName("07-SKULL");
+        table7.setMaxLineLength(30);
+        table7.loadPointers(data);
+        generateEmptyTranslationFiles(data, table7, japaneseDictionary);
+        table7.loadTranslations(latin, true);
+        //table7.writeEnglish(data);
+        //table7.writeBlanks(data);
+
+        PointerTable table2 = new PointerTable(0x50000, 0x54272, 0x2C9E0);
+        table2.addRange(new PointerRange(0x54000, 0x54271));
+        table2.setName("03-TWIN-STAR");
+        table2.setMaxLineLength(30);
+        table2.loadPointers(data);
+        generateEmptyTranslationFiles(data, table2, japaneseDictionary);
+        table2.loadTranslations(latin);
+        //table2.writeEnglish(data);
+        //table2.writeBlanks(data);
+
+        /*PointerTable table3 = new PointerTable(0x50000, 0x58004);
+        table3.addRange(new PointerRange(0x58000, 0x58003));
+        table3.setName("04-TWIN-STAR-CHEST");
+        table3.loadPointers(data);
+        generateEmptyTranslationFiles(data, table3, japaneseDictionary);
+        table3.loadTranslations(latin);
+        table3.writeEnglish(data);*/
+        //table3.writeBlanks(data);
 
 
-        PointerTable table6 = new PointerTable(0x50000, 0x58456);
+        PointerTable table6 = new PointerTable(0x50000, 0x58456, 0x2C9E0);
         table6.addRange(new PointerRange(0x58100, 0x58455));
         table6.setName("06-MUSIC-FACTORY");
         table6.setMaxLineLength(30);
         table6.loadPointers(data);
         generateEmptyTranslationFiles(data, table6, japaneseDictionary);
         table6.loadTranslations(latin, true);
-        table6.checkTranslationsLength(TARGET_LANGUAGE);
         table6.writeEnglish(data);
 
-        PointerTable table7 = new PointerTable(0x50000, 0x50268);
-        table7.addRange(new PointerRange(0x50000, 0x50267));
-        table7.setName("07-SKULL");
-        table7.loadPointers(data);
-        generateEmptyTranslationFiles(data, table7, japaneseDictionary);
-        table7.loadTranslations(latin, true);
-        table7.writeEnglish(data);
+        
 
-        PointerTable table8 = new PointerTable(0x50000, 0x5CF9E);
+        PointerTable table8 = new PointerTable(0x50000, 0x5CF9E, 0x2C9E0);
         table8.addRange(new PointerRange(0x5CF00, 0x5CF9D));
         table8.setName("08-STATION");
         table8.loadPointers(data);
         generateEmptyTranslationFiles(data, table8, japaneseDictionary);
         table8.loadTranslations(latin, true);
-        table8.writeEnglish(data);
+        //table8.writeEnglish(data);
+
+        PointerTable table9 = new PointerTable(0x50000, 0x5E01A, 0x2C9E0);
+        table9.addRange(new PointerRange(0x5E000, 0x5E019));
+        table9.setName("09-SAND");
+        table9.loadPointers(data);
+        generateEmptyTranslationFiles(data, table9, japaneseDictionary);
+        table9.loadTranslations(latin, true);
+        //table9.writeEnglish(data);
+        //table9.writeBlanks(data);
         
+        PointerTable tableM = new PointerTable(0x50000, 0x58004, 0x2C9E0);
+        tableM.addRange(new PointerRange(0x5E000, 0x5E019));
+        tableM.setName("77-TEST");
+        tableM.loadPointers(data);
+        generateEmptyTranslationFiles(data, tableM, japaneseDictionary);
         
+
+        table2.checkTranslationsLength(TARGET_LANGUAGE);
+        table6.checkTranslationsLength(TARGET_LANGUAGE);
+        table7.checkTranslationsLength(TARGET_LANGUAGE);
+        table1.checkTranslationsLength(TARGET_LANGUAGE);
         
-        fixItemList();
-        checkItemLength();
+        //fixItemList();
+        //testQuiz();
+        //checkItemLength();
         
         loadPatches();
         applyPatches(data);
@@ -178,7 +827,7 @@ public class DynamiTracer {
 
         //testDecompression();
         
-        testIntro();
+        //testIntro();
 
                 
         saveRom();
@@ -190,7 +839,7 @@ public class DynamiTracer {
     }
     
     public static void checkItemLength() {
-        ResIO textResource = ResIO.getTextResource("translations/00-ITEMS.txt");
+        ResIO textResource = ResIO.getTextResource(String.format("translations/00-ITEMS-%s.txt", TARGET_LANGUAGE.getCode()));
         while (textResource.hasNext()) {
             String s = textResource.next().toString();
             s = '"' + s + '"';
@@ -198,8 +847,11 @@ public class DynamiTracer {
             if (VERBOSE) System.out.println(String.format("%d px\t%d tiles\t%s", length, length/8, s));
         }
     }
-    
-    
+
+    public static void testQuiz() {
+        Patch p = new Patch(0x30E7D, Hex.parseHex("61 61 61 61 61 61"));
+        patches.add(p);
+    }
 
     public static void fixItemList() {
         Patch p = new Patch(0x215C2, Hex.parseHex("EA"));
@@ -229,8 +881,338 @@ public class DynamiTracer {
         insertItemName(data);
         
     }
-    
+
     public static void loadPatches() {
+        System.out.println("loadPatches");
+        // Vehicule names
+        /*Patch p = new Patch(0x21730, latinSmall.getCode("Cry Baby"));
+        patches.add(p);
+        p = new Patch(0x21740, latinSmall.getCode("Mach M."));
+        patches.add(p);
+        p = new Patch(0x21750, latinSmall.getCode("Lightni."));
+        patches.add(p);
+        p = new Patch(0x21760, latinSmall.getCode("Hell Ha."));
+        patches.add(p);
+        p = new Patch(0x21770, latinSmall.getCode("The Cas."));
+        patches.add(p);
+        p = new Patch(0x21780, latinSmall.getCode("Popup.{00}"));
+        patches.add(p);*/
+        Patch p = new Patch(0x21730, latinSmall.getCode(
+                "Cry Baby{00}{00}{00}{00}" +
+                        "Mach Mary{00}{00}{00}" +
+                        "Lightning{00}{00}{00}" +
+                        "Hell Harley{00}" +
+                        "The Castle{00}{00}" +
+                        "Popuppy{00}{00}{00}{00}{00}"
+        ));
+        patches.add(p);
+        /**
+         * C216AF  0A             ASL
+         * C216B0  0A             ASL
+         * C216B1  0A             ASL
+         * C216B2  0A             ASL
+         */
+        p = new Patch(0x216AF, Hex.parseHex("22 40 B6 C2"));
+        patches.add(p);
+        p = new Patch(0x2B640, Hex.parseHex("08 0A 0A 85 32 0A 65 32 28 6B"));
+        patches.add(p);
+        
+
+        p = new Patch(0x22044, latinSmall.getCode("Character Pick "));
+        patches.add(p);
+
+        
+        // Character description width
+        byte[] bytes = Utils.hexStringToByteArray("17 00");
+        p = new Patch(x("220E0"), bytes);
+        patches.add(p);
+        
+        // Intro - leading spaces
+        // $C2/1EA5 A2 06 00    LDX #$0006
+        bytes = Utils.hexStringToByteArray("A2 02 00");
+        p = new Patch(x("21EA5"), bytes);
+        patches.add(p);
+
+        // 0B clearing length (from x15 to x1A, 21 to 26 chars)
+        // C0 15 18    CPY #$1815
+        bytes = Utils.hexStringToByteArray("C0 1A 18");
+        p = new Patch(x("2145D"), bytes);
+        patches.add(p);
+
+        // Moving up the announcer ship sprite to make room for the text
+        bytes = Utils.hexStringToByteArray("C0 28 40 1C C0 18 20 1C F0 F0 08 30 F0 F0 00 20 F0 F0 00 20 F0 F0 00 20 B8 30 60 1C C8 30 62 1C D8 30 64 1C B8 40 80 1C C8 40 82 1C D8 40 84 1C C8 20 2C 1C D8 10 24 1C D8 20 44 1C D0 10 0D 3C");
+        p = new Patch(x("2F6EB"), bytes);
+        patches.add(p);
+
+        // Make the intro longer
+        patches.add(new Patch(0x21F06, Hex.parseHex("C9 80 18")));
+        
+        // Move table info to 0x100000
+        patches.add(new Patch(0x21412, Hex.parseHex("20 00 B6"))); // Reads characters to print
+        patches.add(new Patch(0x2B600, Hex.parseHex("BF 00 00 50 60")));
+        //patches.add(new Patch(0x214AF, Hex.parseHex("69 00 00")));
+        patches.add(new Patch(0x214BA, Hex.parseHex("20 00 B6"))); // Reads characters to check end of line
+
+        patches.add(new Patch(0x23819, Hex.parseHex("20 00 B6"))); // Reads characters in name input
+        patches.add(new Patch(0x238D5, Hex.parseHex("54 00 50"))); // Reads default character names
+
+        // Modify the default character names
+        bytes = ResIO.getBinaryResource("decompressed/3E200.data").getBytes();
+        byte[] zeros = new byte[0x3C0-bytes.length];
+        bytes = Bytes.concat(bytes, zeros);
+        //String names = "Daniel {EL}Rose   {EL}Early  {EL}Wilde  {EL}Harper {EL}Jim    {EL}";
+        String names = "Daniel{00}{EL}Rose{00}{00}{00}{EL}Early{00}{00}{EL}Wilde{00}{00}{EL}Harper{00}{EL}Jim{00}{00}{00}{00}{EL}";
+        int i = 0x390;
+        for (byte b : latinSmall.getCode(names)) {
+            bytes[i++] = b;
+        }
+        for (int k = 0x281; k<0x2A0; k++) {
+            bytes[k] = 0x62;
+        }
+        
+        //bytes[0x27F] = 50; // ((6*8)-1)+3
+        //bytes[0x10A] = 0x70; // 64
+        //bytes[0x10D] = 0x2C; // 38
+        
+        DynamiTracerCompressor compressor = new DynamiTracerCompressor(new DynamiTracerAlgorithm());
+        byte[] compressData = new byte[0];
+        try {
+            compressData = compressor.compressData(bytes, false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        p = new Patch(x("3E1D0"), compressData);
+        patches.add(p);
+
+        // Changes the pointer to the compressed data with the default character names
+        bytes = Utils.hexStringToByteArray("D0 E1");
+        p = new Patch(x("3E03F"), bytes);
+        patches.add(p);
+
+        /**
+         CMP #$2281
+         BNE 21
+         LDX #$2390
+         LDY #$9000
+         LDA #$002F
+         PHB
+         MVN $7F,$7F
+         PLB
+         LDX #$22A5
+         LDY #$0064
+         RTL
+         LDA $8A
+         PHB
+         MVN $7F,$7F
+         PLB
+         RTL
+         */
+        //patches.add(new Patch(0x04D7E, Hex.parseHex("22 10 B6 C2")));
+        //patches.add(new Patch(0x2B610, Hex.parseHex("C9 80 02 D0 08 08 18 69 10 21 28 AA 6B 69 01 20 AA 6B")));
+
+        //patches.add(new Patch(0x04D8B, Hex.parseHex("22 30 B6 C2")));
+        //patches.add(new Patch(0x2B630, Hex.parseHex("C9 C0 23 D0 08 08 38 E9 10 21 28 AA 6B 38 E9 01 20 AA 6B")));
+
+        patches.add(new Patch(0x04D82, Hex.parseHex("22 10 B6 C2 EA EA EA")));
+        patches.add(new Patch(0x2B610, Hex.parseHex("C9 81 22 D0 15 A2 90 23 A0 00 F0 A9 2F 00 8B 54 7F 7F AB A2 A5 22 A0 64 00 6B A5 8A 8B 54 7F 7F AB 6B")));
+        
+        // Name change to 8 letters
+        // Before : C2021A  65 10          ADC $10
+        patches.add(new Patch(0x2021A, Hex.parseHex("0A EA")));
+        //Before : C20222  69 40 00       ADC #$0040
+        patches.add(new Patch(0x20222, Hex.parseHex("69 00 F0")));
+        // Before : C238F9  A2 05 18       LDX #$1805
+        patches.add(new Patch(0x238F9, Hex.parseHex("A2 07 18")));
+        // 40 00 46 00 4C 00 52 00 58 00 5E 00
+        patches.add(new Patch(0x30793, Hex.parseHex("00 F0 08 F0 10 F0 18 F0 20 F0 28 F0")));
+
+        //237AB  A9 09          LDA #$09
+        patches.add(new Patch(0x237AB, Hex.parseHex("A9 06")));
+
+        
+        // C30515  C0 05 00       CPY #$0005
+        patches.add(new Patch(0x30515, Hex.parseHex("C0 07 00")));
+        // C238D2  A9 05 00       LDA #$0005
+        patches.add(new Patch(0x238D2, Hex.parseHex("A9 07 00")));
+        // C238EF  E0 05 18       CPX #$1805
+        patches.add(new Patch(0x238EF, Hex.parseHex("E0 07 18")));
+        // C238F6  8D 05 18       STA $1805
+        patches.add(new Patch(0x238F6, Hex.parseHex("8D 07 18")));
+
+
+        // C20C38  A9 05 00       LDA #$0005            Early
+        patches.add(new Patch(0x20C38, Hex.parseHex("A9 07 00")));
+
+
+
+        /**
+         * SNES HEADER
+         */
+        patches.add(new Patch(0xFFC0, Hex.parseHex("44 59 4E 41 4D 49 20 54 52 41 43 45 52 20 20 20 20 20 20 20 20 31 02 0A 05 00")));
+
+        sramPatches();
+
+        /**
+         * PASSWORD SCREEN
+         */
+
+        patches.add(new Patch(0x23B35, Hex.parseHex("EA EA EA")));
+
+        /**
+         * HIGH SCORE
+         * CHECKSUM HIGH SCORE
+         * C23579  A9 00 00       LDA #$0000
+         * C2357D  7D 00 00       ADC $0000,X
+         */
+        patches.add(new Patch(0x23579, Hex.parseHex("A9 FF FF")));
+        patches.add(new Patch(0x2357D, Hex.parseHex("EA EA EA")));
+
+        patches.add(new Patch(0x2D91E, latinSmall.getCode("Daniel K.{0A}{00}")));
+        patches.add(new Patch(0x2D929, latinSmall.getCode("Rose T.{0A}{00}")));
+        patches.add(new Patch(0x2D932, latinSmall.getCode("Capt. Early{0A}{00}")));
+        patches.add(new Patch(0x2D93F, latinSmall.getCode("Wilde H.{0A}{00}")));
+        patches.add(new Patch(0x2D949, latinSmall.getCode("Harper M.{0A}{00}")));
+        patches.add(new Patch(0x2D954, latinSmall.getCode("Jim T.{0A}{00}")));
+        
+        String defaultHighScore =   
+                        "F8 0C 01 02 00 F8 D8 F8 00 " +
+                        "CD 08 02 01 00 F8 5A 00 00 " +
+                        "F6 02 03 00 00 B4 AE DA 00 " +
+                        "FD 01 04 03 00 AC DA 66 00 " +
+                        "64 00 05 04 00 F8 69 F8 00 " +
+                        "00 00 06 05 00 D0 00 00 00 " +
+                        "08 E2 20 A9 00 48 20 46 2F 20 1F 30 C9 00 F0 0A 68 1A C9 08 90 EF A9 FF 80 01 68 85 7C 28 60 08 E2 20 A5 7C 20 E7";
+
+        patches.add(new Patch(0x230AE, Hex.parseHex(defaultHighScore)));
+    }
+    
+    public static void sramPatches() {
+
+        // Treasure PTS
+        patches.add(new Patch(0x215A8, latin.getCode("TREAS{00}{B5}{B2}{A5}")));
+        // ABCD EFGHI   JKLMNO  PQRST   UVWXYZ            
+        // A1   A5      AA      B0      B5
+        
+
+        /**
+         * SAVE/LOAD TO SRAM
+         */
+        String sram = "30";
+        // C22EEF  09 16          ORA #$16
+        patches.add(new Patch(0x22EEF, Hex.parseHex(String.format("09 %s", sram))));
+        // C22EF8  09 50          ORA #$50
+        patches.add(new Patch(0x22EF8, Hex.parseHex("09 60")));
+
+        // C22F09  C9 16          CMP #$16
+        patches.add(new Patch(0x22F09, Hex.parseHex(String.format("C9 %s", sram))));
+        // C22F10  54 00 16       MVN $16,$00
+        patches.add(new Patch(0x22F10, Hex.parseHex(String.format("54 00 %s", sram))));
+        // C22F2C  C9 16          CMP #$16
+        patches.add(new Patch(0x22F2C, Hex.parseHex(String.format("C9 %s", sram))));
+        // C22F33  54 16 00       MVN $00,$16
+        patches.add(new Patch(0x22F33, Hex.parseHex(String.format("54 %s 00", sram))));
+
+
+        // Write names to sram
+        /**
+         CPY #$6400
+         BEQ 14
+         TYA
+         ADC #$0220
+         TAY
+         LDX #$F000
+         LDA #$002F
+         MVN $30,$7F
+         RTL
+         */
+        // Jump to subroutine 2B740
+        patches.add(new Patch(0x22F36, Hex.parseHex("22 40 B7 C2 80 08")));
+        patches.add(new Patch(0x2B740, Hex.parseHex("C0 00 64 F0 0E 98 69 20 02 A8 A2 00 F0 A9 2F 00 54 30 7F 6B")));
+
+        // Reads names from sram
+        /**
+         CPY #$11C0
+         BNE 35
+         TXA
+         CLC
+         ADC #$0220
+         TAX
+         LDA #$002F
+         MVN $00,$30
+         SEP #$20
+         LDA $7FF030
+         CMP #$BB
+         BNE 13
+         LDX #$11C0
+         LDY #$F000
+         LDA #$2F
+         PHB
+         MVN $7F,$7E
+         PLB
+         RTL
+         */
+        patches.add(new Patch(0x22F13, Hex.parseHex("22 70 B7 C2 80 08")));
+        //patches.add(new Patch(0x2B770, Hex.parseHex("C0 C0 11 D0 0C 8A 18 69 20 02 AA A9 2F 00 54 00 30 6B")));
+        patches.add(new Patch(0x2B770, Hex.parseHex("C0 C0 11 D0 23 8A 18 69 20 02 AA A9 2F 00 54 00 30 E2 20 AF 30 F0 7F C9 BB D0 0D A2 C0 11 A0 00 F0 A9 2F 8B 54 7F 7E AB 6B")));
+
+        // Before : C233C1  65 10          ADC $10
+        patches.add(new Patch(0x233C1, Hex.parseHex("0A EA")));
+
+        // Before : C233C9  69 40 10       ADC #$1040
+        patches.add(new Patch(0x233C9, Hex.parseHex("69 C0 11")));
+        // Before : C233D0  A9 05 00       LDA #$0005
+        patches.add(new Patch(0x233D0, Hex.parseHex("A9 07 00")));
+
+        /**
+         SEP #$20
+         PHA
+         LDA #$AA
+         STA $7FF030
+         PLA
+         
+         JSR $30E4
+         RTL
+         */
+        // Set save menu flag
+        patches.add(new Patch(0x231AF, Hex.parseHex("22 60 B6 C2 EA")));
+        patches.add(new Patch(0x2B660, Hex.parseHex("E2 20 48 A9 AA 8F 30 F0 7F 68 20 E4 30 6B")));
+
+        /**
+         PHA
+         LDA #$BB
+         STA $7FF030
+         PLA
+         SEP #$20
+         LDA #$01
+         RTL
+         */
+        // Set load menu flag
+        patches.add(new Patch(0x22708, Hex.parseHex("22 80 B6 C2")));
+        patches.add(new Patch(0x2B680, Hex.parseHex("48 A9 BB 8F 30 F0 7F 68 E2 20 A9 01 6B")));
+
+        /**
+         PHP
+         REP #$30
+         LDX #$B7B0
+         LDY #$6010
+         LDA #$000F
+         PHB
+         MVN $30,$C2
+         LDX #$30AE
+         LDY #$63A0
+         LDA #$005C
+         MVN $30,$C2
+         PLB
+         PLP
+         JML $C11C43
+         */
+        // Init sram
+        patches.add(new Patch(0x2B7B0, Hex.parseHex("44 59 4E 41 4D 49 54 52 41 43 45 52 20 20 20 20")));
+        patches.add(new Patch(0xFF03, Hex.parseHex("5C C0 B7 C2")));
+        patches.add(new Patch(0x2B7C0, Hex.parseHex("08 C2 30 A2 B0 B7 A0 10 60 A9 0F 00 8B 54 30 C2 A2 AE 30 A0 A0 63 A9 5C 00 54 30 C2 AB 28 5C 43 1C C1")));
+    }
+
+    public static void loadPatches2() {
 
         // Vehicule names
         Patch p = new Patch(0x21730, latinSmall.getCode("Cry Baby"));
@@ -243,7 +1225,11 @@ public class DynamiTracer {
         patches.add(p);
         p = new Patch(0x21770, latinSmall.getCode("The Cas."));
         patches.add(p);
-        p = new Patch(0x21780, latinSmall.getCode("Popyupi"));
+        p = new Patch(0x21780, latinSmall.getCode("Popuppy"));
+        patches.add(p);
+
+
+        p = new Patch(0x22044, latinSmall.getCode("Character Pick "));
         patches.add(p);
         
         // Character description width
@@ -278,7 +1264,7 @@ public class DynamiTracer {
         for (byte b : latinSmall.getCode(names)) {
             bytes[i++] = b;
         }
-        LzCompressor compressor = new LzCompressor();
+        /*LzCompressor compressor = new LzCompressor();
         try {
             byte[] zeros = new byte[x("3E32A")-x("3E1D0")];
             bytes = compressor.compressData(bytes, false);
@@ -288,7 +1274,7 @@ public class DynamiTracer {
             patches.add(p);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 
@@ -310,6 +1296,7 @@ public class DynamiTracer {
     //patches.add(p);*/
 
     public static void applyPatches(byte[] data) {
+        System.out.println("applyPatches");
         for (Patch patch : patches) {
             patch.applyPatch(data);
         }
@@ -318,6 +1305,7 @@ public class DynamiTracer {
 
     public static void generateEmptyTranslationFiles(byte[] bytes, PointerTable table, Dictionary dictionary) {
         if (SKIP_FILES_GENERATION) return;
+        int dataLength = 0;
         Map<Integer, PointerEntry> pointers = table.getPointers();
         PrintWriter pw = null;
         try {
@@ -333,6 +1321,7 @@ public class DynamiTracer {
                 int length = data[offsetData];
                 dataValue = DataReader.readByteCount(bytes, offsetData, length);
             } else dataValue = DataReader.readUntilEndOfLine(bytes, offsetData);
+            dataLength += dataValue.length;
             String text = dictionary.getValue(dataValue);
             if (VERBOSE) System.out.println(text);
             
@@ -356,6 +1345,7 @@ public class DynamiTracer {
             if (VERBOSE) System.out.println();
 
         }
+        System.out.println(table.getName()+" length = "+dataLength);
         if (pw!=null) {
             pw.flush();
             pw.close();
@@ -420,6 +1410,7 @@ public class DynamiTracer {
     public static void loadRom() {
         try {
             data = Files.readAllBytes(new File(ROM_INPUT).toPath());
+            dataInput = Files.readAllBytes(new File(ROM_INPUT).toPath());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -431,7 +1422,9 @@ public class DynamiTracer {
     
     public static void testDecompression() {
 
-        int pointer = x("3E200");
+        int pointer = x("40BFC");
+        DynamiTracerLz.decompressData(data, pointer, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
+        
         /*int[] pointers = new int[]{
                 x("70000"),
                 x("3E200"),
@@ -440,11 +1433,11 @@ public class DynamiTracer {
         };*/
 
         //for (int pointer : pointers) {
-            LzDecompressor decompressor = new LzDecompressor();
+            /*LzDecompressor decompressor = new LzDecompressor();
             decompressor.decompressData(data, pointer);
             byte[] decompressedData = decompressor.getDecompressedData();
             String file = String.format("src/main/resources/tmp/%s.data", h(pointer));
-            DataWriter.saveData(file, decompressedData);
+            DataWriter.saveData(file, decompressedData);*/
         //}
 
 
@@ -514,7 +1507,7 @@ public class DynamiTracer {
 
     public static void insertItemName(byte[] data) {
         int offset = 0x36800;
-        ResIO textResource = ResIO.getTextResource("translations/00-ITEMS.txt");
+        ResIO textResource = ResIO.getTextResource(String.format("translations/00-ITEMS-%s.txt", TARGET_LANGUAGE.getCode()));
         while (textResource.hasNext()) {
             String s = textResource.next().toString();
 

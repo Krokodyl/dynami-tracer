@@ -5,6 +5,7 @@ import old.ImageParser;
 import old.Palette2bpp;
 import palette.ColorGraphics;
 import resources.Bytes;
+import resources.Hex;
 import resources.ResIO;
 import services.DataWriter;
 import services.Dictionary;
@@ -17,12 +18,13 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static services.Utils.x;
 
 public class Font {
 
-    final static String FONT_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{|}~α♪…āūēō♥";
+    final static String FONT_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{|}~α♪…āūēō♥σ";
     final static String FONT_SMALL_CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]ˆ_`abcdefghijklmnopqrstuvwxyz{|}~β…γ";
     
     // Greek    α	β	γ	δ	ε	ζ	η	θ	ι	κ	λ	μ	ν	ξ	ο	π	ρ	ς	σ	τ	υ	φ	χ	ψ	ω
@@ -48,6 +50,7 @@ public class Font {
     public static Dictionary getLatinDictionary() {
         Dictionary dictionary = new Dictionary();
         dictionary.loadDictionary("dictionaries/latin.txt");
+        dictionary.loadPresets("dictionaries/latin-presets.txt");
         char[] charArray = FONT_CHARACTERS.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
@@ -146,16 +149,16 @@ public class Font {
         String res = "";
         boolean skip = false;
         for (char c : s.toCharArray()) {
-            if (c == '{' || skip) {
-                skip = true;
-            } else if (c == '}'){
+            if (c == '}'){
                 skip = false;
                 res += " ";
-            } else {
+            } else if (c == '{' || skip) {
+                skip = true;
+            }  else {
                 res += c;
             }
         }
-        return res;
+        return res.trim();
     }
     
     public static String[] splitString(String s, int lineLength) {
@@ -185,6 +188,17 @@ public class Font {
         if (!segment.isEmpty())
             list.add(segment);
         return list.toArray(new String[0]);
+    }
+    
+    public static String autoInsertNewLines(String s, int maxLineLength, boolean endLine) {
+        String[] strings = Font.splitString(Font.stripStringSpecialCode(s), maxLineLength*8);
+        for (String s1 : strings) {
+            //System.err.println(s1);
+        }
+        String collect = Arrays.stream(strings).collect(Collectors.joining("{NL}"));
+        if (endLine) collect += "{EL}";
+        return collect;
+        //System.err.println(collect+"{EL}");
     }
 
     public static void generateVWFFontData() {
@@ -221,8 +235,10 @@ public class Font {
                         if (rgb!=0 && (x+1)>width) width = x+1;
                     }
                 }
+                width--;
                 if (width==8) width--;
                 if (tile==0) width = 5;
+                if (tile==824) width = 1; // short space (σ)
                 //System.out.println(String.format("'%s'\twidth=%d (%d)", c+"", width, tile));
                 characterLengthMap.put(c, width);
                 c = (char)(((int)c)+1);

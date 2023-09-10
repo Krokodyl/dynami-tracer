@@ -36,7 +36,7 @@ Excalipoor
 Bahamut's Egg
 Bakamut's Egg
 Moondrop
-Milky Way Cat
+Cat Whiskers
 Grandleon
 Rat Tail
 Pink Tail
@@ -55,8 +55,8 @@ Evil Egg
 Wonder Egg
 Dead Cannon Card
 Firebird Card
-Fry Pan
-Kitchen Knife
+Fry Pan of Love
+Knife
 Elixir
 Phoenix Down
 Gysahl Greens
@@ -70,9 +70,9 @@ Chocolate
 Silver Chalice
 VIP Card
 Coppelia
-Bakuld's Feeling
-Bakti's Heart
-Bakous' Treasure
+Bactroy's Joy
+Bacterry's Heart
+Bactus' Treasure
 Dragon Killer
 Derguhn Killer
 Naga Bromide
@@ -95,7 +95,7 @@ Hero's Spirit
 Idol's Frill
 Glass Ring
 Young Girl Tears
-100,000 Gil
+1 Million Gils
 9 out of 10 cats
 Basic Tool Set
 Goddess Statue
@@ -104,22 +104,22 @@ Hot Baked Potato
 20% off coupon
 Platinum Ticket
 Mutual Feelings
-Mado's Watch
+Madow's Watch
 Time Machine Rod
 Micro-Disk
-Golden Tomb
+Golden House
 Computer ROM
 Rice Ball
+Golden Spire
 Golden Tower
-Golden Building
 Iron Mask
-Golden Mansion
+Golden Building
 Meteorite
 Poyozo's Secret
-Golden House
-Gold House
-Gold Tower
-Gold Shoes
+Golden Mansion
+Golden Pagoda
+Golden Tombstone
+Golden Shoe
 Daniel's Medal
 Rose's Medal
 Early's Medal

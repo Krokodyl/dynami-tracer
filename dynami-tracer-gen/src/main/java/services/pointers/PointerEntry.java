@@ -6,7 +6,8 @@ public class PointerEntry {
     int value;
     int shift;
     byte[] data;
-    
+
+    int newOffset;
     int newValue;
     byte[] newData;
 
@@ -14,6 +15,21 @@ public class PointerEntry {
         this.offset = offset;
         this.value = value;
         this.shift = shift;
+    }
+
+    public PointerEntry(int offset, int value, int shift, int newOffset) {
+        this.offset = offset;
+        this.value = value;
+        this.shift = shift;
+        this.newOffset = newOffset;
+    }
+
+    public int getNewOffset() {
+        return newOffset;
+    }
+
+    public void setNewOffset(int newOffset) {
+        this.newOffset = newOffset;
     }
 
     public int getOffset() {

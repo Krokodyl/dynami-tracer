@@ -1,5 +1,7 @@
 package entities;
 
+import static resources.Hex.h;
+
 public class Patch {
     
     int offset;
@@ -27,6 +29,7 @@ public class Patch {
     }
     
     public void applyPatch(byte[] gameData) {
+        System.out.println("applyPatch\t"+h(offset));
         int i = getOffset();
         for (byte b : getData()) {
             gameData[i++] = b;
