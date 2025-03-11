@@ -6,3 +6,8 @@
 *.7z binary
 *.zip binary
 *.bin binary
+*.jar binary
+*.png binary
+*.bak binary
+*.ase binary
+*.aseprite binary
