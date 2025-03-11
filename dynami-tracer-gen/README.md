@@ -17,6 +17,8 @@ private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\input\\BS
 private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\output\\BS Dynami Tracer (English).bs";
 ```
 
+From the dynami-tracer-gen folder,
+
 Command line compilation: `mvn clean install`
 
 Command line execution: `mvn exec:java`
