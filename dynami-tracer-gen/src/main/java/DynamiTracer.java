@@ -1,3 +1,4 @@
+import checksum.ChecksumCalculator;
 import com.google.common.primitives.Bytes;
 import compression.REPEAT_ALGORITHM;
 import compression.algorithms.DynamiTracerCompressor;
@@ -7,14 +8,15 @@ import enums.Language;
 import images.Sprite;
 import old.ImageParser;
 import old.Palette4bpp;
-import org.apache.commons.lang.ArrayUtils;
 import palette.ColorGraphics;
 import resources.Hex;
 import resources.Memory;
 import resources.ResIO;
 import resources.ResourceLoader;
-import services.*;
+import services.DataReader;
+import services.DataWriter;
 import services.Dictionary;
+import services.Utils;
 import services.lz.DynamiTracerAlgorithm;
 import services.lz.DynamiTracerLz;
 import services.pointers.PointerEntry;
@@ -42,8 +44,8 @@ public class DynamiTracer {
     public static byte[] data;
     public static byte[] dataInput;
 
-    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\input\\BS Dynami Tracer (Japan Extended).sfc";
-    private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\output\\BS Dynami Tracer (English Extended).sfc";
+    private final static String ROM_INPUT = "D:\\git\\dynami-tracer\\roms\\input\\BS Dynami Tracer (Japan).bs";
+    private final static String ROM_OUTPUT = "D:\\git\\dynami-tracer\\roms\\output\\BS Dynami Tracer (English).bs";
 
     static Dictionary japaneseDictionary = new Dictionary();
     static Dictionary japaneseSmallDictionary = new Dictionary();
@@ -73,15 +75,31 @@ public class DynamiTracer {
 
         List<PointerTable> tables = new ArrayList<>();
         
-        PointerTable tableIntro = new PointerTable(0x2C9E0, 0x10C9E0, 0x10C9E0);
+        //PointerTable tableIntro = new PointerTable(0x2C9E0, 0x10C9E0, 0x10C9E0);
+        PointerTable tableIntro = new PointerTable(0x2C9E0, 0xA4060, 0xA4060);
         tableIntro.addRange(new PointerRange(x("2C980"), x("2C983")));
         tableIntro.addRange(new PointerRange(x("2C990"), x("2C9DB")));
         tableIntro.setName("01-INTRO");
-        tables.add(tableIntro);
-        /*tableIntro.loadPointers(data);
-        generateEmptyTranslationFiles(data, tableIntro, japaneseSmallDictionary);
+        //tables.add(tableIntro);
+        tableIntro.loadPointers(data);
+        //generateEmptyTranslationFiles(data, tableIntro, japaneseSmallDictionary);
         tableIntro.loadTranslations(latinSmall);
-        tableIntro.writeEnglish(data);*/
+        tableIntro.writeEnglish(data);
+        /**
+         * C214AB  BD 80 C9       LDA $C980,X
+         * C214AE  18             CLC
+         * C214AF  69 E0 C9       ADC #$C9E0
+         * C214B2  85 67          STA $67
+         * ...
+         * C23786  69 E0 C9       ADC #$C9E0
+         * ...
+         * C22C99  69 E0 C9       ADC #$C9E0
+         */
+        patches.add(new Patch(0x214AF, Hex.parseHex("69 60 00")));
+        patches.add(new Patch(0x23786, Hex.parseHex("69 60 00")));
+        patches.add(new Patch(0x22C99, Hex.parseHex("69 60 40")));
+        
+        
 
         /**
          * C19AB4  A9 2D A9       LDA #$A92D
@@ -90,13 +108,13 @@ public class DynamiTracer {
          * C19ABD  8D 0F 04       STA $040F
          * 
          */
-        //patches.add(new Patch(0x19AB4, Hex.parseHex("A9 00 80")));
-        //patches.add(new Patch(0x19ABA, Hex.parseHex("A9 C4 00")));
+        patches.add(new Patch(0x19AB4, Hex.parseHex("A9 00 52")));
+        patches.add(new Patch(0x19ABA, Hex.parseHex("A9 CA 00")));
         
-        PointerTable table1 = new PointerTable(0x10000, 0x1A965, 0x10000);
-        table1.addRange(new PointerRange(0x1A92D, 0x1A964));
-        //PointerTable table1 = new PointerTable(0x10000, 0x48100, 0x40000);
-        //table1.addRange(new PointerRange(0x1A92D, 0x1A964, 0x48000));
+        //PointerTable table1 = new PointerTable(0x10000, 0x1A965, 0x10000);
+        //table1.addRange(new PointerRange(0x1A92D, 0x1A964));
+        PointerTable table1 = new PointerTable(0x10000, 0xA5300, 0xA0000);
+        table1.addRange(new PointerRange(0x1A92D, 0x1A964, 0xA5200));
         table1.setName("02-ANNOUNCER");
         table1.setMaxLineLength(23);
         tables.add(table1);
@@ -114,14 +132,14 @@ public class DynamiTracer {
         table4.setType(PointerTableType.SIZE_PREFIX);
         //tables.add(table4);
         table4.loadPointers(data);
-        generateEmptyTranslationFiles(data, table4, japaneseDictionary);
+        //generateEmptyTranslationFiles(data, table4, japaneseDictionary);
         table4.loadTranslations(latin, true);
         table4.writeEnglish(data);
         
-        PointerTable table7 = new PointerTable(0x50000, 0x100268, 0x100000);
-        table7.addRange(new PointerRange(0x50000, 0x50267, 0x100000));
-        //PointerTable table7 = new PointerTable(0x50000, bank1PointerOffset+0x268, 0x10000);
-        //table7.addRange(new PointerRange(0x50000, 0x50267, bank1PointerOffset));
+        /*PointerTable table7 = new PointerTable(0x50000, 0x100268, 0x100000);
+        table7.addRange(new PointerRange(0x50000, 0x50267, 0x100000));*/
+        PointerTable table7 = new PointerTable(0x50000, bank1PointerOffset+0x268, 0x10000);
+        table7.addRange(new PointerRange(0x50000, 0x50267, bank1PointerOffset));
         table7.setName("07-SKULL");
         table7.setMaxLineLength(30);
         tables.add(table7);
@@ -137,10 +155,10 @@ public class DynamiTracer {
         
 
 
-        PointerTable table2 = new PointerTable(0x50000, 0x110272, 0x110000);
-        table2.addRange(new PointerRange(0x54000, 0x54271, 0x110000));
-        /*PointerTable table2 = new PointerTable(0x50000, 0x53200+0x272, 0x50000);
-        table2.addRange(new PointerRange(0x54000, 0x54271, 0x53200));*/
+        /*PointerTable table2 = new PointerTable(0x50000, 0x110272, 0x110000);
+        table2.addRange(new PointerRange(0x54000, 0x54271, 0x110000));*/
+        PointerTable table2 = new PointerTable(0x50000, 0x53100+0x272, 0x50000);
+        table2.addRange(new PointerRange(0x54000, 0x54271, 0x53100));
         table2.setName("03-TWIN-STAR");
         table2.setMaxLineLength(30);
         tables.add(table2);
@@ -157,17 +175,17 @@ public class DynamiTracer {
         table3.addRange(new PointerRange(0x58000, 0x58003));
         table3.setName("04-TWIN-STAR-CHEST");
         //tables.add(table3);
-        table3.loadPointers(data);
+        //table3.loadPointers(data);
         //generateEmptyTranslationFiles(data, table3, japaneseDictionary);
-        table3.loadTranslations(latin);
-        table3.writeEnglish(data);
+        //table3.loadTranslations(latin);
+        //table3.writeEnglish(data);
 
 
 
         //PointerTable table8 = new PointerTable(0x50000, 0x12009E, 0x120000);
         //table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x120000));
-        PointerTable table8 = new PointerTable(0x50000, 0x5E800+0x9E, 0x50000);
-        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x5E800));
+        PointerTable table8 = new PointerTable(0x50000, 0x5EA00+0x9E, 0x50000);
+        table8.addRange(new PointerRange(0x5CF00, 0x5CF9D, 0x5EA00));
         table8.setName("08-STATION");
         table8.setMaxLineLength(30);
         /*table8.loadPointers(data);
@@ -175,13 +193,12 @@ public class DynamiTracer {
         table8.loadTranslations(latin, true);
         table8.writeEnglish(data);*/
 
-        PointerTable table9 = new PointerTable(0x50000, 0x12801A, 0x120000);
-        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x128000));
-        /*PointerTable table9 = new PointerTable(0x50000, 0x5011A, 0x50000);
-        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x50100));*/
+        /*PointerTable table9 = new PointerTable(0x50000, 0x12801A, 0x120000);
+        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x128000));*/
+        PointerTable table9 = new PointerTable(0x50000, 0x5001A, 0x50000);
+        table9.addRange(new PointerRange(0x5E000, 0x5E019, 0x50000));
         table9.setName("09-SAND");
         table9.setMaxLineLength(30);
-        tables.add(table9);
         /*table9.loadPointers(data);
         //generateEmptyTranslationFiles(data, table9, japaneseDictionary);
         table9.loadTranslations(latin, true);
@@ -198,17 +215,19 @@ public class DynamiTracer {
         table6.loadTranslations(latin, true);
         table6.writeEnglish(data);*/
         
-        table1.checkTranslationsLength(TARGET_LANGUAGE);
+        /*table1.checkTranslationsLength(TARGET_LANGUAGE);
         table2.checkTranslationsLength(TARGET_LANGUAGE);
         table6.checkTranslationsLength(TARGET_LANGUAGE);
         table7.checkTranslationsLength(TARGET_LANGUAGE);
         table8.checkTranslationsLength(TARGET_LANGUAGE);
-        table9.checkTranslationsLength(TARGET_LANGUAGE);
+        table9.checkTranslationsLength(TARGET_LANGUAGE);*/
         //tableIntro.setMaxLineLength(26);
         //tableIntro.checkTranslationsLength(TARGET_LANGUAGE);
 
 
         tables.add(table8); // STATION
+        tables.add(table9); // SAND
+        tables.add(table3); // TWIN STAR CHEST
 
         for (PointerTable table : tables) {
             table.loadPointers(data);
@@ -222,7 +241,9 @@ public class DynamiTracer {
         for (PointerTable table : tables) {
             table.writeEnglish(data);
         }
-        
+        for (PointerTable table : tables) {
+            table.checkTranslationsLength(TARGET_LANGUAGE, latin);
+        }
 
         // Switch bank to load texts
         /**
@@ -272,18 +293,23 @@ public class DynamiTracer {
         patches.add(new Patch(0x243E, Hex.parseHex("22 D0 B6 C2")));
         patches.add(new Patch(0x2B6D0, Hex.parseHex("" +
                 "BF 01 20 7F 85 17 08 C2 20 A5 16 C9 01 C5 D0 07 " +
-                "A9 01 50 " +
+                //"A9 01 50 " +
+                "A9 AB C1 " +
                 "85 16 80 3A C9 41 C5 D0 07 " +
-                "A9 01 51 " +
+                //"A9 01 51 " +
+                "A9 32 C5 " +
                 "85 16 80 2E C9 00 C5 D0 07 " +
-                "A9 00 50 " +
+                //"A9 00 50 " +
+                "A9 AA C1 " +
                 "85 16 80 22 C9 40 C5 D0 07 " +
-                "A9 00 51 " +
+                //"A9 00 51 " +
+                "A9 31 C5 " +
                 "85 16 80 16 C9 CF C5 D0 07 " +
                 //"A9 00 52 " +
-                "A9 E8 C5 " +
+                "A9 EA C5 " +
                 "85 16 80 0A C9 E0 C5 D0 05 " +
-                "A9 80 52 " +
+                //"A9 80 52 " +
+                "A9 00 C5 " +
                 "85 16 28 A5 17 6B")));
 
         /**
@@ -313,7 +339,7 @@ public class DynamiTracer {
         endingImages();
         postcardImage();
 
-        patches.add(new Patch(0x107FE0, Hex.parseHex("50 72 65 76 69 65 77 20 76 65 72 73 69 6F 6E 20 66 6F 72 20 63 61 62 62 75 73 73 65 73 00 00 00")));
+        //patches.add(new Patch(0x107FE0, Hex.parseHex("50 72 65 76 69 65 77 20 76 65 72 73 69 6F 6E 20 66 6F 72 20 63 61 62 62 75 73 73 65 73 00 00 00")));
         
         loadPatches();
         applyPatches(data);
@@ -345,6 +371,7 @@ public class DynamiTracer {
         }
 
 
+        ChecksumCalculator.updateChecksumHighRomBS(data);
         saveRom();
     }
 
@@ -446,38 +473,38 @@ public class DynamiTracer {
          RTL
          */
 
-        patches.add(new Patch(0x20A55, Hex.parseHex("22 00 40 C1 EA EA")));
-        patches.add(new Patch(0x14000, Hex.parseHex("08 E2 20 AD 82 04 C9 C7 D0 2B C2 20 AD 80 04 C9 1B AF D0 0F A9 AA AA 8D 80 04 E2 20 A9 56 8D 82 04 80 12 C9 B3 B1 D0 0D A9 BB BB 8D 80 04 E2 20 A9 56 8D 82 04 28 A2 00 24 8E 84 04 6B")));
+        //patches.add(new Patch(0x20A55, Hex.parseHex("22 00 40 C1 EA EA")));
+        //patches.add(new Patch(0x14000, Hex.parseHex("08 E2 20 AD 82 04 C9 C7 D0 2B C2 20 AD 80 04 C9 1B AF D0 0F A9 AA AA 8D 80 04 E2 20 A9 56 8D 82 04 80 12 C9 B3 B1 D0 0D A9 BB BB 8D 80 04 E2 20 A9 56 8D 82 04 28 A2 00 24 8E 84 04 6B")));
         
         
         TileParser parser = new TileParser();
         ColorGraphics colorGraphics = new ColorGraphics();
         colorGraphics.loadFromDataFile("images/postcard/cgram.data");
         BufferedImage bufferedImage = ResourceLoader.loadImage("images/postcard/tilemap.png");
-        parser.parseImage(bufferedImage, colorGraphics, ColorDepth._4BPP, 8, 0);
+        parser.parseImage(bufferedImage, colorGraphics, ColorDepth._4BPP, 8, 8, 0, 4);
         byte[] characterBytes = parser.getCharacterBytes();
         byte[] tileMapBytes = parser.getTileMapBytes();
         //System.out.println(Hex.getHexString(characterBytes));
         //System.out.println(Hex.getHexString(tileMapBytes));
         
-        int offset = 0x160000;
+        int offset = 0x7B1B3;
         int bank = 0x56;
         //patches.add(new Patch(0x20A50, Hex.parseHex("A9 56")));
         
         byte[] pointer = Memory.getPointerLow(offset-0x160000);
         //System.out.println(Arrays.toString(pointer));
 
-        patches.add(new Patch(0x14029, pointer));
+        //patches.add(new Patch(0x14029, pointer));
 
         System.out.println("tiles");
         byte[] compressedData = DynamiTracerLz.compressData(characterBytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
         patches.add(new Patch(offset, compressedData));
         offset += compressedData.length;
 
-
+        offset = 0x7AF1B;//0x7AF1B
         System.out.println("tilemap");
         pointer = Memory.getPointerLow(offset-0x160000);
-        patches.add(new Patch(0x14015, pointer));
+        //patches.add(new Patch(0x14015, pointer));
         compressedData = DynamiTracerLz.compressData(tileMapBytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
         patches.add(new Patch(offset, compressedData));
 
@@ -496,8 +523,8 @@ public class DynamiTracer {
         byte[] bytes = ImageParser.loadImage4bpp(
                 "images/ending/tiles-ff.png", new Palette4bpp("images/ending/palette-ff.png"));
 
-        int offset = 0x140000;
-        patches.add(new Patch(0x6343C, Hex.parseHex("00 00 54")));
+        int offset = 0x9A800;
+        //patches.add(new Patch(0x6343C, Hex.parseHex("00 00 54")));
 /*
         byte[] decompressData = DynamiTracerLz.decompressData(data, 0x9A800, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
         
@@ -505,7 +532,7 @@ public class DynamiTracer {
         patches.add(new Patch(offset, compressedData));
 */
         System.out.println("tiles");
-        int pointer = 0x9A800;
+        //int pointer = 0x9A800;
         //byte[] expectedData = DynamiTracerLz.decompressData(data, pointer, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
         byte[] compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
         //byte[] decompressData = DynamiTracerLz.decompressData(compressedData, 0, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
@@ -516,8 +543,8 @@ public class DynamiTracer {
         // TILEMAP
 
         System.out.println("tilemap");
-        offset = 0x148000;
-        patches.add(new Patch(0x6323C, Hex.parseHex("00 80 54")));
+        offset = 0x6A6A4;
+        //patches.add(new Patch(0x6323C, Hex.parseHex("00 80 54")));
 
         bytes = ResIO.getBinaryResource("images/ending/tilemap-ff.data").getBytes();
         compressedData = DynamiTracerLz.compressData(bytes, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
@@ -530,8 +557,8 @@ public class DynamiTracer {
         bytes = ImageParser.loadImage4bpp(
                 "images/ending/tiles-chrono.png", new Palette4bpp("images/ending/palette-chrono.png"));
 
-        offset = 0x150000;
-        patches.add(new Patch(0x63448, Hex.parseHex("00 00 55")));
+        offset = 0x9D672;
+        //patches.add(new Patch(0x63448, Hex.parseHex("00 00 55")));
 
         //pointer = 0x9A800;
         //byte[] expectedData = DynamiTracerLz.decompressData(data, pointer, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_4BITS);
@@ -565,13 +592,13 @@ public class DynamiTracer {
 
         byte[] compressedData = DynamiTracerLz.compressData(newAnswersData, REPEAT_ALGORITHM.REPEAT_ALGORITHM_SIZE_5BITS);
         
-        int offset = 0x130000;
+        int offset = 0x48800;
 
         //patches.add(new Patch(offset, answersData));
         patches.add(new Patch(offset, compressedData));
         //System.arraycopy(data, 0x40BFA, data, offset, 0x800);
 
-        patches.add(new Patch(0x3E06C, Hex.parseHex("00 00 53")));
+        patches.add(new Patch(0x3E06C, Hex.parseHex("00 88 C4")));
 
 
         /**
@@ -800,10 +827,10 @@ public class DynamiTracer {
         generateEmptyTranslationFiles(data, tableM, japaneseDictionary);
         
 
-        table2.checkTranslationsLength(TARGET_LANGUAGE);
-        table6.checkTranslationsLength(TARGET_LANGUAGE);
-        table7.checkTranslationsLength(TARGET_LANGUAGE);
-        table1.checkTranslationsLength(TARGET_LANGUAGE);
+        table2.checkTranslationsLength(TARGET_LANGUAGE, latin);
+        table6.checkTranslationsLength(TARGET_LANGUAGE, latin);
+        table7.checkTranslationsLength(TARGET_LANGUAGE, latin);
+        table1.checkTranslationsLength(TARGET_LANGUAGE, latin);
         
         //fixItemList();
         //testQuiz();
@@ -956,14 +983,14 @@ public class DynamiTracer {
         // Make the intro longer
         patches.add(new Patch(0x21F06, Hex.parseHex("C9 80 18")));
         
-        // Move table info to 0x100000
+        // Move table info to 0x43000
         patches.add(new Patch(0x21412, Hex.parseHex("20 00 B6"))); // Reads characters to print
-        patches.add(new Patch(0x2B600, Hex.parseHex("BF 00 00 50 60")));
+        patches.add(new Patch(0x2B600, Hex.parseHex("BF 00 40 CA 60")));
         //patches.add(new Patch(0x214AF, Hex.parseHex("69 00 00")));
         patches.add(new Patch(0x214BA, Hex.parseHex("20 00 B6"))); // Reads characters to check end of line
 
         patches.add(new Patch(0x23819, Hex.parseHex("20 00 B6"))); // Reads characters in name input
-        patches.add(new Patch(0x238D5, Hex.parseHex("54 00 50"))); // Reads default character names
+        patches.add(new Patch(0x238D5, Hex.parseHex("54 00 CA"))); // Reads default character names
 
         // Modify the default character names
         bytes = ResIO.getBinaryResource("decompressed/3E200.data").getBytes();
@@ -1057,8 +1084,11 @@ public class DynamiTracer {
         /**
          * SNES HEADER
          */
-        patches.add(new Patch(0xFFC0, Hex.parseHex("44 59 4E 41 4D 49 20 54 52 41 43 45 52 20 20 20 20 20 20 20 20 31 02 0A 05 00")));
+        //patches.add(new Patch(0xFFC0, Hex.parseHex("44 59 4E 41 4D 49 20 54 52 41 43 45 52 20 20 20 20 20 20 20 20 31 02 0A 05 00")));
 
+        String title = "42 53 20 44 59 4E 41 4D 49 20 54 52 41 43 45 52";
+        patches.add(new Patch(0xFFC0, Hex.parseHex(title)));
+                
         sramPatches();
 
         /**
@@ -1073,7 +1103,8 @@ public class DynamiTracer {
          * C23579  A9 00 00       LDA #$0000
          * C2357D  7D 00 00       ADC $0000,X
          */
-        patches.add(new Patch(0x23579, Hex.parseHex("A9 FF FF")));
+        //patches.add(new Patch(0x23579, Hex.parseHex("A9 FF FF")));
+        patches.add(new Patch(0x23579, Hex.parseHex("A9 00 00")));
         patches.add(new Patch(0x2357D, Hex.parseHex("EA EA EA")));
 
         patches.add(new Patch(0x2D91E, latinSmall.getCode("Daniel K.{0A}{00}")));
@@ -1106,11 +1137,11 @@ public class DynamiTracer {
         /**
          * SAVE/LOAD TO SRAM
          */
-        String sram = "30";
+        String sram = "16"; // 30
         // C22EEF  09 16          ORA #$16
         patches.add(new Patch(0x22EEF, Hex.parseHex(String.format("09 %s", sram))));
         // C22EF8  09 50          ORA #$50
-        patches.add(new Patch(0x22EF8, Hex.parseHex("09 60")));
+        //patches.add(new Patch(0x22EF8, Hex.parseHex("09 60")));
 
         // C22F09  C9 16          CMP #$16
         patches.add(new Patch(0x22F09, Hex.parseHex(String.format("C9 %s", sram))));
@@ -1136,7 +1167,7 @@ public class DynamiTracer {
          */
         // Jump to subroutine 2B740
         patches.add(new Patch(0x22F36, Hex.parseHex("22 40 B7 C2 80 08")));
-        patches.add(new Patch(0x2B740, Hex.parseHex("C0 00 64 F0 0E 98 69 20 02 A8 A2 00 F0 A9 2F 00 54 30 7F 6B")));
+        patches.add(new Patch(0x2B740, Hex.parseHex("C0 00 54 F0 0E 98 69 20 02 A8 A2 00 F0 A9 2F 00 54 "+sram+" 7F 6B")));
 
         // Reads names from sram
         /**
@@ -1162,7 +1193,7 @@ public class DynamiTracer {
          */
         patches.add(new Patch(0x22F13, Hex.parseHex("22 70 B7 C2 80 08")));
         //patches.add(new Patch(0x2B770, Hex.parseHex("C0 C0 11 D0 0C 8A 18 69 20 02 AA A9 2F 00 54 00 30 6B")));
-        patches.add(new Patch(0x2B770, Hex.parseHex("C0 C0 11 D0 23 8A 18 69 20 02 AA A9 2F 00 54 00 30 E2 20 AF 30 F0 7F C9 BB D0 0D A2 C0 11 A0 00 F0 A9 2F 8B 54 7F 7E AB 6B")));
+        patches.add(new Patch(0x2B770, Hex.parseHex("C0 C0 11 D0 23 8A 18 69 20 02 AA A9 2F 00 54 00 "+sram+" E2 20 AF 30 F0 7F C9 BB D0 0D A2 C0 11 A0 00 F0 A9 2F 8B 54 7F 7E AB 6B")));
 
         // Before : C233C1  65 10          ADC $10
         patches.add(new Patch(0x233C1, Hex.parseHex("0A EA")));
@@ -1218,7 +1249,7 @@ public class DynamiTracer {
         // Init sram
         patches.add(new Patch(0x2B7B0, Hex.parseHex("44 59 4E 41 4D 49 54 52 41 43 45 52 20 20 20 20")));
         patches.add(new Patch(0xFF03, Hex.parseHex("5C C0 B7 C2")));
-        patches.add(new Patch(0x2B7C0, Hex.parseHex("08 C2 30 A2 B0 B7 A0 10 60 A9 0F 00 8B 54 30 C2 A2 AE 30 A0 A0 63 A9 5C 00 54 30 C2 AB 28 5C 43 1C C1")));
+        patches.add(new Patch(0x2B7C0, Hex.parseHex("08 C2 30 A2 B0 B7 A0 10 50 A9 0F 00 8B 54 "+sram+" C2 A2 AE 30 A0 A0 53 A9 5C 00 54 "+sram+" C2 AB 28 5C 43 1C C1")));
     }
 
     public static void loadPatches2() {

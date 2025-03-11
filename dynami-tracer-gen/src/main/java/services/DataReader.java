@@ -205,6 +205,7 @@ public class DataReader {
                                 }
                                 value += segment;
                             }
+                            //value = String.format("Story %s", h(t.getOffsetData()));
                             value += "{EL}";
                             System.err.println("MOLEMAN\t"+value);
                             t.setTranslation(language, value);

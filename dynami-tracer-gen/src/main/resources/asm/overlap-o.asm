@@ -1,4 +1,4 @@
-CPX #$0200
+    CPX #$0200
 	BNE x_not_200
 	LDX #$0100
 	x_not_200:
@@ -26,8 +26,27 @@ CPX #$0200
 	BNE bit_shift_left_top
 	STA $74; (0xFF << 8-shift)
 	
+	
 	LDA #$10
 	STA $76; loop counter
+
+	LDA $73 ; load shift
+	STA $75 ; save tmp
+	LDA [$6D],Y ; load top tile bytes
+	
+	bit_shift_right_bot_i:
+	LSR
+	DEC $75
+	BNE bit_shift_right_bot_i
+	STA $75
+	; LDA $7EF100,X
+	JSL $C30BB0; jump to load bot tile
+	ORA $75
+	; STA $7EF100,X
+	JSL $C30B90; jump to write bot tile
+	INX
+	INY
+	DEC $76
 
 	loop_shift_width_under_8:
 	; LDA $7EF000,X ; load existing top tile bytes

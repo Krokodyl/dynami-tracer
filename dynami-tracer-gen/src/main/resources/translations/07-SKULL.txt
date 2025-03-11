@@ -1446,95 +1446,95 @@ ENG=Myers: Oooooh!{NL}What are the odds?{NL}We have a tie!{WPCL}In this case, th
 POINTER=50242;5390C
 DATA=5390C;FF FF FF EE 5E AC B2 BC AC 7D 44 4C F8 7E 7E EF 05 05 FF FF FF 95 8F 97 FF FF FF A7 8D 9F FF 9F 8B 97 05 FF FF FF 95 CD 8D E3 8F FF A9 AF BD A3 FF BB 45 B1 03 06 03 00 
 JPN=   『ダイナマイ・ブギー!!』{NL}{NL}   さくし   ときた たかし{NL}   さっきょく うえまつ のぶお{03}{06}{03}{EL}
-ENG=    "Dynami Boogie"{NL}{NL}    Lyrics: Takashi Tokita{NL}    Music: Nobuo Uematsu{03}{06}{NL}{03}{EL}
+ENG=      "Dynami Boogie"{NL}{NL}      Lyrics: Takashi Tokita{NL}      Music: Nobuo Uematsu{03}{06}{03}{EL}
 
 POINTER=50244;53944
 DATA=53944;FF 89 97 8F 59 8D D7 D3 8F FF A9 A1 E1 A9 BB A9 BF D5 03 12 03 00 
 JPN= ほしくずきらめく うちゅうのうみも{03}{12}{03}{EL}
-ENG=Twinkling stardust in a cosmic sea{03}{12}{NL}{03}{EL}
+ENG=Twinkling stardust in a cosmic sea{03}{12}{03}{EL}
 
 POINTER=50246;5395A
 DATA=5395A;FF FF FF FF B0 DC BB BC 96 C8 30 94 F8 8C CC A6 03 13 03 00 
 JPN=    オレのマシンの サーキット{03}{13}{03}{EL}
-ENG=My machine's on the tracks{03}{13}{NL}{03}{EL}
+ENG=My machine's on the tracks{03}{13}{03}{EL}
 
 POINTER=50248;5396E
 DATA=5396E;FF FF AB BB 92 BB 80 F8 A6 CB FF A9 41 CD 9F C5 A9 B5 03 14 03 00 
 JPN=  あのコのハートを うばったように{03}{14}{03}{EL}
-ENG=Like I stole her heart{03}{14}{NL}{03}{EL}
+ENG=Like I stole her heart{03}{14}{03}{EL}
 
 POINTER=5024A;53984
 DATA=53984;FF FF B9 D7 CD 9F FF B1 9F 8B D7 FF 50 CC A6 99 DB 03 14 03 00 
 JPN=  ねらった おたから ゲットする{03}{14}{03}{EL}
-ENG=To get the treasure I'm after{03}{14}{NL}{03}{EL}
+ENG=To get the treasure I'm after{03}{14}{03}{EL}
 
 POINTER=5024C;53999
 DATA=53999;FF FF AE B8 DA 4C F8 31 9E 84 B3 AE D4 F8 96 E2 C8 03 22 03 00 
 JPN=  エネルギーは タフなエモーション{03}{22}{03}{EL}
-ENG=Tough emotion is my fuel{03}{22}{NL}{03}{EL}
+ENG=Tough emotion is my fuel{03}{22}{03}{EL}
 
 POINTER=5024E;539AE
 DATA=539AE;FF FF FF AE C8 6D A4 E6 B5 31 B3 D9 CF 97 3A 03 10 03 00 
 JPN=   エンプティには なりゃしない{03}{10}{03}{EL}
-ENG=I'm never running on empty{03}{10}{NL}{03}{EL}
+ENG=I'm never running on empty{03}{10}{03}{EL}
 
 POINTER=50250;539C1
 DATA=539C1;80 F8 A6 81 5E AC B2 BC AC FF D3 55 99 81 A6 DC 56 CE F8 03 12 03 00 
 JPN=ハートはダイナマイ めざすはトレジャー{03}{12}{03}{EL}
-ENG=Dynami is a treasure hunt at heart{03}{12}{NL}{03}{EL}
+ENG=Dynami is a treasure hunt at heart{03}{12}{03}{EL}
 
 POINTER=50252;539D8
 DATA=539D8;FF FF FF AD A3 5F 2D FF D6 AC 40 DA A7 DC F8 98 03 12 03 00 
 JPN=   いつだって ライバルとレース{03}{12}{03}{EL}
-ENG=Always racing against rivals{03}{12}{NL}{03}{EL}
+ENG=Always racing against rivals{03}{12}{03}{EL}
 
 POINTER=50254;539EC
 DATA=539EC;FF B0 DC 81 5E AC B2 BC AC FF 52 F8 DA 81 A6 DC 56 CE F8 03 0E 03 00 
 JPN= オレはダイナマイ ゴールはトレジャー{03}{0E}{03}{EL}
-ENG=Dynamiσisσtheσname,σtreasureσisσtheσgoal{03}{0E}{NL}{03}{EL}
+ENG=Dynamiσisσtheσname,σtreasureσisσtheσgoal{03}{0E}{03}{EL}
 
 POINTER=50256;53A03
 DATA=53A03;9D A9 95 B0 DC 9F A1 FF 34 7E 03 18 03 00 
 JPN=そうさオレたち ダイナマイ・トレーサー!{03}{18}{03}{EL}
-ENG=Yeah! We're Dynami Tracers!{03}{18}{NL}{03}{EL}
+ENG=Yeah! We're Dynami Tracers!{03}{18}{03}{EL}
 
 POINTER=50258;53A11
 DATA=53A11;D9 E1 A9 9B AD FF 9F B3 43 8F FF 91 97 8D CB FF C5 93 D3 B5 03 14 03 00 
 JPN=りゅうせい たなびく けしきを よこめに{03}{14}{03}{EL}
-ENG=Seeing a shooting star is a sign{03}{14}{NL}{03}{EL}
+ENG=Seeing a shooting star is a sign{03}{14}{03}{EL}
 
 POINTER=5025A;53A29
 DATA=53A29;FF FF FF B0 DC A7 BC 96 C8 30 85 9F D9 9F 43 03 14 03 00 
 JPN=   オレとマシンの ふたりたび{03}{14}{03}{EL}
-ENG=Me and my machine on a journey{03}{14}{NL}{03}{EL}
+ENG=Me and my machine on a journey{03}{14}{03}{EL}
 
 POINTER=5025C;53A3C
 DATA=53A3C;FF 96 D6 90 9F FF BD AD B5 A1 FF B1 8F 2D AD DB B3 D7 03 14 03 00 
 JPN= シラケた まいにち おくっているなら{03}{14}{03}{EL}
-ENG=If your days are spent in apathy{03}{14}{NL}{03}{EL}
+ENG=If your days are spent in apathy{03}{14}{03}{EL}
 
 POINTER=5025E;53A52
 DATA=53A52;FF FF FF 9C A8 DA BB AE C8 56 C8 FF A5 C9 8B 97 DF 03 14 03 00 
 JPN=   ソウルのエンジン てんかしろ{03}{14}{03}{EL}
-ENG=Ignite the engine of your soul{03}{14}{NL}{03}{EL}
+ENG=Ignite the engine of your soul{03}{14}{03}{EL}
 
 POINTER=50260;53A67
 DATA=53A67;FF AD BB A1 31 AD A3 65 D5 FF DC CC 66 5C F8 C8 95 03 20 03 00 
 JPN= いのちは いつでも レッドゾーンさ{03}{20}{03}{EL}
-ENG=Life always in the red zone{03}{20}{NL}{03}{EL}
+ENG=Life always in the red zone{03}{20}{03}{EL}
 
 POINTER=50262;53A7C
 DATA=53A7C;FF FF B0 F8 40 F8 82 F8 A6 31 39 A1 5F 5B 03 10 03 00 
 JPN=  オーバーヒートは しょうちだぜ{03}{10}{03}{EL}
-ENG=Aware of overheating{03}{10}{NL}{03}{EL}
+ENG=Aware of overheating{03}{10}{03}{EL}
 
 POINTER=50264;53A8E
 DATA=53A8E;FF FF FF AD 8D A5 DB 93 A7 5F 91 65 FF DC F8 98 03 12 03 00 
 JPN=   いきてることだけで レース{03}{12}{03}{EL}
-ENG=Life is nothing but a race{03}{12}{NL}{03}{EL}
+ENG=Life is nothing but a race{03}{12}{03}{EL}
 
 POINTER=50266;53AA2
 DATA=53AA2;9D A9 95 B0 BC AE D5 FF 34 7E 03 14 03 00 
 JPN=そうさオマエも ダイナマイ・トレーサー!{03}{14}{03}{EL}
-ENG=Yeah! You're a Dynami Tracer too!{03}{14}{NL}{03}{EL}
+ENG=Yeah! You're a Dynami Tracer too!{03}{14}{03}{EL}
 

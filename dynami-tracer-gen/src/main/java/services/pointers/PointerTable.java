@@ -125,7 +125,7 @@ public class PointerTable {
         }
     }
 
-    public void checkTranslationsLength(Language targetLanguage) {
+    public void checkTranslationsLength(Language targetLanguage, Dictionary latin) {
         if (translationMap==null) return;
         for (Map.Entry<Integer, Translation> e : translationMap.entrySet()) {
             Translation translation = e.getValue();
@@ -134,6 +134,7 @@ public class PointerTable {
                 for (String specialCode : Font.SPECIAL_CODES) {
                     value = value.replaceAll(specialCode.replaceAll("\\{", "\\\\{"),"§");
                 }
+                value = latin.reversePresets(value);
                 String[] split = value.split("§");
                 for (String s : split) {
                     int length = Font.getStringLength(s);
@@ -199,7 +200,7 @@ public class PointerTable {
 
             // Write new data
             if (bytes!=null) {
-                //System.out.println(h(offsetData)+"\t"+translation.getTranslation(Language.ENGLISH));
+                System.out.println(h(offsetData)+"\t"+translation.getTranslation(Language.ENGLISH));
                 for (int i = 0; i < bytes.length; i++) {
                     data[offsetData++] = bytes[i];
                 }

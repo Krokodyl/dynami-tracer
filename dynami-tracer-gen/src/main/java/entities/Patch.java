@@ -29,7 +29,7 @@ public class Patch {
     }
     
     public void applyPatch(byte[] gameData) {
-        System.out.println("applyPatch\t"+h(offset));
+        //System.out.println("applyPatch\t"+h(offset));
         int i = getOffset();
         for (byte b : getData()) {
             gameData[i++] = b;

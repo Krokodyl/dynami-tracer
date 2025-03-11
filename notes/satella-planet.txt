@@ -7,3 +7,11 @@ NW - hidden room: torchlight
 SW - hidden room: key to the locked chests
 
 NE - hidden room: locked chest
+
+┏━┳━┳━┓┳ ┻ ┛┗
+┃ ┃ ┃ ┃
+┣━╋━╋━┫
+┃ ┃ ┃ ┃
+┣━╋━╋━┫
+┃ ┃ ┃ ┃
+┗━┻━┻━┛

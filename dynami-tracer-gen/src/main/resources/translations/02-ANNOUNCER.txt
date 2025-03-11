@@ -1,32 +1,32 @@
 POINTER=1A92D;1A965
 DATA=1A965;AB F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 B1 C9 4B 8F C7 8F 9B AD EE B0 8E 9E F8 44 EF B5 05 A1 CF 8F D9 8F 5F F8 CC 7E 00 
 JPN=あーっと ゼッケン{0D}ばん{NL}おんがくわくせい『オクターブ』に{NL}ちゃくりくだーッ!{EL}
-ENG=Contestant #{0D} is landing on{NL}the music planet "Octave"!{EL}
+ENG=Contestant #{0D} is landing on{NL}the music planet Octave!{EL}
 
 POINTER=1A92F;1A98D
 DATA=1A98D;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 B8 58 BE BB 89 97 EE A2 AC C8 7D 98 9E F8 EF B5 05 9F A1 C5 CD 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}ネズミのほし『ツイン・スター』に{NL}たちよったーッ!{EL}
-ENG=Contestant #{0D} is stopping{NL}by the mouse planets{NL}"Twin Star"!{EL}
+ENG=Contestant #{0D} is stopping{NL}by the mouse planets{NL}Twin Star!{EL}
 
 POINTER=1A931;1A9B4
 DATA=1A9B4;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 EE 8E DE CC 8E C6 F8 8E 7D 98 9E F8 EF B5 05 A1 CF 8F D9 8F 97 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}『クロックワーク・スター』に{NL}ちゃくりくしたーッ!{EL}
-ENG=Contestant #{0D} is stopping by{NL}the planet "Clockwork Star"!{EL}
+ENG=Contestant #{0D} is stopping by{NL}the planet Clockwork Star!{EL}
 
 POINTER=1A933;1A9DB
 DATA=1A9DB;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 DC F8 98 A1 E1 A9 5F A7 AD A9 BB B5 05 EE AA 5E DA A2 EF 36 9F A1 C5 DB BB 8B 7E 7F 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}レースちゅうだというのに{NL}『アダルツ』に たちよるのか!?{EL}
-ENG=Contestant #{0D}, in the middle{NL}of the race, goes to the{NL}"Adults" planet!{EL}
+ENG=Contestant #{0D}, in the middle{NL}of the race, goes to the{NL}planet Adults!{EL}
 
 POINTER=1A935;1AA05
 DATA=1AA05;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 64 C8 56 CE F8 B3 EE 98 8A DA 7D 48 F8 C8 EF B5 05 B1 D9 A5 97 BD CD 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}デンジャーな『スカル・ボーン』に{NL}おりてしまったーッ!{EL}
-ENG=Contestant #{0D} has landed on{NL}the dangerous planet{NL}"Skull Bone"!{EL}
+ENG=Contestant #{0D} has landed on{NL}the dangerous planet{NL}Skull Bone!{EL}
 
 POINTER=1A937;1AA2E
 DATA=1AA2E;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 57 C9 93 A9 AF AD 9B AD EE 94 A4 D6 EF B5 05 B1 D9 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}じんこうえいせい『サテラ』に{NL}おりたーッ!{EL}
-ENG=Contestant #{0D} goes to the{NL}artificial satellite "Satella"!{EL}
+ENG=Contestant #{0D} goes to the{NL}artificial satellite Satella!{EL}
 
 POINTER=1A939;1AA51
 DATA=1AA51;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 A9 A1 E1 A9 D4 C8 98 9E F8 30 B3 8D 4B D7 B5 05 A3 CD 93 C9 5F F8 CC 7E 00 
@@ -36,7 +36,7 @@ ENG=Contestant #{0D} is delving into{NL}the remains of a space{NL}monster!{EL}
 POINTER=1A93B;1AA77
 DATA=1AA77;B1 F8 CD A7 FF 5A CC 90 C8 0D 41 C9 05 95 41 8F BB EE 94 C8 66 7D 6D D6 B8 CC A6 EF B5 05 A7 A3 B5 E1 A9 97 9F F8 CC 7E 00 
 JPN=おーっと ゼッケン{0D}ばん{NL}さばくの『サンド・プラネット』に{NL}とつにゅうしたーッ!{EL}
-ENG=Contestant #{0D} has entered the{NL}desert of "Sand Planet"!{EL}
+ENG=Contestant #{0D} has entered the{NL}desert of Sand Planet!{EL}
 
 POINTER=1A93D;1AAA0
 DATA=1AAA0;B3 FF B3 C9 A7 FF 5A CC 90 C8 0D 41 C9 05 AB 9F D7 97 AD FF 89 97 CB FF 81 CD 91 C9 97 9F 05 D5 C5 A9 5F F8 CC 7E 7E 00 
@@ -106,7 +106,7 @@ ENG=...{EL}
 POINTER=1A957;1ABEE
 DATA=1ABEE;5A CC 90 C8 78 41 C9 05 EE 25 17 EF 05 0D A1 CF 8F 65 FF 52 F8 DA AC F9 C8 CC 7E 7E 00 
 JPN=ゼッケン5ばん{NL}『ミリオンブレイン・{17}』{NL}{0D}ちゃくで ゴールイ〜ンッ!!{EL}
-ENG=Contestant #5, {17} {25}{NL}reaches the goal in rank {0D}!{EL}
+ENG=Contestant #5,{NL}{17} {25}{NL}reaches the goal in rank {0D}!{EL}
 
 POINTER=1A959;1AC0B
 DATA=1AC0B;88 F8 CC 88 CC 88 CC 88 FE 05 8B 4B 8F 30 39 D9 7E 05 59 BB A9 30 39 D9 7E 00 

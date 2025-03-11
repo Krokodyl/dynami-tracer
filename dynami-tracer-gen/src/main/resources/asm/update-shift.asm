@@ -1,4 +1,5 @@
 LDA $73; load shift
+CLC
 ADC $72; add width
 ADC #$01
 CMP #$08

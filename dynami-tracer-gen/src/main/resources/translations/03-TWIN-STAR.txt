@@ -241,7 +241,7 @@ ENG=Blue Mouse King: You must climb up{NL}the tower faster than the Orange{NL}Mo
 POINTER=54060;548E9
 DATA=548E9;B9 59 BF B1 A9 FA 9D DD 65 81 F7 03 03 0A DC 64 E6 F8 32 03 04 06 52 B0 F8 F8 F8 F8 7E 7E 06 38 7E 03 01 03 00 
 JPN=ねずみおう「それでは。{03}{03}{CLTB}レディー……{03}{04}{NLTB}ゴオーーーー!!{NLTB}でチュ!{03}{01}{03}{EL}
-ENG=Mouse King: On your mark.{03}{04}{CL}Get set...{03}{05}{NL}Gooooo!!{NL}*squeak*{NL}{03}{02}{NL}{03}{EL}
+ENG=Mouse King: On your mark.{03}{04}{CL}Get set...{03}{05}{NL}Gooooo!!{NL}*squeak*{03}{02}{03}{EL}
 
 POINTER=54062;5490E
 DATA=5490E;D5 8F A5 8D 30 BF 67 D9 30 9F BD 81 05 99 4F 9D 93 38 F7 00 
@@ -251,7 +251,7 @@ ENG=The green orb you're looking for is{NL}right there.{EL}
 POINTER=54064;54922
 DATA=54922;AD FF AD AD C7 99 DD 9F 38 7E 05 9F FF 9F 8B D7 36 A9 8B A3 36 95 C7 DB A7 05 57 FF 57 41 8F 98 AC CC A0 4B 32 03 02 03 00 
 JPN=い いいわすれたでチュ!{NL}た たからに うかつに さわると{NL}じ じばくスイッチが……{03}{02}{03}{EL}
-ENG=I forgot to tell you!{NL}If you touch this treasure, it will{NL}turn on the self-destruct{NL}switch...{03}{05}{NL}{03}{EL}
+ENG=I forgot to tell you!{NL}If you touch this treasure, it will{NL}turn on the self-destruct{NL}switch...{03}{05}{03}{EL}
 
 POINTER=54066;5494B
 DATA=5494B;8D CB A9 97 B3 2D AD 9F C5 A9 5F 33 00 
@@ -316,7 +316,7 @@ ENG=Please do not take that without{NL}permission.{NL}*squeak*{EL}
 POINTER=5407E;54A6A
 DATA=54A6A;05 FF EE 1F EF CB FF 50 CC A6 7E 00 
 JPN={NL} 『{1F}』を ゲット!{EL}
-ENG={NLTB}You get {NLTB}"{1F}".{EL}
+ENG={NLTB}You get {NLTB}"{1F}"{EL}
 
 POINTER=54080;54A76
 DATA=54A76;06 FF FF FF B3 C9 B5 D5 FF B2 CC 96 C8 4E 7E 00 
@@ -591,7 +591,7 @@ ENG=No.{EL}
 POINTER=540EC;553DB
 DATA=553DB;92 CC 6F D8 AA FA 95 E5 FF 89 C9 A7 A9 30 BF A1 CB 06 85 95 AD 65 AD DB BB 37 8D 2E AB 8F 06 40 8E A4 D8 AA 5F 7E FF 9D A9 5F A7 FF B1 D5 A9 06 89 A9 CB FF F0 48 9E C8 65 FF B3 4F DB C9 5F F7 00 
 JPN=コッペリア「さぁ ほんとうの みちを{NLTB}ふさいでいるのが きょうあく{NLTB}バクテリアだ! そうだと おもう{NLTB}ほうを Aボタンで なぐるんだ。{EL}
-ENG=Coppelia: The virulent bacteria is{NL}blocking the real path!{NL}Press A to punch the one that you{NL}think it is.{EL}
+ENG=Coppelia: The lying bacteria is{NL}blocking the real path!{NL}Press A to punch the one that you{NL}think it is.{EL}
 
 POINTER=540EE;5541C
 DATA=5541C;92 CC 6F D8 AA FA C1 CD 9F E5 7E 06 8D 2E AB 8F 40 8E A4 D8 AA CB FF 9F B1 97 9F 5D F7 00 
@@ -646,12 +646,12 @@ ENG=Don't you want not to have no{NL}treasures?{NLTB}Yes{NLTB}No{EL}
 POINTER=54102;555CC
 DATA=555CC;D5 A1 DF C9 FF C3 A9 39 FF 97 9F 8F 3A A7 AD A9 05 8D D5 A1 31 5F DD 8B 36 BD 91 DB 93 A7 4B 05 AB DB 81 59 3A A7 31 AD AF 3A C5 B3 7F 0C 81 AD 06 AD AD AF 00 
 JPN=もちろん ゆうしょう したくないという{NL}きもちは だれかに まけることが{NL}あるはずないとは いえないよな?{WPCLTB}はい{NLTB}いいえ{EL}
-ENG=Can you say you don't want not to win{NL}but can't say you want someone else{NL}not to lose?{WPCL}    Yes{NLTB}No{EL}
+ENG=Can you say you don't want not to win{NL}but can't say you want someone else{NL}not to lose?{WPCL}      Yes{NLTB}No{EL}
 
 POINTER=54104;55601
 DATA=55601;A3 BD D9 FF B0 BC AE 81 34 65 05 A6 DC 56 CE F8 37 89 97 AD C7 91 57 CF B3 8F A5 05 9F 5F FF C3 A9 39 CB FF BB 4B 97 9F 8F 3A C9 57 CF 05 3A C9 5F B3 7F 0C 81 AD 7D AD AD AF 7D 81 AD 06 AD AD AF 7D AD AD AF 7D 81 AD 06 AD AD AF 7D 81 AD 7D 81 AD 06 AD AD AF 7D AD AD AF 7D AD AD AF 00 
 JPN=つまり オマエはダイナマイ・トレーサーで{NL}トレジャーが ほしいわけじゃなくて{NL}ただ ゆうしょうを のがしたくないんじゃ{NL}ないんだな?{WPCLTB}はい・いいえ・はい{NLTB}いいえ・いいえ・はい{NLTB}いいえ・はい・はい{NLTB}いいえ・いいえ・いいえ{EL}
-ENG=In other words, you're a Dynami{NL}Tracer, you don't want to have any{NL}treasures, you don't want to win the{NL}competition, right?{WPCL}    Yes, No, Yes{NLTB}No, No, Yes{NLTB}No, Yes, Yes{NLTB}No, No, No{EL}
+ENG=In other words, you're a Dynami{NL}Tracer, you don't want to have any{NL}treasures, you don't want to win the{NL}competition, right?{WPCL}      Yes, No, Yes{NLTB}No, No, Yes{NLTB}No, Yes, Yes{NLTB}No, No, No{EL}
 
 POINTER=54106;55660
 DATA=55660;65 31 AD C5 AD C5 FF 95 AD 53 30 97 A3 D5 C9 5F F7 00 
@@ -856,7 +856,7 @@ ENG=Bactrivia: Correct.{NL}Next question.{EL}
 POINTER=54156;55D21
 DATA=55D21;40 8E AC 58 FA 85 85 C9 F7 06 B1 DD 95 BD 30 8B A1 BB C5 A9 5F B3 F7 0C BD 5F FF A1 2E 9B C9 99 DB 8B 7F 06 FF FF 81 AD 06 FF FF AD AD AF 00 
 JPN=バクイズ「ふふん。{NLTB}おれさまの かちのようだな。{WPCLTB}まだ ちょうせんするか?{NLTB}  はい{NLTB}  いいえ{EL}
-ENG=Bactrivia: Hmm.{NL}Sounds about right.{WPCL}Still want to give it a shot?{NLTB}   Yes{NLTB}   No{EL}
+ENG=Bactrivia: Hmm.{NL}Sounds about right.{WPCL}Still want to give it a shot?{NLTB}Yes{NLTB}No{EL}
 
 POINTER=54158;55D50
 DATA=55D50;40 8E AC 58 FA 56 CE C8 DA 31 67 CD A1 5F 7F 06 EE BA F8 BC DA 7D 8E AC 58 EF 06 EE 8A DA A6 7D 8E AC 58 EF 00 
@@ -936,7 +936,7 @@ ENG=Coppelia: Yay!{NL}You beat a bad bacteria.{EL}
 POINTER=54176;55EC8
 DATA=55EC8;92 CC 6F D8 AA FA 99 FF 99 FF 99 53 AD 7E 7E 06 9D DD 31 65 C9 9B A3 BB 06 EE 8A DA A6 BB AB 8B 97 EF 33 0C BD CD 9F 8F FF 99 53 AD D5 BB CB 06 A5 B5 AD DD 9F B9 F7 0C EE AB B3 9F FF 89 C9 8D 65 06 FF 57 BD C9 97 A5 FF AD AD 65 99 F7 06 FF C7 9F 97 37 C3 DB 97 BD 99 F7 06 FF FF FF FF FF FF FF FF FF FF FF 8B AD 81 A3 97 CF EF 00 
 JPN=コッペリア「す す すごい!!{NLTB}それは でんせつの{NLTB}『カルトのあかし』……{WPCLTB}まったく すごいものを{NLTB}てにいれたね。{WPCLTB}『あなた ほんきで{NLTB} じまんして いいです。{NLTB} わたしが ゆるします。{NLTB}           かいはつしゃ』{EL}
-ENG=Coppelia: Amazing!!{NL}That's the legendary "Cult{NL}Certificate"...{NL}That's really terrific.{WPCL}"You can be really proud of yourself.{NL}Please forgive me."{NLTB}          -The Developer{EL}
+ENG=Coppelia: Amazing!!{NL}That's the legendary "Cult{NL}Certificate"...{NL}That's really terrific.{WPCL}"You can be really proud of yourself.{NL}Please forgive me."{NLTB}            -The Developer{EL}
 
 POINTER=54178;55F36
 DATA=55F36;5F AD FF 0D FF D5 C9 00 

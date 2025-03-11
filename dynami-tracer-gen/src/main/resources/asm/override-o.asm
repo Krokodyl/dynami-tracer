@@ -1,3 +1,8 @@
+CPX #$0100
+	BNE 03;x_not_100
+	LDX #$0200
+	;x_not_100:
+	
 LDA #$08
 STA $76; loop counter
 

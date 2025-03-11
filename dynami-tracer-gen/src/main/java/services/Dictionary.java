@@ -17,6 +17,7 @@ public class Dictionary {
      * English String / Hexadecimal code 
      */
     Map<String, String> presets = new HashMap<>();
+    Map<String, String> reversePresets = new HashMap<>();
     
     public Dictionary(){
         
@@ -48,6 +49,7 @@ public class Dictionary {
                     String code = split[0];
                     String value = split[1];
                     presets.put(value, code);
+                    reversePresets.put(code, value);
                     //map.put(x(code), value);
                     //reverseMap.put(value, x(code));
                 }
@@ -138,6 +140,18 @@ public class Dictionary {
     
     public String applyPresets(String translation) {
         for (Map.Entry<String, String> e : presets.entrySet()) {
+            String value = e.getValue();
+            String key = e.getKey();
+            while (translation.contains(key)) {
+                translation = translation.replace(key, value);
+            }
+            //translation = translation.replaceAll(key, value);
+        }
+        return translation;
+    }
+
+    public String reversePresets(String translation) {
+        for (Map.Entry<String, String> e : reversePresets.entrySet()) {
             String value = e.getValue();
             String key = e.getKey();
             while (translation.contains(key)) {

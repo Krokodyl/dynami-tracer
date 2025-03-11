@@ -1,7 +1,7 @@
 POINTER=5CF00;5CF9E
 DATA=5CF9E;05 FF FF FF 8D C9 65 FF 65 8D A5 AD DB 7E 7E 03 00 
 JPN={NL}   きんで できている!!{03}{EL}
-ENG=It is made of gold!{03}{03}{NL}{03}{EL}
+ENG=It is made of gold!{03}{03}{03}{EL}
 
 POINTER=5CF02;5CFB0
 DATA=5CFB0;05 FF FF FF FF FF FF FF D6 CC 8C F8 7E 0B 06 EE B1 A9 53 C9 BB 81 8B EF CB FF 50 CC A6 7E 00 
@@ -51,7 +51,7 @@ ENG=Plated gold...{EL}
 POINTER=5CF14;5D0CE
 DATA=5D0CE;05 FF FF FF 90 AC 92 8E 03 05 09 05 FF FF FF BE 8A 8E B4 C8 44 CC 9E AC 4A 05 FF FF FF 96 C8 B4 E0 A8 FF 96 A4 AC BC 98 03 05 09 FF FF FF 96 98 A4 D0 03 04 05 FF FF FF 32 03 04 05 FF FF FF AC 56 E2 A8 03 05 09 FF FF FF AA C8 5A C8 FF 9C A8 A0 03 04 05 FF FF FF 32 03 04 05 FF FF FF A4 AC 96 03 05 09 FF FF 8C 90 C8 7E 03 02 05 FF FF FF FF FF 8C 90 C8 7E 03 02 05 FF FF FF FF FF FF FF FF 8C 90 C8 7E 00 
 JPN={NL}   ケイコク{03}{NL}{CL}{NL}   ミカクニンブッタイガ{NL}   シンニュウ シテイマス{03}{NL}{CL}   システム{03}{04}{NL}   ……{03}{04}{NL}   イジョウ{03}{NL}{CL}   アンゼン ソウチ{03}{04}{NL}   ……{03}{04}{NL}   テイシ{03}{NL}{CL}  キケン!{03}{02}{NL}     キケン!{03}{02}{NL}        キケン!{EL}
-ENG={NL}   Warning!{03}{05}{CL}{NL}   Unidentified object{NL}   Intruders detected{03}{05}{CL}    System{03}{04}{NL}    ... ...{03}{04}{NL}    Failure{03}{05}{CL}    Security{03}{04}{NL}    ... ...{03}{04}{NL}    Shutting down{03}{04}{CL}    Danger!{03}{02}{NL}    Danger!{03}{02}{NL}    Danger!{EL}
+ENG={NL}   Warning!{03}{05}{CL}{NL}   Unidentified object{NL}   Intruders detected{03}{05}{CL}      System{03}{04}{NL}      ... ...{03}{04}{NL}      Failure{03}{05}{CL}      Security{03}{04}{NL}      ... ...{03}{04}{NL}      Shutting down{03}{04}{CL}      Danger!{03}{02}{NL}      Danger!{03}{02}{NL}      Danger!{EL}
 
 POINTER=5CF16;5D154
 DATA=5D154;66 AA B0 F8 6D C8 F7 00 
@@ -66,12 +66,12 @@ ENG=Door system error occurred.{WPCL}Impossible to open door.{EL}
 POINTER=5CF1A;5D182
 DATA=5D182;05 FF FF FF FF FF FF 80 DE F8 F7 00 
 JPN={NL}      ハロー。{EL}
-ENG={NL}    Greetings.{EL}
+ENG={NL}      Greetings.{EL}
 
 POINTER=5CF1C;5D18E
 DATA=5D18E;05 FF 80 32 03 05 DE 32 03 05 F8 32 05 03 00 
-JPN={NL} ハ……{03}{05}ロ……{03}{05}ー……{NL}{03}{EL}
-ENG={NL} Gr... {03}{05}ee... {03}{05}tings...{NL}{03}{EL}
+JPN={NL} ハ……{03}{05}ロ……{03}{05}ー……{03}{EL}
+ENG={NL} Gr... {03}{05}ee... {03}{05}tings...{03}{EL}
 
 POINTER=5CF1E;5D19E
 DATA=5D19E;FF FF FF FF A6 A8 A0 CE 8E FF 96 BC 96 9E F7 00 
@@ -121,7 +121,7 @@ ENG=Moving to Floor 1.{EL}
 POINTER=5CF30;5D27B
 DATA=5D27B;FF FF FF FF FF FF AE DC 46 F8 9E F8 03 00 
 JPN=      エレベーター{03}{EL}
-ENG=Elevator{03}{03}{NL}{03}{EL}
+ENG=Elevator{03}{03}{03}{EL}
 
 POINTER=5CF32;5D28A
 DATA=5D28A;FF FF FF FF FF 33 00 
@@ -191,7 +191,7 @@ ENG=August 29, 2026:{WPCL}"I was on duty on Satella{NL}when aliens suddenly atta
 POINTER=5CF4C;5D518
 DATA=5D518;32 03 05 57 A3 31 32 03 05 05 AD 5B C9 FF 93 30 AF AD 9B AD 36 BD C5 AD 93 C9 5F 03 05 05 AE AC D8 AA C8 37 AD A5 32 03 05 0B 9D AD A3 CB FF 03 05 6F CC A6 A7 97 A5 FF 05 8B 2D AD 9F C9 5F 32 03 05 0B 83 E3 CD A7 97 9F D7 32 03 05 05 9D DD 37 51 C9 AD C9 65 32 03 05 0B 32 03 05 9D AD A3 31 C5 8F FF B1 DD B5 05 B3 A3 AD A5 B3 03 05 32 0B 9D AD A3 31 B5 C9 51 C9 BB 03 05 05 93 A7 41 D5 FF B1 49 AF A5 03 05 32 0B 65 D5 FF C1 CD 6A D9 03 05 05 AE AC D8 AA C8 31 03 05 AE AC D8 AA C8 5F B3 32 03 05 05 57 45 C9 A7 FF B1 B3 57 FF AE AC D8 AA C8 CB BF 9F D7 03 05 05 8D E1 A9 B5 03 05 32 00 
 JPN=……{03}{05}じつは ……{03}{05}{NL}いぜん この えいせいに まよいこんだ{03}{05}{NL}エイリアンが いて……{03}{05}{WPCL}そいつを {03}{NL}ペットとして {NL}かっていたんだ……{03}{NL}{WPCL}ひょっとしたら……{03}{NL}{NL}それが げんいんで……{03}{NL}{WPCL}……{03}{NL}そいつは よく おれに{NL}なついてな{03}{NL}……{WPCL}そいつは にんげんの{03}{NL}{NL}ことばも おぼえて{03}{NL}……{WPCL}でも やっぱり{03}{NL}{NL}エイリアンは {03}{NL}エイリアンだな……{03}{NL}{NL}じぶんと おなじ エイリアンをみたら{03}{NL}{NL}きゅうに{03}{NL}……{EL}
-ENG=To tell the truth, there was an alien{NL}that wandered into this satellite{NL}a while ago.{WPCL}I kept him as a pet.{WPCL}Maybe that's why we're in this{NL}situation.{WPCL}He was always so affectionate with me.{WPCL}He learned to talk like a human being.{WPCL}But aliens are still aliens.{NL}If you see an alien that behaves{NL}like me, run!{EL}
+ENG=To tell the truth,{03}{02} there was an alien{NL}{03}{02}that wandered into this satellite{NL}{03}{02}a while ago...{WPCL}I kept him as a pet...{03}{02}{WPCL}Maybe that's why... {03}{02}we're in this{NL}situation.{WPCL}He was always so affectionate {03}{02}with me.{WPCL}He learned to talk... {03}{02}like a human being.{WPCL}But aliens {03}{02}are still aliens.{NL}If you see an alien... {03}{02}that behaves{NL}like me, run!{EL}
 
 POINTER=5CF4E;5D5DC
 DATA=5D5DC;05 B1 BD AF FF 32 05 67 93 A7 B3 8F FF B1 DD 36 B5 A5 DB B3 03 05 32 00 
@@ -286,12 +286,12 @@ ENG=!!{EL}
 POINTER=5CF72;5D832
 DATA=5D832;32 03 05 FF 05 B1 B1 CD FF 67 A9 C1 2D FF 03 05 93 93 B5 32 0B 32 03 05 05 A7 CD FF 03 05 A7 A3 5B C9 FF AE AC D8 AA C8 4B 05 97 C9 B5 E1 A9 FF 97 A5 8D A5 32 0B 32 03 05 0B AB AD A3 D7 FF BD 5F FF 45 57 8B 32 03 05 05 B3 32 03 05 7F 05 9D DD A7 D5 FF 03 05 D5 A9 32 03 05 0B 93 CD 03 05 FF 93 BB 84 DE AA F8 81 05 7B 8B CD 91 AD 30 B1 B1 8D B3 FF 87 C1 30 BD C7 D9 CB 05 DF A9 8B 37 4F DB CD A7 FF BD C7 CD 9F FF 93 A9 5D A9 B5 05 B3 2D AD DB 32 03 05 0B DF CD 03 05 FF DF A9 8B 30 39 D3 AD 31 05 BD 5F FF 87 C9 5F CD 9F 32 03 05 8B AD 03 05 32 7F 03 05 00 
 JPN=……{03}{05} {NL}おおっ どうやって {03}{05}ここに……{WPCL}……{03}{05}{NL}とっ {03}{05}とつぜん エイリアンが{NL}しんにゅう してきて……{WPCL}……{03}{05}{WPCL}あいつら まだ ぶじか……{03}{05}{NL}な……{03}{05}?{NL}それとも {03}{05}もう……{03}{05}{WPCL}こっ{03}{05} このフロアーは{NL}8かっけいの おおきな へやの まわりを{NL}ろうかが ぐるっと まわった こうぞうに{NL}なっている……{03}{05}{WPCL}ろっ{03}{05} ろうかの しょうめいは {NL}まだ へんだった……{03}{05}かい{03}{05}……?{03}{05}{EL}
-ENG=... ...{03}{05}{NL}Oh, how did you...{03}{05}get in here?{WPCL}... ...{03}{05}{NL}The aliens... {03}{05}suddenly...{NL}attacked...{WPCL}... ...{03}{05}{WPCL}Is it... safe?{03}{05}{NL}Or... {03}{05}{NL}are they... {03}{05}still...{03}{05}{WPCL}This floor is...{03}{05}{NL}an octagon with...{03}{05}{NL}a large hallway...{03}{05}{NL}around the edge...{WPCL}The light switch...{03}{05}{NL}for the hallway...{03}{05}{NL}was in the area...{03}{05}{NL}Where was... ?{EL}
+ENG=... ...{03}{02}{NL}Oh, how did you...{03}{02}get in here?{WPCL}... ...{03}{02}{NL}The aliens... {03}{02}suddenly...{NL}attacked...{WPCL}... ...{03}{02}{WPCL}Is it... safe?{03}{02}{NL}Or... {03}{02}{NL}are they... {03}{02}still...{03}{02}{WPCL}This floor is...{03}{02}{NL}an octagon with...{03}{02}{NL}a large hallway...{03}{02}{NL}around the edge...{WPCL}The light switch...{03}{02}{NL}for the hallway...{03}{02}{NL}was in the area...{03}{02}{NL}Where was... ?{EL}
 
 POINTER=5CF74;5D8EC
 DATA=5D8EC;32 03 05 05 AE AC D8 AA C8 37 03 05 65 C9 51 C9 B5 05 C7 DB 95 CB FF 97 9F C5 A9 5F 03 05 32 0B 32 9F CD 03 05 05 9F 97 8B FF A1 2E 67 FF 93 30 A9 D7 4B C7 B5 03 05 05 65 C9 51 C9 30 98 AC CC A0 4B 32 03 05 05 AB CD 9F 81 59 5F F7 0B 32 AB CD 03 05 FF AB A7 FF 92 C8 A6 DE F8 DA 05 DA F8 D0 37 74 8B AD B5 AB DB F7 05 9D 93 36 AD 2D FF AB C9 5B C9 9D A9 A1 CB 03 05 32 0B 03 05 32 32 00 
 JPN=……{03}{05}{NL}エイリアンが {03}{05}でんげんに{NL}わるさを したようだ{03}{05}……{WPCL}……たっ{03}{05}{NL}たしか ちょうど この うらがわに{03}{05}{NL}でんげんの スイッチが……{03}{05}{NL}あったはずだ。{WPCL}……あっ{03}{05} あと コントロール{NL}ルームが 1かいにある。{NL}そこに いって あんぜんそうちを{03}{05}……{WPCL}{03}{05}…………{EL}
-ENG=It looks like the aliens...{03}{05}{NL}have messed with...{03}{05}{NL}the power grid...{WPCL}I think...{03}{05}{NL}there's a power switch...{03}{05}{NL}right here on the...{03}{05}{NL}other side...{WPCL}Also...{03}{05}{NL}there's a control room...{03}{05}{NL}on the first floor...{03}{05}{NL}Go there and stay safe...{WPCL}{03}{05}... ...{EL}
+ENG=It looks like the aliens...{03}{02}{NL}have messed with...{03}{02}{NL}the power grid...{WPCL}I think...{03}{02}{NL}there's a power switch...{03}{02}{NL}right here on the...{03}{02}{NL}other side...{WPCL}Also...{03}{02}{NL}there's a control room...{03}{02}{NL}on the first floor...{03}{02}{NL}Go there and stay safe...{WPCL}{03}{02}... ...{EL}
 
 POINTER=5CF76;5D96D
 DATA=5D96D;05 FF FF FF FF 97 C9 65 AD DB 33 00 
@@ -316,7 +316,7 @@ ENG=Dead...{EL}
 POINTER=5CF7E;5DA21
 DATA=5DA21;94 A4 D6 87 FF C5 A9 93 9D 7E 0B 93 30 57 C9 93 A9 AF AD 9B AD FF 94 A4 D6 81 05 9B AD DD 8D FF 75 73 73 73 B9 C9 8B D7 05 81 9F D7 8D FF A3 63 91 A5 AD BD 99 F7 0B 93 BB 94 A4 D6 8B D7 FF BF B3 95 C9 30 8B A5 AD B5 05 AD DF AD DF B3 32 05 32 B1 8F D9 A3 63 91 A5 32 00 
 JPN=サテラへ ようこそ!{WPCL}この じんこうえいせい サテラは{NL}せいれき 2000ねんから{NL}はたらき つづけています。{WPCL}このサテラから みなさんの かていに{NL}いろいろな……{NL}……おくりつづけて……{EL}
-ENG=Welcome to Satella!{NL}This artificial satellite has{NL}been operating since 2000.{WPCL}From Satella, we will send{NL}various... to every home and...{EL}
+ENG=Welcome to Satella!{NL}This artificial satellite has{NL}been operating since 2000.{WPCL}From Satella, we will send{NL}various broadcasts to every home.{EL}
 
 POINTER=5CF80;5DA7B
 DATA=5DA7B;93 BB 94 A4 D6 31 AC C8 A4 D8 56 EA C8 A6 B3 05 92 C8 6B E0 F8 9E F8 65 FF 9B AD 4D E3 95 DD A5 AD BD 99 F7 0B BD 9F FF A1 8D E1 A9 8B D7 FF 81 B3 DD A5 05 B3 4B AD AB AD 5F FF 81 9F D7 8F FF 83 A7 BB 9F D3 B5 05 94 A4 D6 B5 31 8B 59 8B 59 30 8D A1 2E 83 C9 4B 05 A3 BF 93 BD DD A5 AD BD 32 00 
@@ -331,7 +331,7 @@ ENG=Satella gets its energy from{NL}the light of the Sun.{WPCL}Its voltage can r
 POINTER=5CF84;5DB2B
 DATA=5DB2B;06 FF FF 8B AD A1 E1 A9 65 C9 A7 A9 37 93 C7 DD 9F 7E 03 00 
 JPN={NLTB}  かいちゅうでんとうが こわれた!{03}{EL}
-ENG={NLTB}The torchlight stopped working!{03}{03}{NL}{03}{EL}
+ENG={NLTB}The torchlight stopped working!{03}{03}{03}{EL}
 
 POINTER=5CF86;5DB40
 DATA=5DB40;06 75 93 D3 30 8B AD A1 E1 A9 65 C9 A7 A9 CB 06 A3 8B CD 9F F7 00 
@@ -376,17 +376,17 @@ ENG=Eek, the elevator is...{03}{10}{CL}...tough luck.{EL}
 POINTER=5CF96;5DCDB
 DATA=5DCDB;FF FF FF 83 5F D9 FF A9 AF FF FF FF FF BB 98 AC CC A0 05 FF FF FF 83 5F D9 FF A1 E1 A9 B1 A9 FF BB 98 AC CC A0 05 FF FF FF 83 5F D9 FF 97 9F FF FF FF FF BB 98 AC CC A0 05 FF FF FF 8C CE C8 9A DA 00 
 JPN=   ひだり うえ    のスイッチ{NL}   ひだり ちゅうおう のスイッチ{NL}   ひだり した    のスイッチ{NL}   キャンセル{EL}
-ENG=    Left switch, top row{NL}    Left switch, middle row{NL}    Left switch, bottom row{NL}    Cancel{EL}
+ENG=      Left switch, top row{NL}      Left switch, middle row{NL}      Left switch, bottom row{NL}      Cancel{EL}
 
 POINTER=5CF98;5DD1D
 DATA=5DD1D;FF FF FF BD C9 B3 8B FF A9 AF FF FF FF FF BB 98 AC CC A0 05 FF FF FF BD C9 B3 8B FF A1 E1 A9 B1 A9 FF BB 98 AC CC A0 05 FF FF FF BD C9 B3 8B FF 97 9F FF FF FF FF BB 98 AC CC A0 05 FF FF FF 8C CE C8 9A DA 00 
 JPN=   まんなか うえ    のスイッチ{NL}   まんなか ちゅうおう のスイッチ{NL}   まんなか した    のスイッチ{NL}   キャンセル{EL}
-ENG=    Middle switch, top row{NL}    Middle switch, middle row{NL}    Middle switch, bottom row{NL}    Cancel{EL}
+ENG=      Middle switch, top row{NL}      Middle switch, middle row{NL}      Middle switch, bottom row{NL}      Cancel{EL}
 
 POINTER=5CF9A;5DD62
 DATA=5DD62;FF FF FF BF 4D FF A9 AF FF FF FF FF BB 98 AC CC A0 05 FF FF FF BF 4D FF A1 E1 A9 B1 A9 FF BB 98 AC CC A0 05 FF FF FF BF 4D FF 97 9F FF FF FF FF BB 98 AC CC A0 05 FF FF FF 8C CE C8 9A DA 00 
 JPN=   みぎ うえ    のスイッチ{NL}   みぎ ちゅうおう のスイッチ{NL}   みぎ した    のスイッチ{NL}   キャンセル{EL}
-ENG=    Right switch, top row{NL}    Right switch, middle row{NL}    Right switch, bottom row{NL}    Cancel{EL}
+ENG=      Right switch, top row{NL}      Right switch, middle row{NL}      Right switch, bottom row{NL}      Cancel{EL}
 
 POINTER=5CF9C;5DDA1
 DATA=5DDA1;05 FF FF FF FF FF FF FF FF 7E 7F 00 

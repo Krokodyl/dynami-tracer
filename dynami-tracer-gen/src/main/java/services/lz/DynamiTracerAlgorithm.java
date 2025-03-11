@@ -15,7 +15,9 @@ public class DynamiTracerAlgorithm extends LzAlgorithm {
     }
 
     @Override
-    public RepeatCommand buildRepeatCommand(byte a, byte b, Byte c) {
+    public RepeatCommand buildRepeatCommand(byte[] data, int offset) {
+        byte a = data[offset++];
+        byte b = data[offset];
         int length =  (b & 0xFF) >> repeatAlgorithm.getShift();
         //int length = ((b & 0xFF) >>> algorithm.getShift()) + 3;
         //a = (byte) (a + ((b & 0xF0) * 0x100));
@@ -46,7 +48,7 @@ public class DynamiTracerAlgorithm extends LzAlgorithm {
     }
 
     @Override
-    public FooterCommand buildFooterCommand(byte[] data, int start, int offset) {
+    public FooterCommand buildFooterCommand(HeaderCommand headerCommand, byte[] data, int start, int offset) {
         int count = (data[offset] & 0xFF) & 0x3F;
         int valueHeader = (data[offset+2] & 0xFF)*0x100+(data[offset+1] & 0xFF);
         FooterCommand footerCommand = new FooterCommand(count, valueHeader, this);
@@ -72,14 +74,16 @@ public class DynamiTracerAlgorithm extends LzAlgorithm {
         return bytes;
     }
 
-    public boolean endDecompression(HeaderCommand headerCommand, int decomp, int comp) {
-        if (headerCommand.getDecompressedLength()>0) return (decomp<headerCommand.getDecompressedLength());
-        else if (headerCommand.getCompressedLength()>0) return (comp>=headerCommand.getCompressedLength());
+    @Override
+    public boolean endDecompression(HeaderCommand headerCommand, int decompressedLength, int compressedLength, int flagCount) {
+        if (headerCommand.getDecompressedLength()>0) return (decompressedLength<headerCommand.getDecompressedLength());
+        else if (headerCommand.getCompressedLength()>0) return (compressedLength>=headerCommand.getCompressedLength());
         return false;
     }
 
-    public boolean footerReached(HeaderCommand headerCommand, int startOffset, int offset) {
-        return headerCommand.hasFooter() && startOffset + headerCommand.getOffsetFooter() + 2 <= offset;
+    @Override
+    public boolean footerReached(HeaderCommand headerCommand, int start, int offset, int flagCount) {
+        return headerCommand.hasFooter() && start + headerCommand.getOffsetFooter() + 2 <= offset;
     }
 
     public boolean hasTerminalByte() {

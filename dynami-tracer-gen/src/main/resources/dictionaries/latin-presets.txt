@@ -10,6 +10,7 @@
 {2A}=CCCCCC
 {2B}=DDDDDD
 {2C}=EEEEEE
+{2D}=      
 {2E}=in
 {2F}=er
 {30}=ou
